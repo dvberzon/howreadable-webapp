@@ -1,5 +1,26 @@
 Models:
 ----
+Testcase
+-----
+name
+default_question
+default_correct_answer
+translations
+
+TestcaseTranslation
+-----
+testcase_id
+language
+question
+correct_answer
+options
+
+TestcaseOption (sample, example)
+----
+name
+snippet
+question
+answer
 
 Particpant
 ---
@@ -9,7 +30,7 @@ years_coding
 main_language
 experiment_lang
 
-response
+Response
 -----
 participant_id
 case
@@ -19,10 +40,7 @@ readable_score
 comments
 
 
-
-
 routes:
 /participants/new
 /participant/1/test/name
-
 when do we randomise? 

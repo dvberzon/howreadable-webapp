@@ -1,0 +1,20 @@
+testcases:
+  ternary_if:
+    name: "Ternary operators vs if statements"
+    languages:
+      - js
+      - rb
+    question: What value will the variable result have
+    correct_answer: 20
+    samples:
+      - ternary
+      - if_statement
+  reduce_for:
+    name: "Reduce function vs for loops"
+    languages:
+      -js
+      -rb
+
+languages:
+  js: javascript
+  rb: ruby
