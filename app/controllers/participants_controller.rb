@@ -1,5 +1,6 @@
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: [:show, :edit, :update, :destroy]
+  layout 'scaffold'
 
   # GET /participants
   # GET /participants.json

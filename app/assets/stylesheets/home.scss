@@ -1,6 +1,11 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-code {
-  white-space: pre
+.watchthispace {
+  margin: 25% auto 0;
+  max-width: 350px;
+  text-align: center;
+  .hero {
+    font-size: 1.2em;
+  }
 }
