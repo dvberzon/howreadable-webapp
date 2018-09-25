@@ -1,4 +1,4 @@
-testcases:
+test_cases:
   ternary_if:
     name: "Ternary operators vs if statements"
     languages:
@@ -6,7 +6,7 @@ testcases:
       - rb
     question: What value will the variable result have
     correct_answer: 20
-    samples:
+    examples:
       - ternary
       - if_statement
   reduce_for:
@@ -14,6 +14,12 @@ testcases:
     languages:
       -js
       -rb
+    question: What value will the variable result have
+    correct_answer: 10
+    examples:
+      - reduce
+      - for_loop
+    
 
 languages:
   js: javascript

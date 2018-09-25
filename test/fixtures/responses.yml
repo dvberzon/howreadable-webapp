@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  test_case: MyString
+  example: MyString
+  participants: one
+  responded_ms: 1
+  given_answer: MyString
+  readable_score: 1
+  comments: MyText
+
+two:
+  test_case: MyString
+  example: MyString
+  participants: two
+  responded_ms: 1
+  given_answer: MyString
+  readable_score: 1
+  comments: MyText

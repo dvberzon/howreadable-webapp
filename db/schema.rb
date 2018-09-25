@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_24_170124) do
+ActiveRecord::Schema.define(version: 2018_09_25_213208) do
 
   create_table "participants", force: :cascade do |t|
     t.string "contact"
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(version: 2018_09_24_170124) do
     t.string "language_choice"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.string "test_case"
+    t.string "example"
+    t.integer "participant_id"
+    t.integer "responded_ms"
+    t.string "given_answer"
+    t.integer "readable_score"
+    t.text "comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["participant_id"], name: "index_responses_on_participant_id"
   end
 
 end
