@@ -5,4 +5,7 @@ class HomeController < ApplicationController
 
   def temproot
   end
+
+  def thankyou
+  end
 end

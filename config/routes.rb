@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   end
   root to: 'home#temproot'
   get 'home' => 'home#index'
+  get 'thankyou' => 'home#thankyou', as: :thankyou
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

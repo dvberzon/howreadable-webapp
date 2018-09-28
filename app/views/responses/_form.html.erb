@@ -1,4 +1,4 @@
-<%= form_with(model: response, local: true) do |form| %>
+<%= form_with(model: [participant, response], local: true) do |form| %>
   <% if response.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(response.errors.count, "error") %> prohibited this response from being saved:</h2>

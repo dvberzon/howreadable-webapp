@@ -1,6 +1,7 @@
 class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :edit, :update, :destroy]
-  before_action :set_participant, only: [:edit]
+  before_action :set_participant, only: [:edit, :update]
+  before_action :admin_only, except: [:edit, :create]
 
   # GET /responses
   # GET /responses.json
@@ -43,7 +44,13 @@ class ResponsesController < ApplicationController
   def update
     respond_to do |format|
       if @response.update(response_params)
-        format.html { redirect_to @response, notice: 'Response was successfully updated.' }
+        format.html do
+          if @response.next
+            redirect_to edit_participant_response_path @participant, @response.next
+          else
+            redirect_to thankyou_path
+          end
+        end
         format.json { render :show, status: :ok, location: @response }
       else
         format.html { render :edit }
