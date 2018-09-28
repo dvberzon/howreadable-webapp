@@ -11,37 +11,34 @@
     </div>
   <% end %>
 
+  <%= render 'test_case' %>
+
   <div class="field">
-    <%= form.label :test_case %>
-    <%= form.text_field :test_case %>
+    <%= form.hidden_field :responded_ms %>
   </div>
 
   <div class="field">
-    <%= form.label :example %>
-    <%= form.text_field :example %>
-  </div>
-
-  <div class="field">
-    <%= form.label :responded_ms %>
-    <%= form.number_field :responded_ms %>
-  </div>
-
-  <div class="field">
-    <%= form.label :given_answer %>
+    <%= form.label :given_answer, 'Your answer:' %>
     <%= form.text_field :given_answer %>
   </div>
 
   <div class="field">
-    <%= form.label :readable_score %>
-    <%= form.number_field :readable_score %>
+    <%= form.label :readable_score, 'How readable did you find this code?' %>
+    <ul class="lickert">
+      <li>Horrid</li>
+      <% 0.upto(4).each do |score| %>
+        <li><label><%= form.radio_button :readable_score, score %></label></li>
+      <% end %>
+      <li>Lovely</li>
+    </ul>
   </div>
 
   <div class="field">
-    <%= form.label :comments %>
+    <%= form.label :comments, 'Any comments?' %>
     <%= form.text_area :comments %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Save' %>
   </div>
 <% end %>

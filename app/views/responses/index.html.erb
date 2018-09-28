@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Participant</th>
       <th>Test case</th>
       <th>Example</th>
       <th>Responded ms</th>
@@ -18,6 +19,7 @@
   <tbody>
     <% @responses.each do |response| %>
       <tr>
+        <td><%= response.participant_id %></td>
         <td><%= response.test_case %></td>
         <td><%= response.example %></td>
         <td><%= response.responded_ms %></td>

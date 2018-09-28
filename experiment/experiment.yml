@@ -4,7 +4,7 @@ test_cases:
     languages:
       - js
       - rb
-    question: What value will the variable result have
+    question: What value will the variable <strong>result</strong> have?
     correct_answer: 20
     examples:
       - ternary
@@ -14,7 +14,7 @@ test_cases:
     languages:
       -js
       -rb
-    question: What value will the variable result have
+    question: What value will the variable <strong>result</strong> have?
     correct_answer: 10
     examples:
       - reduce
@@ -22,5 +22,15 @@ test_cases:
     
 
 languages:
-  js: javascript
-  rb: ruby
+  js: Javascript
+  rb: Ruby
+
+years_programming:
+  0: Just started
+  1: One year
+  2: Two years
+  3: Three years
+  4: Four years
+  5: Five years
+  6: 6 - 10 years
+  10: 10 years or more

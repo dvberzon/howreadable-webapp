@@ -1,24 +1,3 @@
-<p id="notice"><%= notice %></p>
+<h1>Thank you</h1>
 
-<p>
-  <strong>Contact:</strong>
-  <%= @participant.contact %>
-</p>
-
-<p>
-  <strong>Main language:</strong>
-  <%= @participant.main_language %>
-</p>
-
-<p>
-  <strong>Years programming:</strong>
-  <%= @participant.years_programming %>
-</p>
-
-<p>
-  <strong>Language choice:</strong>
-  <%= @participant.language_choice %>
-</p>
-
-<%= link_to 'Edit', edit_participant_path(@participant) %> |
-<%= link_to 'Back', participants_path %>
+<%= link_to edit_participant_response_path(@participant, @participant.responses.first), :class=>'button' do %>Start experiment<% end %>

@@ -1,5 +1,6 @@
 class Participant < ApplicationRecord
-  has_many :responses
+  has_many :responses, dependent: :delete_all
+  after_create :generate_responses
 
   def generate_responses
     # return if we already have responses

@@ -1,5 +1,6 @@
 class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :edit, :update, :destroy]
+  before_action :set_participant, only: [:edit]
 
   # GET /responses
   # GET /responses.json
@@ -65,6 +66,10 @@ class ResponsesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_response
       @response = Response.find(params[:id])
+    end
+
+    def set_participant
+      @participant = Participant.find(params[:participant_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
