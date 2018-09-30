@@ -6,7 +6,7 @@ class Response < ApplicationRecord
   end
 
   def snippet
-    Snippet.new example, participant.language_choice
+    Snippet.new test_case, example, participant.language_choice
   end
 
   def next

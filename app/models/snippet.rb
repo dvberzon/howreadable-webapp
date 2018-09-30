@@ -1,6 +1,7 @@
 class Snippet
-  attr_accessor :name, :lang
-  def initialize name, lang
+  attr_accessor :test_case, :name, :lang
+  def initialize test_case, name, lang
+    self.test_case = test_case
     self.name = name
     self.lang = lang
   end
@@ -10,7 +11,7 @@ class Snippet
   end
 
   def text
-    @text ||= File.read(File.join(Rails.root, 'experiment', filename))
+    @text ||= File.read(File.join(Rails.root, 'experiment', test_case, filename))
   end
 
   def lang_name
