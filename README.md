@@ -1,24 +1,16 @@
-# README
+# HOWREADABLE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The /experiment folder has all the details of the different test cases and the examples to compare
 
-Things you may want to cover:
+/experiment/experiment.yml defines the diffrent test cases and their metadata.
 
-* Ruby version
+the rest of the files in experiment are the test case examples. They are all named in the form
 
-* System dependencies
+<example>.<lang>
 
-* Configuration
+eg
 
-* Database creation
+if a test case has an example called 'ifelse' and languages: 'rb' and 'js', the files would be
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ifelse.rb
+ifelse.js
