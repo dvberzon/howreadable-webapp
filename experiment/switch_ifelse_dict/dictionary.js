@@ -1,4 +1,4 @@
-function apply_tuple(action, num) {
+function applyTuple(action, num) {
   var result;
 
   var action_handlers = {
@@ -24,4 +24,4 @@ function apply_tuple(action, num) {
   return result;
 }
 
-const result = apply_tuple('double', 2);
+const result = applyTuple('double', 2);

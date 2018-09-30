@@ -4,4 +4,4 @@ def hi_lo(value)
   "ok"
 end
 
-result = hi_lo(6);
+result = hi_lo 6

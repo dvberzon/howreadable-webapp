@@ -1,8 +1,7 @@
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: [:show, :edit, :update, :destroy]
   before_action :admin_only, except: [:new, :create, :show]
-  layout 'scaffold'
-
+  layout 'scaffold', only: [:index]
   # GET /participants
   # GET /participants.json
   def index

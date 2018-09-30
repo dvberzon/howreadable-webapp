@@ -2,7 +2,7 @@ class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :edit, :update, :destroy]
   before_action :set_participant, only: [:edit, :update]
   before_action :admin_only, except: [:edit, :create]
-
+  layout 'scaffold', only: [:index]
   # GET /responses
   # GET /responses.json
   def index

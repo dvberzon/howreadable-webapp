@@ -1,0 +1,17 @@
+html {
+  height: 100%;
+  background-image: image-url('bg-2048.jpg');
+  background-position-y: center;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+div.container {
+  margin: 10% auto;
+  border-radius: 30px;
+  background-color: white;
+  padding: 30px;
+}
+
