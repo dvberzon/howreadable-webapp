@@ -12,6 +12,7 @@ class ParticipantsController < ApplicationController
   # GET /participants/1
   # GET /participants/1.json
   def show
+    @num_snippets = @participant.responses.length || 0
   end
 
   # GET /participants/new

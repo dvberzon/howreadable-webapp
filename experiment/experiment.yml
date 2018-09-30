@@ -9,6 +9,19 @@ test_cases:
     examples:
       - ternary
       - if_statement
+  nested_ternary_if:
+    name: "Nested Ternary operators (with or without brackets) vs if statements"
+    languages:
+      - js
+      - rb
+    question: What value will the variable <strong>result</strong> have?
+    correct_answer:
+      - ok
+      - "\"ok\""
+      - "'ok'"
+    examples:
+      - ternary
+      - if_statement
   reduce_for:
     name: "Reduce function vs for loops"
     languages:
