@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_25_213208) do
+ActiveRecord::Schema.define(version: 2018_09_29_162756) do
 
   create_table "participants", force: :cascade do |t|
     t.string "contact"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(version: 2018_09_25_213208) do
     t.string "language_choice"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "accepted"
+    t.boolean "can_contact"
+    t.string "name"
   end
 
   create_table "responses", force: :cascade do |t|

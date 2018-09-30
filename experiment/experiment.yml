@@ -12,14 +12,24 @@ test_cases:
   reduce_for:
     name: "Reduce function vs for loops"
     languages:
-      -js
-      -rb
+      - js
+      - rb
     question: What value will the variable <strong>result</strong> have?
     correct_answer: 10
     examples:
       - reduce
       - for_loop
-    
+  switch_ifelse_dict:
+    name: "Swtich case vs if else vs dictionary"
+    languages:
+      - js
+      - rb
+    question: What value will the variable <strong>result</strong> have?
+    correct_answer: 4
+    examples:
+      - switch
+      - ifelse
+      - dictionary  
 
 languages:
   js: Javascript
