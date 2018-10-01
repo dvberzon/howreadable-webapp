@@ -1,4 +1,7 @@
 test_cases:
+
+  
+  # Ternary operators vs if statements
   ternary_if:
     name: "Ternary operators vs if statements"
     languages:
@@ -9,6 +12,8 @@ test_cases:
     examples:
       - ternary
       - if_statement
+  
+  # Nested Ternary operators (with or without brackets) vs if statements
   nested_ternary_if:
     name: "Nested Ternary operators (with or without brackets) vs if statements"
     languages:
@@ -22,6 +27,8 @@ test_cases:
     examples:
       - ternary
       - if_statement
+  
+  # Reduce function vs for loops
   reduce_for:
     name: "Reduce function vs for loops"
     languages:
@@ -32,6 +39,8 @@ test_cases:
     examples:
       - reduce
       - for_loop
+  
+  # Swtich case vs if else vs dictionary
   switch_ifelse_dict:
     name: "Swtich case vs if else vs dictionary"
     languages:
@@ -42,7 +51,19 @@ test_cases:
     examples:
       - switch
       - ifelse
-      - dictionary  
+      - dictionary
+
+  # If else vs early return
+  ifelse_earlyreturn:
+    name: "If else vs early return"
+    languages:
+      - js
+      - rb
+    question: What value will the variable <strong>result</strong> have?
+    correct_answer: 4
+    examples:
+      - ifelse
+      - earlyreturn
 
 languages:
   js: Javascript
