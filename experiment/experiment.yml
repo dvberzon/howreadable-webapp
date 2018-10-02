@@ -65,6 +65,30 @@ test_cases:
       - ifelse
       - earlyreturn
 
+  # generic vs specific naming
+  generic_specific:
+    name: "Generic vs specific method names"
+    languages:
+      - js
+      - rb
+    question: What value will the variable <strong>result</strong> have?
+    correct_answer: true
+    examples:
+      - generic
+      - specific
+
+  # methods vs local logic
+  functions_local:
+    name: "Functions vs local logic"
+    languages:
+      - js
+      - rb
+    question: What value will the variable <strong>result</strong> have?
+    correct_answer: true
+    examples:
+      - functions
+      - local
+
 languages:
   js: Javascript
   rb: Ruby
