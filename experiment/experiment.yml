@@ -7,6 +7,7 @@ test_cases:
     languages:
       - js
       - rb
+      - py
     question: What value will the variable <strong>result</strong> have?
     correct_answer: 20
     examples:
@@ -19,6 +20,7 @@ test_cases:
     languages:
       - js
       - rb
+      - py
     question: What value will the variable <strong>result</strong> have?
     correct_answer:
       - ok
@@ -34,6 +36,7 @@ test_cases:
     languages:
       - js
       - rb
+      - py
     question: What value will the variable <strong>result</strong> have?
     correct_answer: 10
     examples:
@@ -46,6 +49,7 @@ test_cases:
     languages:
       - js
       - rb
+      #- py no case statement in python sadly
     question: What value will the variable <strong>result</strong> have?
     correct_answer: 4
     examples:
@@ -59,6 +63,7 @@ test_cases:
     languages:
       - js
       - rb
+      - py
     question: What value will the variable <strong>result</strong> have?
     correct_answer: 4
     examples:
@@ -71,6 +76,7 @@ test_cases:
     languages:
       - js
       - rb
+      - py
     question: What value will the variable <strong>result</strong> have?
     correct_answer: true
     examples:
@@ -83,6 +89,7 @@ test_cases:
     languages:
       - js
       - rb
+      - py
     question: What value will the variable <strong>result</strong> have?
     correct_answer: true
     examples:
@@ -92,6 +99,7 @@ test_cases:
 languages:
   js: Javascript
   rb: Ruby
+  py: Python
 
 years_programming:
   0: Just started

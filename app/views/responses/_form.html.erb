@@ -1,44 +1,43 @@
-<%= form_with(model: [participant, response], local: true) do |form| %>
-  <% if response.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(response.errors.count, "error") %> prohibited this response from being saved:</h2>
-
-      <ul>
-      <% response.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div id="response">
+  
+    <div class="question">
+      <%= render 'test_case' %>
+      <button class="go">I'm ready to answer</button>
     </div>
-  <% end %>
 
-  <%= render 'test_case' %>
+    <div class="answer-form">
+      <button class="back">I want to see the code again</button>
+      <%= form_with(model: [participant, response], local: true) do |form| %>
+      
+        <div class="field">
+          <%= form.hidden_field :responded_ms %>
+        </div>
 
-  <div class="field">
-    <%= form.hidden_field :responded_ms %>
-  </div>
+        <div class="field">
+          <%= form.label :given_answer, 'Your answer:' %>
+          <%= form.text_field :given_answer %>
+        </div>
 
-  <div class="field">
-    <%= form.label :given_answer, 'Your answer:' %>
-    <%= form.text_field :given_answer %>
-  </div>
+        <div class="field">
+          <%= form.label :readable_score, 'How readable did you find this code?' %>
+          <ul class="lickert">
+            <li>Horrid</li>
+            <% 0.upto(4).each do |score| %>
+              <li><label><%= form.radio_button :readable_score, score %></label></li>
+            <% end %>
+            <li>Lovely</li>
+          </ul>
+        </div>
 
-  <div class="field">
-    <%= form.label :readable_score, 'How readable did you find this code?' %>
-    <ul class="lickert">
-      <li>Horrid</li>
-      <% 0.upto(4).each do |score| %>
-        <li><label><%= form.radio_button :readable_score, score %></label></li>
-      <% end %>
-      <li>Lovely</li>
-    </ul>
-  </div>
+        <div class="field">
+          <%= form.label :comments, 'Any comments?' %>
+          <%= form.text_area :comments %>
+        </div>
 
-  <div class="field">
-    <%= form.label :comments, 'Any comments?' %>
-    <%= form.text_area :comments %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Save' %>
-  </div>
-<% end %>
+        <div class="actions">
+          <%= form.submit 'Save' %>
+        </div>
+        <% end %>
+    </div>
+  
+</div>

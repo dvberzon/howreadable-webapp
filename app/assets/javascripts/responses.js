@@ -1,19 +1,32 @@
 document.addEventListener('DOMContentLoaded', function(){
   // code for response page
-  if(document.querySelector('#response-form')){
+  if(document.querySelector('#response')){
     var startTime = new Date();
-    var responseTime = null;
-    var input = document.querySelector('#response_given_answer');
+    var responseTime = 0;
+    var responeDiv = document.getElementById('response');
+    var goButton = document.querySelector('.question button.go');
+    var backButton = document.querySelector('.answer-form button.back');
     var msInput = document.querySelector('#response_responded_ms');
 
+    var startTimer = function(){
+      startTime = new Date();
+      console.log('started timer');
+    }
 
-    input.addEventListener('change', function(event){
-       if(!responseTime){
-        responseTime = new Date() - startTime;
-        msInput.value = responseTime;
-        console.log(responseTime);
-      }
-    });  
+    var stopTimer = function(){
+      responseTime += new Date() - startTime;
+      msInput.value = responseTime;
+    }
+
+    goButton.addEventListener('click', function(){
+      stopTimer();
+      responeDiv.classList.add("answer-mode");
+    });
+
+    backButton.addEventListener('click', function(){
+      startTimer();
+      responeDiv.classList.remove("answer-mode");
+    });
   }
   
 })

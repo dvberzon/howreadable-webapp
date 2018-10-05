@@ -1,7 +1,7 @@
 <p>Look at the following code</p>
 <pre>
-  <code>
-<%= @response.snippet.text %>
+  <code class="<%= @response.snippet.lang_name %>">
+<%#    %><%= @response.snippet.text %>
   </code>
 </pre>
 <p class="question"><%= @response.test_case_obj.question.html_safe %></p>

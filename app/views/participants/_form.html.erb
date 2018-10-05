@@ -1,57 +1,65 @@
-<%= form_with(model: participant, local: true) do |form| %>
+<div id="participant">
+  <%= form_with(model: participant, local: true) do |form| %>
 
-  <p>Thank you for agreeing to take part in our experiment.</p>
-  <p>We'd first like to collect some information about you</p>
-  
-  <div class="field">
-    <label>How long have you been programming?</label>
-    <%= form.select :years_programming, Experiment.years_programming_options %>
-  </div>
+    <p>Thank you for agreeing to take part in our experiment.</p>
+    <p>We'd first like to collect some information about you</p>
+    
+    <div class="field">
+      <label>* How long have you been programming?</label>
+      <%= form.select :years_programming, Experiment.years_programming_options %>
+    </div>
 
-  <div class="field">
-    <label>What is the main language you work in?</label>
-    <%= form.text_field :main_language %>
-  </div>
+    <div class="field">
+      <label>* What is the main language you work in?</label>
+      <%= form.text_field :main_language %>
+    </div>
 
-  <div class="field">
-    <label>Which programming language would you like to read examples of</label>
-    <p>It should be the language you are most familiar with</p>
-    <% Experiment.languages.each do |id, name| %>
-      <label>
-        <%= form.radio_button :language_choice, id %>  <%= name %>
-      </label>
-    <% end %>
-  </div>
-  
-  <div class="field">
-    <label>Can we contact if we have questions about your responses?</label>
-    <% yes_no_options.each do |id, name| %>
-      <label>
-        <%= form.radio_button :can_contact, id %>  <%= name %>
-      </label>
-    <% end %>
-  </div>
-
-  <div class="contact">
-    <p>If so please enter your contact information</p>
-     <div class="field">
-        <%= form.label :name %>
-        <%= form.text_field :name %>
+    <div class="field">
+      <label>* Which programming language would you like to read examples of</label>
+      <p>It should be the language you are most familiar with</p>
+      <div class="option-buttons">
+        <% Experiment.languages.each do |id, name| %>
+          <span class="option">
+            <%= form.radio_button :language_choice, id %>
+            <%= form.label :language_choice , name, value: id, :class=>'button' %>
+          </span>
+        <% end %>
       </div>
-      <div class="field">
-        <%= form.label :contact, 'Contact info' %>
-        <p>Email address, twitter handle etc.</p>
-        <%= form.text_field :contact %>
+    </div>
+    
+    <div class="field">
+      <label>Can we contact if we have questions about your responses?</label>
+      <div class="option-buttons contact-options">
+        <% yes_no_options.each do |id, name| %>
+          <span class="option">
+            <%= form.radio_button :can_contact, id %>
+            <%= form.label :can_contact, name, value: id, :class=>'button' %>
+          </span>
+        <% end %>
       </div>
-  </div>
+    </div>
 
-  
+    <div id="contact">
+      <p>If so please enter your contact information</p>
+       <div class="field">
+          <%= form.label :name %>
+          <%= form.text_field :name %>
+        </div>
+        <div class="field">
+          <%= form.label :contact, 'Contact info' %>
+          <p>Email address, twitter handle etc.</p>
+          <%= form.text_field :contact %>
+        </div>
+    </div>
 
-  
+    
 
-  
+    
 
-  <div class="actions">
-    <%= form.submit 'Participate' %>
-  </div>
-<% end %>
+    
+
+    <div class="actions">
+      <%= form.submit 'Participate', :class=>'button-primary' %>
+    </div>
+  <% end %>
+</div>

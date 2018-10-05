@@ -1,12 +1,33 @@
 // Place all the styles related to the responses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-ul.lickert {
-  li {
-    display: inline-block;
-    label {
-      padding: 0 10px;
+div#response {
+  div.question {
+    display: block;
+    code {
+      padding: 20px 50px;
+      font-size: 20px;
+      font-family: Inconsolata, courier, monospace;
     }
   }
+  div.answer-form {
+    display: none;
+  }
+  &.answer-mode {
+    div.question {
+      display: none;
+    }
+    div.answer-form {
+      display: block;
+      ul.lickert {
+        li {
+          display: inline-block;
+          label {
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+  }
+
 }
