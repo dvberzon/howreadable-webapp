@@ -14,10 +14,14 @@ body {
 
 
 div.container {
-  margin: 10% auto;
+  margin: 40px auto;
   border-radius: 30px;
   background-color: white;
   padding: 30px;
+}
+
+div.container.home {
+  margin-top: 10%;
 }
 
 div.option-buttons {

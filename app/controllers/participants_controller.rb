@@ -16,7 +16,7 @@ class ParticipantsController < ApplicationController
 
   # GET /participants/new
   def new
-    @participant = Participant.new
+    @participant = Participant.new(language_choice: params[:lang])
   end
 
   # GET /participants/1/edit

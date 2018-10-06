@@ -9,3 +9,19 @@
     font-size: 1.2em;
   }
 }
+
+p.languages {
+  .button {
+    display: inline-block;
+    width: 30%;
+    margin: 0 10px;
+    font-size: inherit;
+    height: inherit;
+    text-align: center;
+    img {
+      height: 60px;
+      display: block;
+      margin: 20px auto;
+    }
+  }
+}
