@@ -11,17 +11,26 @@
 }
 
 p.languages {
+  text-align: center;
   .button {
     display: inline-block;
     width: 30%;
-    margin: 0 10px;
-    font-size: inherit;
+    min-width: 120px;
+    margin: 10px 1%;
+    font-size: 16px;
     height: inherit;
     text-align: center;
+    padding: 0px;
     img {
       height: 60px;
       display: block;
       margin: 20px auto;
+    }
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
+    &:hover {
+      background-color:#f3f3f3;
     }
   }
 }

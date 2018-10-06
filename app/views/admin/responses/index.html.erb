@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<p>
+  <%= link_to 'Participants', admin_participants_path, :class=>'button' %>
+  <%= link_to 'Responses', admin_responses_path, :class=>'button button-primary' %>
+</p>
 
 <h1>Responses</h1>
 
@@ -12,28 +15,21 @@
       <th>Given answer</th>
       <th>Readable score</th>
       <th>Comments</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @responses.each do |response| %>
       <tr>
-        <td><%= response.participant_id %></td>
+        <td><%= link_to response.participant_id, [:admin, response.participant] %></td>
         <td><%= response.test_case %></td>
         <td><%= response.example %></td>
         <td><%= response.responded_ms %></td>
         <td><%= response.given_answer %></td>
         <td><%= response.readable_score %></td>
         <td><%= response.comments %></td>
-        <td><%= link_to 'Show', response %></td>
-        <td><%= link_to 'Edit', edit_response_path(response) %></td>
-        <td><%= link_to 'Destroy', response, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Response', new_response_path %>

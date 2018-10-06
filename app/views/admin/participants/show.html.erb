@@ -1,0 +1,46 @@
+<p>
+  <%= link_to 'Participants', admin_participants_path, :class=>'button button-primary' %>
+  <%= link_to 'Responses', admin_responses_path, :class=>'button' %>
+</p>
+
+<h1>Participant - <%= @participant.id %></h1>
+
+
+<ul class="data-list">
+  <li><strong>ID:</strong> <%= @participant.id %></li>
+  <li><strong>Name:</strong> <%= @participant.name %></li>
+  <li><strong>Can contact:</strong> <%= @participant.can_contact %></li>
+  <li><strong>Contact:</strong> <%= @participant.contact %></li>
+  <li><strong>Main language:</strong> <%= @participant.main_language %></li>
+  <li><strong>Years programming:</strong> <%= @participant.years_programming %></li>
+  <li><strong>Language choice:</strong> <%= @participant.language_choice %></li>
+        
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test case</th>
+      <th>Example</th>
+      <th>Responded ms</th>
+      <th>Given answer</th>
+      <th>Readable score</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @participant.responses.each do |response| %>
+      <tr>
+        <td><%= response.test_case %></td>
+        <td><%= response.example %></td>
+        <td><%= response.responded_ms %></td>
+        <td><%= response.given_answer %></td>
+        <td><%= response.readable_score %></td>
+        <td><%= response.comments %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p class="align-right"><%= link_to 'Delete', [:admin,@participant], method: :delete, data: { confirm: 'Are you sure?' }, :class=>'button' %></p>
