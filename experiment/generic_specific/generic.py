@@ -1,8 +1,8 @@
-def processStr(str):
+def process_str(str):
   return ''.join(sorted(list(str.strip().lower())))
 
 
-def isAnagramOf(str, testStr):
-  return processStr(str) == processStr(testStr)
+def is_anagram_of(str, testStr):
+  return process_str(str) == process_str(testStr)
 
-result = isAnagramOf("devil", "lived")
+result = is_anagram_of("devil", "lived")

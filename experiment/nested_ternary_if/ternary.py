@@ -1,4 +1,4 @@
-def hiLo(value):
+def hi_lo(value):
   return "high" if value > 10 else "low" if value < 5 else "ok"
 
-result = hiLo(6)
+result = hi_lo(6)

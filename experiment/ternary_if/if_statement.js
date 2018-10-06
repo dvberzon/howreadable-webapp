@@ -6,4 +6,4 @@ function getResult(value) {
   }
 }
 
-const result = getResult(3);
+var result = getResult(3);

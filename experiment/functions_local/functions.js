@@ -25,7 +25,7 @@ function validateParams(params){
       && postcodeValid(params)
 }
 
-const params = {
+var params = {
   firstName: 'Jane',
   lastName: 'Doe',
   email: 'jane@doe.com',

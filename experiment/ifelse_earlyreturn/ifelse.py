@@ -1,10 +1,10 @@
-def letterForNumber(num):
+def letter_for_number(num):
   if(num > 0 and num < 27):
     letters = "abcdefghijklmnopqrstuvwxyz"
-    lettersArr = list(letters)   # ['a', 'b', ..]
-    letter = lettersArr[num - 1]
+    letters_arr = list(letters)   # ['a', 'b', ..]
+    letter = letters_arr[num - 1]
   else:
     letter = '-'
   return letter
 
-result = letterForNumber(3)
+result = letter_for_number(3)

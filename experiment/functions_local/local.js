@@ -11,7 +11,7 @@ function validateParams(params){
   return firstNameValid && lastNameValid && emailValid && postcodeValid
 }
 
-const params = {
+var params = {
   firstName: 'Jane',
   lastName: 'Doe',
   email: 'jane@doe.com',

@@ -1,8 +1,8 @@
-def sortAlphabetically(str):
+def sort_alphabetically(str):
   return ''.join(sorted(list(str.strip().lower())))
 
 
-def isAnagramOf(str, testStr):
-  return sortAlphabetically(str) == sortAlphabetically(testStr)
+def is_anagram_of(str, testStr):
+  return sort_alphabetically(str) == sort_alphabetically(testStr)
 
-result = isAnagramOf("devil", "lived")
+result = is_anagram_of("devil", "lived")

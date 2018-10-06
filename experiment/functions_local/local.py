@@ -1,19 +1,19 @@
-def strPresent(str):
+def str_present(str):
   return str is not None and len(str) > 0
 
-def validateParams(params):
-  firstNameValid = strPresent(params.get('firstName'))
-  lastNameValid = strPresent(params.get('lastName'))
-  emailValid = strPresent(params.get('email')) and '@' in params.get('email')
-  postcodeValid = strPresent(params.get('postcode'))
+def validate_params(params):
+  first_name_valid = str_present(params.get('first_name'))
+  last_name_valid = str_present(params.get('last_name'))
+  email_valid = str_present(params.get('email')) and '@' in params.get('email')
+  postcode_valid = str_present(params.get('postcode'))
 
-  return firstNameValid and lastNameValid and emailValid and postcodeValid
+  return first_name_valid and last_name_valid and email_valid and postcode_valid
 
 params = {
-  'firstName': 'Jane',
-  'lastName': 'Doe',
+  'first_name': 'Jane',
+  'last_name': 'Doe',
   'email': 'jane@doe.com',
   'postcode': ''
 }
 
-result = validateParams(params)
+result = validate_params(params)

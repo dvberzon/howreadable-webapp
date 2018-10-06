@@ -1,8 +1,8 @@
-def hiLo(value):
+def hi_lo(value):
   if(value > 10):
     return  "high"
   if(value < 5):
     return "low"
   return "ok"
 
-result = hiLo(6)
+result = hi_lo(6)
