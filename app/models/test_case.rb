@@ -1,10 +1,11 @@
 class TestCase
-  attr_accessor :id, :name, :question, :correct_answer, :languages, :examples
+  attr_accessor :id, :name, :question, :answers, :correct_answer, :languages, :examples
 
   def initialize id, yaml
     self.id = id
     self.name = yaml['name']
     self.question = yaml['question']
+    self.answers = yaml['answers']
     self.correct_answer = yaml['correct_answer']
     self.languages = yaml['languages']
     self.examples = yaml['examples']
@@ -29,6 +30,10 @@ class TestCase
     # instead of full randomisation, spread the tests around by using
     # the participant id as the index for the example
     examples[id % examples.length]
+  end
+
+  def answer_options lang
+    answers.map {|ans| [ans, Experiment.translate_answer(ans, lang)]}
   end
 
 end

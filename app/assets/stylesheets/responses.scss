@@ -20,6 +20,12 @@ div#response {
     }
     div.answer-form {
       display: block;
+      .answer-options{
+        label {
+          font-size: 18px;
+          text-transform: none;
+        }
+      }
       ul.lickert {
         li {
           display: inline-block;
@@ -27,6 +33,12 @@ div#response {
             padding: 0 10px;
           }
         }
+      }
+      #response_comments {
+        width: 100%;
+      }
+      .actions{
+        text-align: right;
       }
     }
   }

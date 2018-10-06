@@ -5,6 +5,10 @@ class Response < ApplicationRecord
     TestCase.find test_case
   end
 
+  def answer_options
+    test_case_obj.answer_options participant.language_choice
+  end
+
   def snippet
     Snippet.new test_case, example, participant.language_choice
   end
@@ -15,5 +19,9 @@ class Response < ApplicationRecord
 
   def prev
     @prev ||= participant.responses.find_by index: (index||0) - 1
+  end
+
+  def correct?
+    given_answer == test_case_obj.correct_answer.to_s
   end
 end

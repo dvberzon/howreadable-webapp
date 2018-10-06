@@ -35,7 +35,7 @@
         <td><%= response.test_case %></td>
         <td><%= response.example %></td>
         <td><%= response.responded_ms %></td>
-        <td><%= response.given_answer %></td>
+        <td><%= response.given_answer %> <% if response.correct? %>&#10003;<% end %></td>
         <td><%= response.readable_score %></td>
         <td><%= response.comments %></td>
       </tr>

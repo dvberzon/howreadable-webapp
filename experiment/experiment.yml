@@ -122,6 +122,25 @@ test_cases:
       - functions
       - local
 
+# Comments
+  comments:
+    name: "Comments: none, what, why and bad"
+    languages:
+      - js
+      - rb
+      - py
+    question: What value will the variable <strong>result</strong> have?
+    answers:
+      - 'true'
+      - 'false'
+      - 'null'
+    correct_answer: 'true'
+    examples:
+      - no_comment
+      - bad_comment
+      - what_comment
+      - why_comment
+
 languages:
   js: Javascript
   rb: Ruby
