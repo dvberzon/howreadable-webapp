@@ -10,10 +10,10 @@ class Response < ApplicationRecord
   end
 
   def next
-    @next ||= participant.responses.where("id > ?", id).first
+    @next ||= participant.responses.find_by index: (index||0) + 1
   end
 
   def prev
-    @prev ||= participant.responses.where("id < ?", id).last
+    @prev ||= participant.responses.find_by index: (index||0) - 1
   end
 end

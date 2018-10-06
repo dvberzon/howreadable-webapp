@@ -25,4 +25,10 @@ class TestCase
     examples.sample
   end
 
+  def example_for_participant_id id
+    # instead of full randomisation, spread the tests around by using
+    # the participant id as the index for the example
+    examples[id % examples.length]
+  end
+
 end

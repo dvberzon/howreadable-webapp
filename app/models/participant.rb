@@ -8,12 +8,12 @@ class Participant < ApplicationRecord
     # or there is no language choice
     return unless language_choice
     return unless responses.blank?
-    puts 'got here'
+    index = 0
     Experiment.test_cases.shuffle.each do |tc|
-      puts "tc #{tc}"
       if tc.has_lang language_choice
-        puts 'about to create response'
-        responses.create({test_case: tc.id, example: tc.rand_example})
+        example = tc.example_for_participant_id id
+        responses.create({test_case: tc.id, example: example, index: index})
+        index+= 1
       end
     end
   end

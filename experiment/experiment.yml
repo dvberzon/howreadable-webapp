@@ -9,6 +9,10 @@ test_cases:
       - rb
       - py
     question: What value will the variable <strong>result</strong> have?
+    answers:
+      - 10
+      - 20
+      - 'null'
     correct_answer: 20
     examples:
       - ternary
@@ -22,10 +26,12 @@ test_cases:
       - rb
       - py
     question: What value will the variable <strong>result</strong> have?
+    answers:
+      - high
+      - low
+      - ok
     correct_answer:
       - ok
-      - "\"ok\""
-      - "'ok'"
     examples:
       - ternary
       - if_statement
@@ -39,6 +45,10 @@ test_cases:
       - py
     question: What value will the variable <strong>result</strong> have?
     correct_answer: 10
+    answers:
+      - 4
+      - 6
+      - 10
     examples:
       - reduce
       - for_loop
@@ -51,6 +61,10 @@ test_cases:
       - rb
       #- py no case statement in python sadly
     question: What value will the variable <strong>result</strong> have?
+    answers:
+      - 2
+      - 4
+      - 6
     correct_answer: 4
     examples:
       - switch
@@ -65,7 +79,11 @@ test_cases:
       - rb
       - py
     question: What value will the variable <strong>result</strong> have?
-    correct_answer: 4
+    answers:
+      - b
+      - c
+      - d
+    correct_answer: c
     examples:
       - ifelse
       - earlyreturn
@@ -78,7 +96,11 @@ test_cases:
       - rb
       - py
     question: What value will the variable <strong>result</strong> have?
-    correct_answer: true
+    answers:
+      - 'true'
+      - 'false'
+      - 'null'
+    correct_answer: 'true'
     examples:
       - generic
       - specific
@@ -91,7 +113,11 @@ test_cases:
       - rb
       - py
     question: What value will the variable <strong>result</strong> have?
-    correct_answer: true
+    answers:
+      - 'true'
+      - 'false'
+      - 'null'
+    correct_answer: 'true'
     examples:
       - functions
       - local
@@ -100,6 +126,21 @@ languages:
   js: Javascript
   rb: Ruby
   py: Python
+
+answer_translations:
+  'null':
+    js: 'null'
+    rb: nil
+    py: None
+  'false':
+    js: 'false'
+    rb: 'false'
+    py: 'False'
+  'true':
+    js: 'true'
+    rb: 'true'
+    py: 'True'
+
 
 years_programming:
   0: Just started

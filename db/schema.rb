@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_29_162756) do
+ActiveRecord::Schema.define(version: 2018_10_06_220319) do
 
   create_table "participants", force: :cascade do |t|
     t.string "contact"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2018_09_29_162756) do
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "index"
     t.index ["participant_id"], name: "index_responses_on_participant_id"
   end
 
