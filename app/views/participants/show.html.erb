@@ -4,4 +4,5 @@
 <p>We would like you to read the code snippet, and then answer a question about the result of running the code</p>
 <p>We will also ask you to rate the code's readability, and add any comments you wish</p>
 <p>The purpose is to test the readability of the code snippet, not your ability as a developer. There are no trick questions and we aren't trying to catch you out, so don't spend ages searching for a hidden bug. Try to answer as quickly as you can based on your initial impression of what the code does</p>
-<%= link_to edit_participant_response_path(@participant, @participant.responses.first), :class=>'button' do %>Start experiment<% end %>
+<p class="text-right">
+<%= link_to edit_participant_response_path(@participant, @participant.responses.first), :class=>'button button-primary' do %>Start experiment<% end %></p>

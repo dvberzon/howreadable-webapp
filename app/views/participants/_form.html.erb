@@ -4,19 +4,28 @@
     <p>Thank you for agreeing to take part in our experiment.</p>
     <p>We'd first like to collect some information about you</p>
     
-    <div class="field">
-      <label>* How long have you been programming?</label>
-      <%= form.select :years_programming, Experiment.years_programming_options %>
+    <div class="field row">
+      <div class="six columns text-right">
+        <label>How long have you been programming?</label></div>
+      <div class="six columns">
+        <%= form.select :years_programming, Experiment.years_programming_options , {}, :class=>'u-full-width'%>
+      </div>
     </div>
 
-    <div class="field">
-      <label>* What is the main language you work in?</label>
-      <%= form.text_field :main_language %>
+    <div class="field row">
+      <div class="six columns text-right">
+        <label>What is the main language you work in?</label>
+      </div>
+      <div class="six columns">
+        <%= form.text_field :main_language , :class=>'u-full-width'%>
+      </div>
     </div>
     
-    <div class="field">
-      <label>Can we contact if we have questions about your responses?</label>
-      <div class="option-buttons contact-options">
+    <div class="field row">
+      <div class="six columns text-right">
+        <label>Can we contact you for further information?</label>
+      </div>
+      <div class="option-buttons contact-options six columns">
         <% yes_no_options.each do |id, name| %>
           <span class="option">
             <%= form.radio_button :can_contact, id %>
@@ -27,25 +36,31 @@
     </div>
 
     <div id="contact">
-      <p>If so please enter your contact information</p>
-       <div class="field">
+      <div class="row">
+        <div class="six columns text-right">please enter your contact information</div>
+        <div class="six columns"></div>
+      </div>
+      <div class="row field">
+        <div class="six columns text-right">
           <%= form.label :name %>
-          <%= form.text_field :name %>
         </div>
-        <div class="field">
+        <div class="six columns">
+          <%= form.text_field :name , :class=>'u-full-width'%>
+        </div>
+      </div>
+      <div class="row field">
+        <div class="six columns text-right">
           <%= form.label :contact, 'Contact info' %>
-          <p>Email address, twitter handle etc.</p>
-          <%= form.text_field :contact %>
+          
         </div>
+        <div class="six columns">
+          <%= form.text_field :contact , :class=>'u-full-width'%>
+          <p class="text-right"><em>Email address, twitter handle etc.</em></p>
+        </div>
+      </div>
     </div>
-
-    
-
-    
-
-    
-
-    <div class="actions">
+    <p />
+    <div class="actions text-right">
       <%= form.submit 'Participate', :class=>'button-primary' %>
     </div>
   <% end %>

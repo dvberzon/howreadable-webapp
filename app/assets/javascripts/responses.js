@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function(){
       responeDiv.classList.add("answer-mode");
     });
 
-    backButton.addEventListener('click', function(){
+    backButton.addEventListener('click', function(e){
+      e.preventDefault();
       startTimer();
       responeDiv.classList.remove("answer-mode");
     });

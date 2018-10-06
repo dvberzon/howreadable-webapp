@@ -2,11 +2,11 @@
   
     <div class="question">
       <%= render 'test_case' %>
-      <button class="go">I'm ready to answer</button>
+      <button class="go u-pull-right">I'm ready to answer</button>
     </div>
 
     <div class="answer-form">
-      <button class="back">I want to see the code again</button>
+      
       <%= form_with(model: [participant, response], local: true) do |form| %>
       
         <div class="field">
@@ -38,10 +38,11 @@
 
         <div class="field">
           <%= form.label :comments, 'Any comments?' %>
-          <%= form.text_area :comments %>
+          <%= form.text_area :comments, :class=>'u-full-width' %>
         </div>
 
         <div class="actions">
+          <button class="back">I want to see the code again</button>
           <%= form.submit 'next', :class=>'button-primary' %>
         </div>
         <% end %>

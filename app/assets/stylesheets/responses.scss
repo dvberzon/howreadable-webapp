@@ -34,11 +34,12 @@ div#response {
           }
         }
       }
-      #response_comments {
-        width: 100%;
-      }
+      
       .actions{
         text-align: right;
+        .back {
+          float: left;
+        }
       }
     }
   }
