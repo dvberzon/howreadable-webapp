@@ -10,6 +10,21 @@
   }
 }
 
+div.intro {
+  p.lead {
+    font-size: 27px;
+    font-weight: 200;
+    em {
+      font-weight: 400;
+    }
+  }
+  em {
+    color: #69d;
+    font-weight: 600;
+    font-style: normal;
+  }
+}
+
 p.languages {
   text-align: center;
   .button {

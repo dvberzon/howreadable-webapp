@@ -1,14 +1,13 @@
 <h1>How readable?</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p class="languages">
-<% Experiment.languages.each do |id, name| %>
-  <%= link_to start_path(id), :class=>"button" do %>
-    <%= image_tag("#{id}.svg", ) %> <%= name %>
+<div class="intro">
+  <p class="lead">We need your help with an investigation into <em>readable code</em></p>
+  <p>If you are a <em>computer programmer</em> with about <em>10 minutes</em> to spare, we would like to show you some snippets of source code and ask you questions about them. We are interested in how code syntax, structure and style affect readability.</p>
+  <p>If you are willing to take part, please select a programming language from the list below. We will be showing you code snippets in this language, so it should be to one with which you are most familiar.</p>
+  <p class="languages">
+  <% Experiment.languages.each do |id, name| %>
+    <%= link_to start_path(id), :class=>"button" do %>
+      <%= image_tag("#{id}.svg", ) %> <%= name %>
+    <% end %>
   <% end %>
-<% end %>
-</p>
+  </p>
+</div>
