@@ -25,6 +25,10 @@ class Experiment
     yaml['years_programming'].map{|value, name| [name, value]}
   end
 
+  def self.lickert
+    yaml['lickert']
+  end
+
   def self.translate_answer answer, lang
     translation = yaml['answer_translations'][answer]
     translation ? translation[lang] : answer

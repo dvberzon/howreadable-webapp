@@ -27,13 +27,21 @@
 
         <div class="field">
           <%= form.label :readable_score, 'How readable did you find this code?' %>
-          <ul class="lickert">
-            <li>Horrid</li>
-            <% 0.upto(4).each do |score| %>
-              <li><label><%= form.radio_button :readable_score, score %></label></li>
-            <% end %>
-            <li>Lovely</li>
-          </ul>
+          <div class="option-buttons">
+          
+            <ul class="lickert">
+              <li>Horrid</li>
+              <% Experiment.lickert.each do |id, name| %>
+                <li>
+                  <span class="option">
+                    <%= form.radio_button :readable_score, id %>
+                    <%= form.label :readable_score, name.html_safe, value: id, :class=>'button' %>
+                  </span>
+                </li>
+              <% end %>
+              <li>Lovely</li>
+            </ul>
+          </div>
         </div>
 
         <div class="field">

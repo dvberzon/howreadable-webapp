@@ -36,19 +36,45 @@ div#response {
     }
     div.answer-form {
       display: block;
+      .field {
+        margin: 30px 0 10px;
+      }
       .answer-options{
+        text-align: center;
         label {
           font-size: 18px;
           text-transform: none;
+          margin: 0px 20px;
+          @media only screen and (max-width: 780px) {
+            margin: 0px 5px;
+          }
         }
       }
       ul.lickert {
+        text-align: center;
+        margin-top: 10px;
         li {
           display: inline-block;
+          vertical-align: top;
+          padding: 0 5px;
+          line-height: 60px;
           label {
             padding: 0 10px;
+            font-size: 40px;
+            line-height: 60px;
+            height: 60px;
+          }
+          @media only screen and (max-width: 780px) {
+            font-size: 12px;
+            padding: 0 2px;
+            label {
+              font-size: 30px;
+              padding: 0 2px;
+            }
           }
         }
+        
+
       }
       
       .actions{
