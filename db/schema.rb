@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_06_220319) do
+ActiveRecord::Schema.define(version: 2018_10_07_093634) do
 
   create_table "participants", force: :cascade do |t|
     t.string "contact"
@@ -24,6 +24,26 @@ ActiveRecord::Schema.define(version: 2018_10_06_220319) do
     t.string "name"
   end
 
+  create_table "random_sequence_entries", force: :cascade do |t|
+    t.string "value"
+    t.integer "index"
+    t.integer "block_index"
+    t.datetime "assigned_at"
+    t.integer "assigned_to"
+    t.boolean "locked"
+    t.integer "random_sequence_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "random_sequences", force: :cascade do |t|
+    t.string "test_case"
+    t.string "language"
+    t.integer "current_index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "responses", force: :cascade do |t|
     t.string "test_case"
     t.string "example"
@@ -35,6 +55,7 @@ ActiveRecord::Schema.define(version: 2018_10_06_220319) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "index"
+    t.datetime "randomised_at"
     t.index ["participant_id"], name: "index_responses_on_participant_id"
   end
 

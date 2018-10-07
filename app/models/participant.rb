@@ -11,8 +11,8 @@ class Participant < ApplicationRecord
     index = 0
     Experiment.test_cases.shuffle.each do |tc|
       if tc.has_lang language_choice
-        example = tc.example_for_participant_id id
-        responses.create({test_case: tc.id, example: example, index: index})
+        #example = tc.example_for_participant_id id
+        responses.create({test_case: tc.id, index: index})
         index+= 1
       end
     end

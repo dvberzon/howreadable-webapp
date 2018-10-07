@@ -21,17 +21,6 @@ class TestCase
     languages.include? lang
   end
 
-  def rand_example
-    # todo, use randomisation
-    examples.sample
-  end
-
-  def example_for_participant_id id
-    # instead of full randomisation, spread the tests around by using
-    # the participant id as the index for the example
-    examples[id % examples.length]
-  end
-
   def answer_options lang
     answers.map {|ans| [ans, Experiment.translate_answer(ans, lang)]}
   end
