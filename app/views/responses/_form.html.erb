@@ -30,16 +30,16 @@
           <div class="option-buttons">
           
             <ul class="lickert">
-              <li>Horrid</li>
-              <% Experiment.lickert.each do |id, name| %>
+              <li class="label">Horrid</li>
+              <% Experiment.lickert.each do |id, css| %>
                 <li>
                   <span class="option">
                     <%= form.radio_button :readable_score, id %>
-                    <%= form.label :readable_score, name.html_safe, value: id, :class=>'button' %>
+                    <%= form.label :readable_score, value: id, :class=>'button' do %><i class="far <%= css %>"></i><% end %>
                   </span>
                 </li>
               <% end %>
-              <li>Lovely</li>
+              <li class="label">Lovely</li>
             </ul>
           </div>
         </div>

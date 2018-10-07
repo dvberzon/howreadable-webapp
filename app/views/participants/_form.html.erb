@@ -20,18 +20,18 @@
         <%= form.text_field :main_language , :class=>'u-full-width'%>
       </div>
     </div>
-    
+<%#    
     <div class="field row">
       <div class="six columns text-right">
         <label>Can we contact you for further information?</label>
       </div>
       <div class="option-buttons contact-options six columns">
-        <% yes_no_options.each do |id, name| %>
+        <% yes_no_options.each do |id, name| %#>
           <span class="option">
-            <%= form.radio_button :can_contact, id %>
-            <%= form.label :can_contact, name, value: id, :class=>'button' %>
+            <%= form.radio_button :can_contact, id %#>
+            <%= form.label :can_contact, name, value: id, :class=>'button' %#>
           </span>
-        <% end %>
+        <% end %#>
       </div>
     </div>
 
@@ -42,23 +42,24 @@
       </div>
       <div class="row field">
         <div class="six columns text-right">
-          <%= form.label :name %>
+          <%= form.label :name %#>
         </div>
         <div class="six columns">
-          <%= form.text_field :name , :class=>'u-full-width'%>
+          <%= form.text_field :name , :class=>'u-full-width'%#>
         </div>
       </div>
       <div class="row field">
         <div class="six columns text-right">
-          <%= form.label :contact, 'Contact info' %>
+          <%= form.label :contact, 'Contact info' %#>
           
         </div>
         <div class="six columns">
-          <%= form.text_field :contact , :class=>'u-full-width'%>
+          <%= form.text_field :contact , :class=>'u-full-width'%#>
           <p class="text-right"><em>Email address, twitter handle etc.</em></p>
         </div>
       </div>
     </div>
+    %>
     <p />
     <div class="actions text-right">
       <%= form.submit 'Participate', :class=>'button-primary' %>
