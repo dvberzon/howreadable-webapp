@@ -1,0 +1,45 @@
+<p>
+  <%= link_to 'Participants', admin_participants_path, :class=>'btn' %>
+  <%= link_to 'Responses', admin_responses_path, :class=>'btn' %>
+  <%= link_to 'Randomisations', admin_randomisations_path, :class=>'btn btn-primary' %>
+</p>
+<h1>Randomisation sequence details</h1>
+<p><%= link_to 'Back to sequences', admin_randomisations_url, :class=>'btn btn-default' %></p>
+<p>Test case: <span class="text-info"><%= @sequence.test_case %></span></p>
+<p>Language: <span class="text-info"><%= @sequence.language %></span></p>
+<% stats = @sequence.stats %>
+<ul class="list-inline">
+	<li>Number of entries: <span class="label label-info"><%= stats[:total] %></span></li>
+	<li>Number of assigned: <span class="label label-success"><%= stats[:assigned] %></span></li>
+	<% stats[:examples].each do |k, v| %>
+		<li>
+			<%= v[:name] %>: 
+			<span class="text-info">total</span> <span class="label label-info"><%= v[:total] %></span>,
+			<span class="text-success">assigned:</span> <span class="label label-success"><%= v[:assigned] %></span>
+		</li>
+	<% end %>
+</ul>
+<table class="table">
+	<tr>
+		<th>Index</th>
+		<th>Block Index</th>
+		<th>Value</th>
+		<th>Assigned?</th>
+		<th>Assigned at</th>
+		<th>Assigned to</th>
+	</tr>
+	<% @sequence.random_sequence_entries.each do |entry| %>
+	<tr>
+		<td><%= entry.index %></td>
+		<td><%= entry.block_index %></td>
+		<td><strong><%= entry.value %></strong></td>
+		<td><% if entry.assigned_at.present? %><span class="glyphicon glyphicon-ok text-success"></span><% end %></td>
+		<td><%= entry.assigned_at.try(:to_s, :db) %></td>
+		<td>
+			<% if entry.assigned_to %>
+					<%= link_to entry.assigned_to.to_s, admin_participant_url(entry.assigned_to) %>
+			<% end %>
+		</td>
+	</tr>
+	<% end %>
+</table>

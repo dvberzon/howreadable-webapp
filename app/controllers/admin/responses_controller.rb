@@ -1,7 +1,7 @@
 class Admin::ResponsesController < ApplicationController
 
   before_action :admin_only
-  layout 'scaffold'
+  layout 'admin'
   # GET /responses
   # GET /responses.json
   def index

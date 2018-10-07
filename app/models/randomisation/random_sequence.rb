@@ -20,6 +20,27 @@ class Randomisation::RandomSequence < ActiveRecord::Base
     end
   end
 
+  # return an array of blocks for inspection
+  def stats
+    stats = {total: 0, assigned: 0, examples: {}}
+    examples.each do |example|
+      stats[:examples][example] = {name: example, total: 0, assigned: 0}
+    end
+    blocks = {}
+    random_sequence_entries.each do |entry|
+      stats[:total] += 1
+      stats[:examples][entry.value][:total] += 1
+      if entry.assigned_at
+        stats[:assigned] += 1
+        stats[:examples][entry.value][:assigned] += 1
+      end
+      blocks[entry.block_index] ||= []
+      blocks[entry.block_index].push entry
+    end
+    stats[:blocks] = blocks.values
+    stats
+  end
+
   def self.for_test_case_and_language test_case, language
     # either retrieve existing one or create a new one
     Randomisation::RandomSequence.where(test_case: test_case, language: language).first_or_create

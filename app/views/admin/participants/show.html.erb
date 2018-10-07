@@ -1,23 +1,24 @@
 <p>
-  <%= link_to 'Participants', admin_participants_path, :class=>'button button-primary' %>
-  <%= link_to 'Responses', admin_responses_path, :class=>'button' %>
+  <%= link_to 'Participants', admin_participants_path, :class=>'btn btn-primary' %>
+  <%= link_to 'Responses', admin_responses_path, :class=>'btn' %>
+  <%= link_to 'Randomisations', admin_randomisations_path, :class=>'btn' %>
 </p>
 
 <h1>Participant - <%= @participant.id %></h1>
 
 
-<ul class="data-list">
-  <li><strong>ID:</strong> <%= @participant.id %></li>
-  <li><strong>Name:</strong> <%= @participant.name %></li>
-  <li><strong>Can contact:</strong> <%= @participant.can_contact %></li>
-  <li><strong>Contact:</strong> <%= @participant.contact %></li>
-  <li><strong>Main language:</strong> <%= @participant.main_language %></li>
-  <li><strong>Years programming:</strong> <%= @participant.years_programming %></li>
-  <li><strong>Language choice:</strong> <%= @participant.language_choice %></li>
+<ul class="list-inline">
+  <li><strong>ID:</strong> <span class="text-info"><%= @participant.id %></span></li>
+  <li><strong>Name:</strong> <span class="text-info"><%= @participant.name %></span></li>
+  <li><strong>Can contact:</strong> <span class="text-info"><%= @participant.can_contact %></span></li>
+  <li><strong>Contact:</strong> <span class="text-info"><%= @participant.contact %></span></li>
+  <li><strong>Main language:</strong> <span class="text-info"><%= @participant.main_language %></span></li>
+  <li><strong>Years programming:</strong> <span class="text-info"><%= @participant.years_programming %></span></li>
+  <li><strong>Language choice:</strong> <span class="text-info"><%= @participant.language_choice %></span></li>
         
 </ul>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Test case</th>
@@ -43,4 +44,4 @@
   </tbody>
 </table>
 
-<p class="align-right"><%= link_to 'Delete', [:admin,@participant], method: :delete, data: { confirm: 'Are you sure?' }, :class=>'button' %></p>
+<p class="align-right"><%= link_to 'Delete', [:admin,@participant], method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger' %></p>

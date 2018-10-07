@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     root to: 'participants#index'
     resources :participants, only: [:index, :show, :destroy]
     resources :responses, only: [:index]
+    resources :randomisations, :only=>[:index, :show]
   end
 
   resources :participants do

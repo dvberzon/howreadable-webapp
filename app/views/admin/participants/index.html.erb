@@ -1,13 +1,14 @@
 <p>
-  <%= link_to 'Participants', admin_participants_path, :class=>'button button-primary' %>
-  <%= link_to 'Responses', admin_responses_path, :class=>'button' %>
+  <%= link_to 'Participants', admin_participants_path, :class=>'btn btn-primary' %>
+  <%= link_to 'Responses', admin_responses_path, :class=>'btn' %>
+  <%= link_to 'Randomisations', admin_randomisations_path, :class=>'btn' %>
 </p>
 
 <p id="notice"><%= notice %></p>
 
 <h1>Participants</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>ID</th>

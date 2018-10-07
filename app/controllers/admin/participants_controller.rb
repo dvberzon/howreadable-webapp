@@ -1,7 +1,7 @@
 class Admin::ParticipantsController < ApplicationController
   before_action :set_participant, only: [:show, :destroy]
   before_action :admin_only
-  layout 'scaffold'
+  layout 'admin'
 
   # GET /participants
   # GET /participants.json
