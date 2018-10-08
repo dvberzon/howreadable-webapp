@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :responses
   end
 
-  root to: 'home#temproot'
+  root to: 'home#index'
   get 'home' => 'home#index'
   get 'thankyou' => 'home#thankyou', as: :thankyou
   get 'start/:lang' => 'participants#new', as: :start
