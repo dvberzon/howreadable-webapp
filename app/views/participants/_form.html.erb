@@ -1,7 +1,8 @@
 <div id="participant">
-  <%= participant.errors.inspect %>
   <%= form_with(model: participant, local: true) do |form| %>
     <%= form.hidden_field :language_choice %>
+    <%= form.hidden_field :client_h %>
+    <%= form.hidden_field :client_w %>
     <p>Thank you for agreeing to take part in our experiment.</p>
     <p>We'd first like to collect some information about you</p>
     

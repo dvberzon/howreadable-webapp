@@ -17,4 +17,8 @@ class Participant < ApplicationRecord
       end
     end
   end
+
+  def client_dimensions
+    client_w && client_h && "#{client_w}X#{client_h}"
+  end
 end

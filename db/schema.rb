@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 2018_10_08_200742) do
     t.string "name"
     t.string "agent"
     t.string "ip"
-    t.integer "device_w"
-    t.integer "device_h"
+    t.integer "client_w"
+    t.integer "client_h"
   end
 
   create_table "random_sequence_entries", force: :cascade do |t|
