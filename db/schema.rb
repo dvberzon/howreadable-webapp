@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_07_093634) do
+ActiveRecord::Schema.define(version: 2018_10_08_200742) do
 
   create_table "participants", force: :cascade do |t|
     t.string "contact"
@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 2018_10_07_093634) do
     t.boolean "accepted"
     t.boolean "can_contact"
     t.string "name"
+    t.string "agent"
+    t.string "ip"
+    t.integer "device_w"
+    t.integer "device_h"
   end
 
   create_table "random_sequence_entries", force: :cascade do |t|

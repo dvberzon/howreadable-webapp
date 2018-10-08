@@ -12,9 +12,8 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Can contact</th>
-      <th>Name</th>
-      <th>Contact</th>
+      <th>IP</th>
+      <th>Date</th>
       <th>Main language</th>
       <th>Years programming</th>
       <th>Language</th>
@@ -26,9 +25,8 @@
     <% @participants.each do |participant| %>
       <tr>
         <td><%= participant.id %></td>
-        <td><%= participant.can_contact? ? 'Y' : '' %></td>
-        <td><%= participant.name %></td>
-        <td><%= participant.contact %></td>
+        <td><%= participant.ip %></td>
+        <td><%= participant.created_at.strftime('%d/%m/%Y %H:%M') %></td>
         <td><%= participant.main_language %></td>
         <td><%= participant.years_programming %></td>
         <td><%= participant.language_choice %></td>

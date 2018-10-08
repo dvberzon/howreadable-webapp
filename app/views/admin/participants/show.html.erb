@@ -9,14 +9,16 @@
 
 <ul class="list-inline">
   <li><strong>ID:</strong> <span class="text-info"><%= @participant.id %></span></li>
-  <li><strong>Name:</strong> <span class="text-info"><%= @participant.name %></span></li>
-  <li><strong>Can contact:</strong> <span class="text-info"><%= @participant.can_contact %></span></li>
-  <li><strong>Contact:</strong> <span class="text-info"><%= @participant.contact %></span></li>
+  <li><strong>Created:</strong> <span class="text-info"><%= @participant.created_at.to_s(:short) %></span></li>
+  <li><strong>Agent:</strong> <span class="text-info"><%= @participant.agent %></span></li>
+  <li><strong>IP:</strong> <span class="text-info"><%= @participant.ip %></span></li>
+</ul>
+<ul class="list-inline">  
   <li><strong>Main language:</strong> <span class="text-info"><%= @participant.main_language %></span></li>
   <li><strong>Years programming:</strong> <span class="text-info"><%= @participant.years_programming %></span></li>
   <li><strong>Language choice:</strong> <span class="text-info"><%= @participant.language_choice %></span></li>
-        
 </ul>
+
 
 <table class="table">
   <thead>

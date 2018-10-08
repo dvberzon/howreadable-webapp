@@ -16,7 +16,8 @@ class ParticipantsController < ApplicationController
   # POST /participants.json
   def create
     @participant = Participant.new(participant_params)
-
+    @participant.agent = request.user_agent
+    @participant.ip = request.remote_ip
     respond_to do |format|
       if @participant.save
         format.html { redirect_to @participant }
