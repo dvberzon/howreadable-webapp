@@ -11,6 +11,7 @@
     <tr>
       <th>Participant</th>
       <th>Date</th>
+      <th>Index</th>
       <th>Test case</th>
       <th>Example</th>
       <th>Responded ms</th>
@@ -24,7 +25,8 @@
     <% @responses.each do |response| %>
       <tr>
         <td><%= link_to response.participant_id, [:admin, response.participant] %></td>
-        <td><%= response.created_at.strftime('%d/%m/%Y %H:%M') %></td>
+        <td><%= response.updated_at.strftime('%d/%m/%Y %H:%M') %></td>
+        <td><%= response.index %></td>
         <td><%= response.test_case %></td>
         <td><%= response.example %></td>
         <td><%= response.responded_ms %></td>

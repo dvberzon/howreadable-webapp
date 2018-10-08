@@ -1,5 +1,5 @@
 class Participant < ApplicationRecord
-  has_many :responses, dependent: :delete_all
+  has_many :responses, -> {order :index}, dependent: :delete_all
   after_create :generate_responses
   validates :language_choice, presence: true
 
