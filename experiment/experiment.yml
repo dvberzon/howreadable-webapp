@@ -161,11 +161,11 @@ answer_translations:
     py: 'True'
 
 lickert:
-  0: '&#x1F622'
-  1: '&#x1F641'
-  2: '&#x1F610'
-  3: '&#x1f642'
-  4: '&#x1F601;'
+  0: fa-angry
+  1: fa-frown
+  2: fa-meh
+  3: fa-smile
+  4: fa-grin-stars
 
 years_programming:
   0: Just started
