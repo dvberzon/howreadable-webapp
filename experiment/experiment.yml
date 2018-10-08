@@ -141,6 +141,23 @@ test_cases:
       - what_comment
       - why_comment
 
+# Order of if clauses
+  order_of_if:
+    name: "Order of if clauses"
+    languages:
+      - js
+      - rb
+      - py
+    question: What value will the variable <strong>result</strong> have?
+    answers:
+      - Dear Mrs. Marple
+      - Dear Jane
+      - Dear Jane Marple
+    correct_answer: 'true'
+    examples:
+      - positive_first
+      - negative_first
+
 languages:
   js: Javascript
   rb: Ruby
