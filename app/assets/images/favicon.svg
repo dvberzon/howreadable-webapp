@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="105" height="105" viewBox="0, 0, 105, 105">
+  <g id="Layer_1" transform="translate(-340, -229)">
+    <path d="M340,229 L445,229 L445,334 L340,334 L340,229 z" fill="#FFFFFF"/>
+    <text transform="matrix(1, 0, 0, 1, 391.744, 281.5)">
+      <tspan x="-39.744" y="25" font-family="Raleway-Medium" font-size="72" fill="#000000">Hr</tspan>
+    </text>
+  </g>
+</svg>
