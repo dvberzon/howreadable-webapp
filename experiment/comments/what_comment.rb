@@ -1,7 +1,7 @@
 # for any two ranges, do they overlap?
 def ranges_overlap?(range1, range2)
   # does one start before the other ends
-  # and end before the other starts 
+  # and end before the other starts
   range1[:end] >= range2[:start] && range1[:start] <= range2[:end]
 end
 

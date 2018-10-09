@@ -1,5 +1,4 @@
 def apply_tuple(action, num)
-
   if action == :half
     result = num / 2
   elsif action == :double
@@ -9,7 +8,7 @@ def apply_tuple(action, num)
   elsif action == :quadruple
     result = num * 4
   else
-    result = num;
+    result = num
   end
 
   result

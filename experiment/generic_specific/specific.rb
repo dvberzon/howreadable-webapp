@@ -1,10 +1,9 @@
 def sort_alphabetically(str)
-  return str.downcase.chars.sort.join.strip
+  str.downcase.chars.sort.join.strip
 end
 
-
-def is_anagram_of(str, testStr)
-  return sort_alphabetically(str) == sort_alphabetically(testStr)
+def anagram_of?(str, test_str)
+  sort_alphabetically(str) == sort_alphabetically(test_str)
 end
 
-result = is_anagram_of "devil", "lived"
+result = anagram_of? 'devil', 'lived'

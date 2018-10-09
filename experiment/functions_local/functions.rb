@@ -1,5 +1,5 @@
 def str_present(str)
-  str && str.length > 0
+  str && !str.empty?
 end
 
 def first_name_valid(params)
@@ -19,10 +19,10 @@ def postcode_valid(params)
 end
 
 def validate_params(params)
-    first_name_valid(params)
-      && last_name_valid(params)
-      && email_valid(params)
-      && postcode_valid(params)
+    first_name_valid(params) &&
+      last_name_valid(params) &&
+      email_valid(params) &&
+      postcode_valid(params)
 end
 
 

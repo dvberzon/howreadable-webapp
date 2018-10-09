@@ -1,5 +1,5 @@
-def getResult(value)
+def get_result(value)
   value > 4 ? 10 : 20
 end
 
-result = getResult(3)
+result = get_result(3)

@@ -1,5 +1,5 @@
 def str_present(str)
-  str && str.length > 0
+  str && !str.empty?
 end
 
 def validate_params(params)
