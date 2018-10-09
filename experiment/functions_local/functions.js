@@ -32,4 +32,4 @@ var params = {
   postcode: ''
 };
 
-result = validateParams(params);
+var result = validateParams(params);
