@@ -1,5 +1,5 @@
 function strPresent(str){
-  return str != null && str.length > 0
+  return str != null && str.length > 0;
 }
 
 function firstNameValid(params){
@@ -19,10 +19,10 @@ function postcodeValid(params){
 }
 
 function validateParams(params){
-  return firstNameValid(params) 
-      && lastNameValid(params)
-      && emailValid(params)
-      && postcodeValid(params)
+  return firstNameValid(params) && 
+    lastNameValid(params) &&
+    emailValid(params) &&
+    postcodeValid(params);
 }
 
 var params = {
@@ -30,6 +30,6 @@ var params = {
   lastName: 'Doe',
   email: 'jane@doe.com',
   postcode: ''
-}
+};
 
 result = validateParams(params);

@@ -16,4 +16,4 @@ function applyTuple(action, num) {
   return result;
 }
 
-const result = applyTuple('double', 2);
+var result = applyTuple('double', 2);

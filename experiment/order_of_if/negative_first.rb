@@ -9,7 +9,7 @@ def greeting(user)
 end
 
 user = {
-  title: "Mrs.",
+  title: "Miss",
   first_name: "Jane",
   last_name: "Marple"
 }

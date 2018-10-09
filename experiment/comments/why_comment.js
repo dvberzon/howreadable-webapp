@@ -1,4 +1,4 @@
-function doRangesOverlap(range1, range2){
+function doRangesOverlap(range1, range2) {
   // Two ranges overlap if one starts before the other ends
   // and ends before the other starts
   return range1.end >= range2.start && range1.start <= range2.end;
@@ -7,11 +7,11 @@ function doRangesOverlap(range1, range2){
 var scores = {
   start: 1,
   end: 7
-}
+};
 
 var desired = {
   start: 5,
   end: 9
-}
+};
 
 var result = doRangesOverlap(scores, desired);

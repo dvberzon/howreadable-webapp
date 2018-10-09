@@ -3,7 +3,7 @@ function hiLo(value){
     return  "high";
   }
   if(value < 5) {
-    return "low"
+    return "low";
   }
   return "ok";
 }

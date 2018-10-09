@@ -7,7 +7,7 @@ def greeting(user):
   return "Dear " + name
 
 user = {
-  'title': 'Mrs.',
+  'title': 'Miss',
   'first_name': 'Jane',
   'last_name': 'Marple'
 }

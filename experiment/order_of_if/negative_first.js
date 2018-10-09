@@ -11,9 +11,9 @@ function getGreeting(user){
 }
 
 var user = {
-  title: "Mrs.",
+  title: "Miss",
   firstName: "Jane",
   lastName: "Marple"
-}
+};
 
 var result = getGreeting(user);

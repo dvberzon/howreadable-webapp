@@ -150,7 +150,7 @@ test_cases:
       - py
     question: What value will the variable <strong>result</strong> have?
     answers:
-      - Dear Mrs. Marple
+      - Dear Miss Marple
       - Dear Jane
       - Dear Jane Marple
     correct_answer: 'true'
