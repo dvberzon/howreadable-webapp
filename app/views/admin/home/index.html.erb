@@ -1,0 +1,39 @@
+<p>
+  <%= link_to 'Home', admin_root_path, :class=>'btn btn-primary' %>
+  <%= link_to 'Participants', admin_participants_path, :class=>'btn' %>
+  <%= link_to 'Responses', admin_responses_path, :class=>'btn' %>
+  <%= link_to 'Randomisations', admin_randomisations_path, :class=>'btn' %>
+</p>
+
+<h1>Stats</h1>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Participants
+  </div>
+  <div class="panel-body">
+    <ul class="list-inline">
+      <% @stats.participants.each do |k, v| %>
+        <li><%= k %>: <span class="text-info"><%= v %></span></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<% @stats.test_cases.each do |k, tc| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <%= k %>
+    </div>
+    <div class="panel-body">
+      <% tc.each do |k, example| %>
+        <h4><%= k %></h4>
+        <ul class="list-inline">
+            <li>Total: <span class="text-info"><%= example[:total] %></span></li>
+            <li>Average ms: <span class="text-info"><%= example[:average_ms] %></span></li>
+            <li>Percentage correct: <span class="text-info"><%= example[:percent_correct] %></span></li>
+            <li>Average readable: <span class="text-info"><%= example[:average_readable] %></span></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
+
   namespace :admin do
-    root to: 'participants#index'
+    root to: 'home#index'
     resources :participants, only: [:index, :show, :destroy]
     resources :responses, only: [:index]
     resources :randomisations, :only=>[:index, :show] do

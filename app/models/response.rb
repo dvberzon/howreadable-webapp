@@ -26,6 +26,10 @@ class Response < ApplicationRecord
     given_answer == test_case_obj.correct_answer.to_s
   end
 
+  def self.answered
+    where.not(given_answer: nil)
+  end
+
   # assign a random example through the randomisation mechanism
   def randomise
     Randomisation::RandomSequence.randomise_response self
