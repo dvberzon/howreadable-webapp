@@ -29,9 +29,9 @@ test_cases:
     answers:
       - high
       - low
-      - ok
+      - 'ok'
     correct_answer:
-      - ok
+      - 'ok'
     examples:
       - ternary
       - if_statement
@@ -117,7 +117,7 @@ test_cases:
       - 'true'
       - 'false'
       - 'null'
-    correct_answer: 'true'
+    correct_answer: 'false'
     examples:
       - functions
       - local
@@ -153,7 +153,7 @@ test_cases:
       - Dear Miss Marple
       - Dear Jane
       - Dear Jane Marple
-    correct_answer: 'true'
+    correct_answer: 'Dear Miss Marple'
     examples:
       - positive_first
       - negative_first
