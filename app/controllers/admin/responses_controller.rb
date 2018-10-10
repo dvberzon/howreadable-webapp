@@ -5,7 +5,7 @@ class Admin::ResponsesController < ApplicationController
   # GET /responses
   # GET /responses.json
   def index
-    @responses = Response.all
+    @responses = Response.paginate(:page => params[:page])
   end
 
 end

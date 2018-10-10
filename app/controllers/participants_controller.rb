@@ -1,5 +1,8 @@
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: [:show]
+  before_action  only: [:show] do
+    session_participant_only params[:id]
+  end
   
   # GET /participants/1
   # GET /participants/1.json
@@ -20,6 +23,7 @@ class ParticipantsController < ApplicationController
     @participant.ip = request.remote_ip
     respond_to do |format|
       if @participant.save
+        add_participant_to_session @participant
         format.html { redirect_to @participant }
         format.json { render :show, status: :created, location: @participant }
       else

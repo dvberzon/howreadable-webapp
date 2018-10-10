@@ -30,8 +30,7 @@ test_cases:
       - high
       - low
       - 'ok'
-    correct_answer:
-      - 'ok'
+    correct_answer: 'ok'
     examples:
       - ternary
       - if_statement

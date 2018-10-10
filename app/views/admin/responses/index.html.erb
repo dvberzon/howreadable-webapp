@@ -23,8 +23,8 @@
 
   <tbody>
     <% @responses.each do |response| %>
-      <tr>
-        <td><%= link_to response.participant_id, [:admin, response.participant] %></td>
+      <tr class="<%= 'greyed-out' if response.given_answer.blank? %>">
+        <td><%= link_to response.participant_id, admin_participant_url(response.participant) %></td>
         <td><%= response.updated_at.strftime('%d/%m/%Y %H:%M') %></td>
         <td><%= response.index %></td>
         <td><%= response.test_case %></td>
@@ -37,4 +37,6 @@
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate @responses %>
 

@@ -15,3 +15,8 @@
  *= require_tree .
  *= require_self
  */
+tr.greyed-out td, tr.greyed-out td a { color: #ccc; }
+.random_sequence_scroll {
+  height: 200px;
+  overflow-y: auto;
+}

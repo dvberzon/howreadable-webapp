@@ -11,4 +11,14 @@ class ApplicationController < ActionController::Base
       username == ENV['admin_username'] && password == ENV['admin_password']
     end
   end
+
+  def add_participant_to_session participant
+    session[:participant] = participant.id
+  end
+
+  def session_participant_only id
+    if session[:participant].to_s != id.to_s
+      render(:file => File.join(Rails.root, 'public/403.html'), :status => 403, :layout => false)
+    end
+  end
 end

@@ -4,7 +4,7 @@
   <%= link_to 'Randomisations', admin_randomisations_path, :class=>'btn btn-primary' %>
 </p>
 <h1>Randomisation sequence details</h1>
-<p><%= link_to 'Back to sequences', admin_randomisations_url, :class=>'btn btn-default' %></p>
+<p><%= link_to 'Back to sequences', admin_randomisations_url, :class=>'btn btn-default' %> <%= link_to 'Generate 100 more', generate_admin_randomisation_url(@sequence), :class=>'btn btn-primary pull-right', data: { confirm: 'Are you sure?' } %></p>
 <p>Test case: <span class="text-info"><%= @sequence.test_case %></span></p>
 <p>Language: <span class="text-info"><%= @sequence.language %></span></p>
 <% stats = @sequence.stats %>
@@ -28,7 +28,7 @@
 		<th>Assigned at</th>
 		<th>Assigned to</th>
 	</tr>
-	<% @sequence.random_sequence_entries.each do |entry| %>
+	<% @entries.each do |entry| %>
 	<tr>
 		<td><%= entry.index %></td>
 		<td><%= entry.block_index %></td>
@@ -43,3 +43,5 @@
 	</tr>
 	<% end %>
 </table>
+
+<%= will_paginate @entries %>
