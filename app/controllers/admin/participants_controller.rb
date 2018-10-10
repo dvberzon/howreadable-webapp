@@ -6,7 +6,7 @@ class Admin::ParticipantsController < ApplicationController
   # GET /participants
   # GET /participants.json
   def index
-    @participants = Participant.all.order(:id)
+    @participants = Participant.includes(:responses).order(:id)
   end
 
   # GET /participants/1

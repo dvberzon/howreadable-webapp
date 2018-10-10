@@ -17,6 +17,7 @@
       <th>Main language</th>
       <th>Years programming</th>
       <th>Language</th>
+      <th>Filled in responses</th>
       <th></th>
     </tr>
   </thead>
@@ -30,6 +31,7 @@
         <td><%= participant.main_language %></td>
         <td><%= participant.years_programming %></td>
         <td><%= participant.language_choice %></td>
+        <td><%= participant.responses.where.not(given_answer: nil).count%></td>
         <td><%= link_to 'Show', [:admin, participant] %></td>
       </tr>
     <% end %>
