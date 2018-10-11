@@ -47,9 +47,9 @@ class Stats
       tc.each do |k, example|
         example.each do |lang, stat|
           if(total = stat[:total])
-            stat[:average_ms] = stat[:total_ms] / total
-            stat[:percent_correct] = stat[:total_correct] * 100 / total
-            stat[:average_readable] = stat[:total_readable] / total
+            stat[:average_ms] = stat[:total_ms].to_f / total
+            stat[:percent_correct] = stat[:total_correct].to_f * 100 / total
+            stat[:average_readable] = stat[:total_readable].to_f / total
           end
         end
       end

@@ -31,9 +31,9 @@
           <ul class="list-inline <%= lang==:overall ? 'text-danger' : 'text-muted' %>">
               <li><strong><%= lang %></strong></li>
               <li>Total: <span class="text-info"><%= stat[:total] %></span></li>
-              <li>Ave Time (s): <span class="text-info"><%= stat[:average_ms]/1000.0 %></span></li>
-              <li>Percentage correct: <span class="text-info"><%= stat[:percent_correct] %></span></li>
-              <li>Average readable: <span class="text-info"><%= stat[:average_readable] %></span></li>
+              <li>Ave Time (s): <span class="text-info"><%= "%.2f" % (stat[:average_ms]/1000.0) %></span></li>
+              <li>Percentage correct: <span class="text-info"><%= "%.1f" %stat[:percent_correct] %></span></li>
+              <li>Average readable: <span class="text-info"><%= "%.2f" % stat[:average_readable] %></span></li>
           </ul>
         <% end %>
       <% end %>
