@@ -13,6 +13,7 @@ class Stats
   private 
 
   def add_response response
+    lang = response.participant.language_choice
     unless @participant_ids[response.participant_id]
       @participant_ids[response.participant_id] = true
       participants[:total] += 1 
