@@ -34,6 +34,7 @@ test_cases:
     examples:
       - ternary
       - if_statement
+      - ternary_brackets
   
   # Reduce function vs for loops
   reduce_for:
