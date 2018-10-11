@@ -10,6 +10,7 @@ Rails.application.routes.draw do
         get 'generate' => 'randomisations#generate', as: :generate
       end
     end
+    resources :data_downloads, only: [:show]
   end
 
   resources :participants do

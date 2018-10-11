@@ -20,25 +20,36 @@ class Stats
       participants[lang] = (participants[lang] || 0) + 1
     end
     test_case = (test_cases[response.test_case] ||= {})
-    example = (test_case[response.example] ||= {
+    example = (test_case[response.example] ||= {})
+    example[:overall] ||= ({
       total: 0,
       total_ms: 0,
       total_correct: 0,
       total_readable: 0
     })
-    example[:total] += 1
-    example[:total_ms] += (response.responded_ms || 0)
-    example[:total_correct] += 1 if response.correct?
-    example[:total_readable] += (response.readable_score || 0)
+    example[lang] ||= ({
+      total: 0,
+      total_ms: 0,
+      total_correct: 0,
+      total_readable: 0
+    })
+    [example[:overall], example[lang]].each do |stat|
+      stat[:total] += 1
+      stat[:total_ms] += (response.responded_ms || 0)
+      stat[:total_correct] += 1 if response.correct?
+      stat[:total_readable] += (response.readable_score || 0)
+    end
   end
 
   def calculate_averages
     test_cases.each do |k, tc|
       tc.each do |k, example|
-        if(total = example[:total])
-          example[:average_ms] = example[:total_ms] / total
-          example[:percent_correct] = example[:total_correct] * 100 / total
-          example[:average_readable] = example[:total_readable] / total
+        example.each do |lang, stat|
+          if(total = stat[:total])
+            stat[:average_ms] = stat[:total_ms] / total
+            stat[:percent_correct] = stat[:total_correct] * 100 / total
+            stat[:average_readable] = stat[:total_readable] / total
+          end
         end
       end
     end

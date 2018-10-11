@@ -4,7 +4,7 @@
   <%= link_to 'Responses', admin_responses_path, :class=>'btn' %>
   <%= link_to 'Randomisations', admin_randomisations_path, :class=>'btn' %>
 </p>
-
+<%= link_to 'Responses CSV', admin_data_download_url('responses'), :class=>'btn btn-info pull-right' %>
 <h1>Stats</h1>
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -27,12 +27,15 @@
     <div class="panel-body">
       <% tc.each do |k, example| %>
         <h4><%= k %></h4>
-        <ul class="list-inline">
-            <li>Total: <span class="text-info"><%= example[:total] %></span></li>
-            <li>Average ms: <span class="text-info"><%= example[:average_ms] %></span></li>
-            <li>Percentage correct: <span class="text-info"><%= example[:percent_correct] %></span></li>
-            <li>Average readable: <span class="text-info"><%= example[:average_readable] %></span></li>
-        </ul>
+        <% example.each do |lang, stat| %>
+          <ul class="list-inline <%= lang==:overall ? 'text-danger' : 'text-muted' %>">
+              <li><strong><%= lang %></strong></li>
+              <li>Total: <span class="text-info"><%= stat[:total] %></span></li>
+              <li>Average ms: <span class="text-info"><%= stat[:average_ms] %></span></li>
+              <li>Percentage correct: <span class="text-info"><%= stat[:percent_correct] %></span></li>
+              <li>Average readable: <span class="text-info"><%= stat[:average_readable] %></span></li>
+          </ul>
+        <% end %>
       <% end %>
     </div>
   </div>
