@@ -1,4 +1,4 @@
-Code readability describes
-how the structure of code can
-help a developer understand and
+Grammar describes
+how the structure of language can
+help a speaker understand and
 control it.
