@@ -54,4 +54,37 @@ class CsvData
       end
     end
   end
+
+  def self.participants
+    CSV.generate do |csv|
+      csv << [
+        'Participant ID',
+        'Main language',
+        'Years programming',
+        'Language choice',
+        'Created at',
+        'Agent',
+        'IP',
+        'Client w',
+        'Client h',
+        'Number answered'
+      ]
+      Participant.includes(:responses).order(:id).find_each do |participant|
+        row = [
+          participant.id, 
+          participant.main_language, 
+          participant.years_programming, 
+          participant.language_choice, 
+          participant.created_at, 
+          participant.agent, 
+          participant.ip, 
+          participant.client_w, 
+          participant.client_h,
+          participant.responses.count {|r| r.given_answer }
+        ]
+        csv << row
+
+      end
+    end
+  end
 end

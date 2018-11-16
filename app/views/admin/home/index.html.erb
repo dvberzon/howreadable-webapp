@@ -4,7 +4,10 @@
   <%= link_to 'Responses', admin_responses_path, :class=>'btn' %>
   <%= link_to 'Randomisations', admin_randomisations_path, :class=>'btn' %>
 </p>
-<%= link_to 'Responses CSV', admin_data_download_url('responses'), :class=>'btn btn-info pull-right' %>
+<ul class="pull-right list-inline">
+<li><%= link_to 'Responses CSV', admin_data_download_url('responses'), :class=>'btn btn-info pull-right' %></li>
+<li><%= link_to 'Participants CSV', admin_data_download_url('participants'), :class=>'btn btn-warning pull-right' %></li>
+</ul>
 <h1>Stats</h1>
 <div class="panel panel-default">
   <div class="panel-heading">
