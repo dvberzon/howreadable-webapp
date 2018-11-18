@@ -7,4 +7,7 @@ class HomeController < ApplicationController
 
   def thankyou
   end
+
+  def closed
+  end
 end
