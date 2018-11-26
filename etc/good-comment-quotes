@@ -1,0 +1,137 @@
+Good quotes from comments
+------
+
+I would ask for a complete rewrite on a code review.
+
+I am also not keen on the use of abbreviations as they mk cd hrd 2 rd.
+
+Anything with < or > and particularly combinations make my old man brain hurt. I'm not even sure if the logic of this is true. 
+
+I'm not sure why `String.prototype.charAt` wasn't used for this. It would be better in every way and simpler. In addition, this does nothing for i18n support. I'd rather see the string of available letters passed in as an argument with perhaps a default of a-z.
+
+the `name` temp var is misnamed--it's not strictly a name, but rather a salutation
+
+Might be easier to reason about if it was just a series of statements instead of a conjunction:
+
+```
+return false if range1[:end] < range2[:start]
+return false if range1[:start > range2[:end]
+true
+```
+
+`range1` and `range2` should be renamed to `lowRange` and `highRange` because this function only works that way. If `range2` is lower but still overlapping, this will return false
+
+range1.start <= range2.end seems unnecessary and I kept rereading it thinking he code did something else other than specified by the function name
+
+variables with similar names and same properties are easy to confuse and you have to read it slowly so your sure that you actually compared the right values
+
+Too many unnecessary comments. There is no need to explain obvious variable names and function name.
+
+some brackets might've been nice?
+return (range1.end >= range2.start) && (range1.start <= range2.end)
+
+"This does not establish that the ranges overlap for all cases:
+ * One range is entirely contained in another
+ * One range overlaps the start of the other
+ * One range overlaps the end of the other
+
+So this code is not readable because it implies it tests more than it does."
+
+in this case, comments were used instead of sensible variable names. the overlap method itself is fine, but I don't particularly trust comments to give me context so I had to check a handful of times.
+
+It's clear function name, but hard to predict the result from variables. Would be better to see an object method than individual params e.g. new Range(range).overlaps(range)
+
+I mostly understood the intention from the comment, but it wasn't easy to follow the logic without it. I might rename the method since the word 'overlap' could have multiple meanings
+
+Currying functions may make for terser reading.
+
+nicely split out into validation functions for each property. I'd have liked the values to be passed in directly e.g. validateFirstName(params.firstName) rather than validateFirstName having to know how to access the first name (and thus having to know about what params looks like). 
+
+I had to hold my nose a bit at this definition of a valid email ;)
+
+Presence validations could be more generic and reused, passing the specific string each time rather than extracting it from params
+
+I think most of these functions are unnecessary and not doing much. In addition `strPresent` isn't very descriptive. I'd rather see two validation functions: `isValidString` and `isValidEmail` and just using them directly in `validateParams`. In addition, `validateParams` should be more descriptive, such as `validateUserParams`
+
+The string checker function is a little redundant. While there's a small readability penalty, it's more idiomatic to use `!!` in front of each (potential) string to check if they're truthy and cast to try (zero-length strings are falsy in JS).
+
+Code was quickly readable, though I feel the function names let it down slightly e.g. shortening "string" to "str". Also "strPresent" would have been more readable as something like "isTruthyString", otherwise it may be interpreted that this function checks for the presence of a string within another
+
+The structure of the code is also backwards. The primary function of this is the validation of the dictionary yet the first method that is present is the validation of a single string. The code should be organized from general to specific, so that you are introduced to things by context (how they are used) before seeing how they are implemented (what they do).
+
+I'd probably prefer to see this written as a series of guard clauses, i.e. `return false unless (expression)` although the variable naming here helps clarify the intent, so it might be a wash.
+
+Not a huge fan. That long chain of functions takes a bit to think through and is not super readable. I'd rather introduce some intermediate variable names like `sortedLetters` as the array of sorted lowercase letters. And also `processStr` is really not a helpful function name. `sortStringLetters` would be better perhaps.
+It's readable, but incorrect. This will only produce correct answers in general for ascii words. To avoid issues with words including characters which span more than one byte, the spread operator can be used.
+
+The sort code does more than it implies, and it's real intent is to normalize the two strings so I feel it is badly named.
+
+There are better ways to do this.
+
+Depends on the intended usage of the function; if user facing then it's reasonable. If it's coder facing then omfg start at zero you heathen!
+
+Mostly offended by the inefficiency. But too much code hear for something simple. Bugs could easily be hiding, i didn't check the letters. Also extra brackets is weird.
+
+Easier for me to arrange from left to right what is larger and smaller.
+For example: 
+0 < num && num < 27
+Which in math/algebraic notation looks more like:
+0 < x < 27
+
+Should use more language specific features such as String.prototype.charAt to lower the amounts of code. More code = more stuff to read
+
+You can index the string directly so you don't need to convert it to a list. The name letters_arr is a form of hungarian notation, and it's the discouraged form (instead of naming by intent it names by type, which is inappropriate as the type of the variable should be readily apparent - in this case it is established on the preceding line). So based on this I feel that letters_arr is lazy naming and instead they should be able to name it better or not name it at all.
+
+I am also not keen on the use of abbreviations as they mk cd hrd 2 rd.
+
+Secondly the entire method body is indented when the guard clause (of the index being unrepresentable) could be placed first and then the rest of the method could follow without being part of an else clause.
+
+Finally arrays start at 0 not 1 so that is certainly going to cause surprises.
+
+Too lengthy implementation for something simple such as 'abcdefghijklmnopqrstuvwxyz'[num] with an early return of '-' when out of range
+
+I'd normally prefer a real if condition or case statement than early returns in this case, I'd normally use that for error cases rather than flow control.
+
+The name of the method doesn't flow well and it doesn't cover one of the available return values. A better and equally terse name would be `describe`.
+
+Relatively readable, but the order of the checks is confusing. I would prefer seeing the checks in numerical order and using the same sign each time.
+
+< 5: return "low"
+<= 10: return "ok"
+return "high"
+
+If this makes sense in the problem domain, :shipit: but you could reduce cognitive load by rewriting as a step function:
+if(value < 5) {
+  return "low";
+} else if (value < 11 ) {
+  return "ok";
+} else {
+  return  "high";
+}
+
+Nesting ternaries is bad. Use multiple statements instead. Generally favour using variables to name things.
+
+I have no intention of ever learning the precendence rules for two inline ifs. If you write this you are bad and you should feel bad.
+
+Chaining ternary/elivs operator is subject to headache
+
+nested ternaries?! c'mon. also, the method hi_lo returns high (not "hi"), low (not "lo"), or a mystery third value. stahp.
+
+I'd flip the if-else around, and handle the case where the title exists to avoid the `!` operator.
+
+I had a long phone call so time not accurate.
+
+Strictly speaking the method does two things - it determines their title and then generates a salutation. The method name only indicates the title generation, so it could be used inappropriately.
+
+I'm uncertain how the code would behave if the dictionary did not have the title key in it. It would be nicer to see the code explicitly check that title is in the dictionary user rather than just trying to access it.
+
+The conditionals in this case mapped really poorly to their bodies. We checked for absence of title (a negative case) and then did a totally-not-title thing. Also, if there _is_ a title, we just assume the existence of last name. Re-arranging the condition to be positive and swapping the two cases would have been much easier.
+
+"Good opportunity to use ternary operator, much shorter, concise not terse, less cognitive overhead
+return "Dear " + user.title ? user.title + " " + user.lastName : user.firstName"
+
+Quite readable if you don't care about what the output is (more than that it returns some kind of greeting). I thought there was quite unlogic that you greeted the person either by firstname or lastname depending on whether or not you provided a title but that's not really related to the readability more to the "business logic" :)
+
+Prefer preincrement in for loops like this (theoretically faster too)
+for(var i = 0; i < values.length; ++i) {
+Ambivalent about whether or not Array.prototype.reduce would be cleaner (though would definitely be slower)

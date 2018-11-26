@@ -1,0 +1,1853 @@
+
+Comments
+----
+
+The code comment appears to be incorrect.
+The boolean statement could have been written to more clearly match the logic of the comment.
+
+
+
+Anything with < or > and particularly combinations make my old man brain hurt. I'm not even sure if the logic of this is true. Plus I'm sure Ruby has a method to do this that's nicer. :-)
+
+
+Strangely the comment confused me. I spent additional time reading the comment rather than looking at the code. I feel that the condition returned from the function may have been more readable if the arguments were reordered somehow.
+
+
+
+The comment contradicts the code itself
+
+
+
+
+
+I liked the comment before the condition which saved me time to understand the criteria.
+
+
+The comment describes the problem differently than the implementation
+
+
+
+
+comments were very concise
+
+"the conjunction is hard to follow. It's nice that this logic is hidden inside a method, cuz I'd shout if I ran into it in the middle of something else.
+
+Might be easier to reason about if it was just a series of statements instead of a conjunction:
+
+```
+return false if range1[:end] < range2[:start]
+return false if range1[:start > range2[:end]
+true
+```
+
+although I'm not convinced those three lines are better than the conjunction now..."
+The code is readable but the wrong comment is deceiving.
+
+
+
+
+
+
+
+
+
+Comment is incorrect 
+"I like to see logic to be aligned with comments.
+
+# Two ranges overlap if one starts before the other starts
+# or ends before the other ends
+
+The comment begins with "one starts before the other starts"
+but the logic begins with "range1.get('end') >= range2.get('start')".... other way round"
+
+The code is wrong, the description is wrong, and it does not include the type of the parameters and the value returned
+
+`range1` and `range2` should be renamed to `lowRange` and `highRange` because this function only works that way. If `range2` is lower but still overlapping, this will return false.
+
+
+
+
+
+
+
+
+i'm not sure if this is a trick test so i have to read all the code but i'd hope i could rely on the intention revealing method name to save me doing so!
+Why?
+
+
+The function do_ranges_overlap could use if clauses with some temporary variables instead.
+
+
+
+
+
+range1.start <= range2.end seems unnecessary and I kept rereading it thinking he code did something else other than specified by the function name.
+
+
+
+
+
+
+
+
+
+variables with similar names and same properties are easy to confuse and you have to read it slowly so your sure that you actually compared the right values
+
+
+
+
+It's readable. Just a bit confusing since there's a Range object in Ruby's standard lib. Would probably use that instead of a hash
+
+
+
+
+
+Line is too long, I'd split it in 2
+
+Would be easier to read if you would use a traditional if-statement with two returns
+
+
+
+
+
+There is logic that needs to be understood to follow the code. I would suggest a simple comment above the return to explain it's working.
+
+
+Something made this much less readable than the others.
+doStuff() // This does stuff ... yeah I know ... it's in the name ... Too many comments
+
+
+
+Too many unnecessary comments. There is no need to explain obvious variable names and function name.
+
+can't think of anyway to make it much clearer
+
+"some brackets might've been nice?
+return (range1.end >= range2.start) && (range1.start <= range2.end)"
+
+
+
+Had to look at the input data (score & desired) and trace the code through in my mind to figure it out
+
+
+Found it hard to visualise the logic for some reason (probably my own deficiency).
+
+
+
+
+
+
+
+
+
+
+"This does not establish that the ranges overlap for all cases:
+ * One range is entirely contained in another
+ * One range overlaps the start of the other
+ * One range overlaps the end of the other
+
+So this code is not readable because it implies it tests more than it does."
+
+
+Overuse of code comments.
+
+
+
+
+the code comments helped immensely
+
+
+
+in this case, comments were used instead of sensible variable names. the overlap method itself is fine, but I don't particularly trust comments to give me context so I had to check a handful of times.
+
+
+
+
+Too many comments. Splitting the logic into methods would have made it self documenting 
+
+
+
+
+too many comments
+
+
+It's clear function name, but hard to predict the result from variables. Would be better to see an object method than individual params e.g. new Range(range).overlaps(range)
+
+
+
+
+Looked like the comment (not the code was wrong) which didn't help with readability
+
+
+
+
+
+
+
+
+
+
+
+
+I liked the comment above the condition as I don't had to think about what the logic does but it was explained with simple and meaningful words.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I mostly understood the intention from the comment, but it wasn't easy to follow the logic without it. I might rename the method since the word 'overlap' could have multiple meanings
+
+
+
+
+
+
+
+I don't think there's a "better" way to write this but these types of expressions always take a while to make sense of.
+
+I would remove the comments, the code is clear enough without them
+
+
+Currying functions may make for terser reading.
+Breaking the code up into different functions was a nice idea.
+
+
+
+
+Took long and hard to read
+
+
+I'm not sure breaking the methods up added to the clarity of the whole solution.
+
+
+
+meaningful names :yey:
+
+
+
+
+
+
+
+
+
+
+
+method that validate name should take name as argument, not object. Method that validate postcode should get postcode as arg, etc...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nicely split out into validation functions for each property. I'd have liked the values to be passed in directly e.g. validateFirstName(params.firstName) rather than validateFirstName having to know how to access the first name (and thus having to know about what params looks like). 
+
+
+
+
+
+
+
+
+
+
+
+
+Too small functions
+
+
+
+
+
+Most would consider this good. But I had to read from the bottom up and this much abstraction in the name of short methods just gets in the way of readability. 
+
+
+
+I'd change `str_present`'s body to always return a boolean even though Ruby treats every value other than `nil` and `false` as truthy. 
+
+
+
+
+
+
+
+Presence validations could be more generic and reused, passing the specific string each time rather than extracting it from params
+"composed methods were nice; each on its own was a very digestible chunk. I had to hold my nose a bit at this definition of a valid email ;)
+
+having to switch between using parens and not doing so wasn't helpful, but not too tough."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+strPresent seems like an odd name for the function - I'm not sure I could come up with a bettor one at the moment
+too many funcs
+I think most of these functions are unnecessary and not doing much. In addition `strPresent` isn't very descriptive. I'd rather see two validation functions: `isValidString` and `isValidEmail` and just using them directly in `validateParams`. In addition, `validateParams` should be more descriptive, such as `validateUserParams`
+
+"The string checker function is a little redundant. While there's a small readability penalty, it's more idiomatic to use `!!` in front of each (potential) string to check if they're truthy and cast to try (zero-length strings are falsy in JS).
+
+More verbose, but I prefer to return as soon as possible. Each failed check could immediately return false."
+
+
+
+
+strPresent would be better if it started with a verb i.e. isStringPresent. Should also break out the email validation into it's own function. validateParams also knows too much about the params object it's checking, it would we be more readable if you defined what type the param is within the params object and check based on that
+
+
+
+
+
+Would probably go with stringPresent personally but nabd
+
+
+
+
+
+
+Code was quickly readable, though I feel the function names let it down slightly e.g. shortening "string" to "str". Also "strPresent" would have been more readable as something like "isTruthyString", otherwise it may be interpreted that this function checks for the presence of a string within another.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Probably better done with getopt or optparse modules.
+I like that each param is validated on it's own and at the end there is the condition for the validity of the model.
+
+
+
+a better approach could be used for each key validated by same function, but the main problem is '!= null' check
+
+"It's wildly overengineered.
+
+A string is truthy if it has content, so the test can be replaced with:
+
+return params.get('first_name') and params.get('second_name') ...
+
+(I'm recalling these, you get the idea). So the method to establish if the string is truthy could be replaced by `bool(str)` which is implicit when strings are used in a boolean context (such as when joined to other expressions using and).
+
+The structure of the code is also backwards. The primary function of this is the validation of the dictionary yet the first method that is present is the validation of a single string. The code should be organized from general to specific, so that you are introduced to things by context (how they are used) before seeing how they are implemented (what they do)."
+
+The `strPresent` function name is not the best name, it could be `isValidString` or something along the lines
+
+
+
+
+
+
+
+
+
+never liked shortened names of functions. The return statement would be much more readable if each bool value was on a seperate row
+
+
+Super easy to follow. Still want parentheses around arguments though
+Just a style preference, but I find ruby less readable without using brackets around method arguments.
+
+
+
+
+
+Would be nice to separate "param.get" calls & from actual validity check
+
+
+
+
+
+
+
+
+
+
+
+"str_present should follow convention and be named str_present? because returns boolean. Same with validate_params?
+Inconsistent use of parenthesis on implementation. Variable assignment not needed, it could well be 4 lines."
+
+
+
+
+
+
+
+I'd probably prefer to see this written as a series of guard clauses, i.e. `return false unless (expression)` although the variable naming here helps clarify the intent, so it might be a wash.
+Overwrought and too verbose. Confusion over predicate methods and naming 
+
+
+
+
+no comment in the code is not great
+
+
+
+
+
+ProcessStr has an ambiguous name, but method makes for easy reading
+
+
+
+
+processStr is a bit vague, if this was given a much more descriptive name it would have been even easier
+Chaining doesn't make for readable code, labels make for readable code
+
+
+
+Generally not a fan of `processX` functions but this seems like the best option 
+too many words/processes, all in one line
+
+
+I liked the chained function calls although `processStr()` didnt tell me much about what it was going to do
+
+processStr is not a great function name as it’s not clear how the string is to be processed
+Bad variable names, somewhat good function names.
+
+
+Very readable, though I feel like I was delayed by my word skills. Not sure how I'd improve this.
+
+
+Better practice to use triple (strict) equals operator
+
+
+
+
+
+
+
+"processStr" is a bit vague. Maybe "alphaSort" would be better? 
+
+
+
+
+Not hard to read, did not understand what .trim() was used to in this example. Was it needed for the example code?
+
+
+
+processStr's purpose is unclear outside of isAnagramOf
+
+processString isn't a great function name. otherwise the use of chained prototype methods is easy to follow.
+
+
+Only readable because as an experienced python programmer I recognized the idioms. Function name not great.
+I think this code is not correct at all but the function name processStr doesn't tell anything about it's logic. Whitespaces are missing as well.
+
+
+
+
+maybe function composition here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"process_str" is a really bad name, when all it does it sort the letters.
+
+
+
+
+
+
+
+
+
+
+the chain of methods wasn't awesome, and the method within in which it was contained was poorly named. overall, the anagram method itself is fine.
+
+
+"Method name process_str is a bit ambiguous.
+Also implementation would be enough with str.downcase.chars.sort"
+
+
+
+
+
+I don't like this Process_str name. 
+Everything besides method naming seems okey
+
+
+
+
+Not using ===
+
+
+
+no comment is not great, and the function name processStr could do with a more explicit name
+
+
+
+processStr is a terrible name
+Not a huge fan. That long chain of functions takes a bit to think through and is not super readable. I'd rather introduce some intermediate variable names like `sortedLetters` as the array of sorted lowercase letters. And also `processStr` is really not a helpful function name. `sortStringLetters` would be better perhaps.
+It's readable, but incorrect. This will only produce correct answers in general for ascii words. To avoid issues with words including characters which span more than one byte, the spread operator can be used.
+Would be good to see more detail in comments about how the sort alphabetically function was actually working.
+
+
+
+
+Simple
+
+Straight forward code. Single line functions, names are enough to understand the functions. 
+
+
+'sort_alphabetically' feels like its poorly named. sort_characters_alphabetically maybe?
+
+Nice method names
+should be a === ?
+
+An intermediate variable would help. Mixing method and function calls a bunch of times on a line can confuse.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+string comparison would require '==='
+The sort code does more than it implies, and it's real intent is to normalize the two strings so I feel it is badly named.
+
+
+
+
+
+
+
+
+Not a fan of chaining everything on a single row, usually adding new rows before each new function call (sortAlphabetically)
+
+
+
+
+I don't create a function to compare the result with two functions.
+`sort_alphabetically` does a lot in a single line. Breaking it up a bit would help
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Odd naming of 'str' and 'testStr', aren't both 'testStr' or 'str' in this case, which is the string to check and reverse?
+Prefer to see each call of the individual methods in sort alphabetically on seperate lines with example return comments. Also not sure on the result as not familiar with all of the methods inside that method off the top of my head
+
+
+
+
+
+
+
+
+
+Separating the split().sort().join()... into multiple lines could make this clearer, but it is understandable
+
+The chaining starts to get a bit unreadable
+
+I like that it abstracts the complexity of the algorithm behind named functions
+
+Use of magic numbers = bad
+"There's a lot of odd whitespace (vertical and horizontal) going on here, but that's fairly minor.
+
+The function does more than it needs to. For example, splitting the string into an array of letters is bad (works here because we're restricted to a subset of ascii characters). Worse, you can just index the string (so no array is necessary). Finally, you can make use of character codes:
+
+// where we've checked the range of n as in the original function.
+return String.fromCharCode(96 + n);"
+Only comment really is that the array could have been written explicitly rather than creating it from a string. Other than that it was pretty good.
+
+
+
+
+
+Overcomplicating the solution. 
+
+
+
+0 based arrays :/
+
+like the comment
+
+
+
+
+
+
+I was thrown off by the initial early return, and further by the splitting of the string to an array, as this could have been achieved with String.charAt(). Fairly readable.
+
+
+
+
+
+
+
+Using 1-based indexing can easily trip you up
+
+
+
+
+
+
+
+
+
+
+Function name is a bit obscure but the code is readable
+
+
+
+reasonable name for the function. it validates its inputs (although the return value for out of range seems weird). steps are broken up within the function so are easy to follow. possibly unnecessary to use two variables for the alphabet to array process 
+
+
+
+
+
+
+
+There are better ways to do this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The plural `letters` makes me think I have an array, I'd use that in lieu of `_arr`
+
+I like the guard clause at the start
+The comment showing an array example was well done
+
+
+
+
+
+
+
+
+
+
+C
+
+
+
+
+
+
+
+
+
+
+Fairly readable but would prefer (‘a’..’z’).to_a[num -1]
+
+
+
+
+
+
+
+The comment helped for the split operation
+
+
+
+
+
+
+
+
+
+simple and I like the alphabet as a static string
+
+
+
+
+
+Depends on the intended usage of the function; if user facing then it's reasonable. If it's coder facing then omfg start at zero you heathen!
+Feel like there's a more ruby-ish method to do it, but I'd have to hit the docs.
+
+
+A bit procedural, I had to read quite a lot to see what it did
+
+
+
+
+
+Mostly offended by the inefficiency. But too much code hear for something simple. Bugs could easily be hiding, i didn't check the letters. Also extra brackets is weird.
+
+"Easier for me to arrange from left to right what is larger and smaller.
+For example: 
+0 < num && num < 27
+Which in math/algebraic notation looks more like:
+0 < x < 27"
+
+
+
+
+Should use more language specific features such as String.prototype.charAt to lower the amounts of code. More code = more stuff to read 
+
+
+Rather wordy for what could have been a single statement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+No whitespace at all but the fn name was meaningful. Could be done easier as well.
+
+
+
+
+
+There are string functions that would make that more readable
+"You can index the string directly so you don't need to convert it to a list. The name letters_arr is a form of hungarian notation, and it's the discouraged form (instead of naming by intent it names by type, which is inappropriate as the type of the variable should be readily apparent - in this case it is established on the preceding line). So based on this I feel that letters_arr is lazy naming and instead they should be able to name it better or not name it at all.
+
+I am also not keen on the use of abbreviations as they mk cd hrd 2 rd.
+
+Secondly the entire method body is indented when the guard clause (of the index being unrepresentable) could be placed first and then the rest of the method could follow without being part of an else clause.
+
+Finally arrays start at 0 not 1 so that is certainly going to cause surprises."
+
+
+
+
+
+
+
+
+
+
+it's fine--hashmap of letters/numbers would be immediately understandable if longer
+
+
+
+
+
+
+
+
+
+
+Lot's of noise due to unneccessary variable assignment that doesn't contribute to readability.
+the method was reasonably named, and guard arguments gave me some insight into expected values. the comment was probably unnecessary, but wasn't _wrong_.
+I would ask for a complete rewrite on a code review.
+
+
+Too lengthy implementation for something simple such as 'abcdefghijklmnopqrstuvwxyz'[num] with an early return of '-' when out of range
+
+
+
+
+"I would save the index as a variables for clarity so you don't have to inline 'num-1'.
+You have no 'let','var' or 'const' before result either which can be confusing."
+
+
+
+
+
+
+
+
+
+
+I'm not sure why `String.prototype.charAt` wasn't used for this. It would be better in every way and simpler. In addition, this does nothing for i18n support. I'd rather see the string of available letters passed in as an argument with perhaps a default of a-z.
+
+Looks good.
+
+
+I don't like the naming convention of the function. Unclear of purpose.
+
+
+
+
+Naming of functions could be better. 'hi_lo' is confusing. Else should've been used.
+
+simple af
+I'd normally prefer a real if condition or case statement than early returns in this case, I'd normally use that for error cases rather than flow control.
+
+
+
+
+
+
+
+
+
+
+Pretty good. Not sure how I'd improve.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I'm missing some white spaces here. The function name could be more expressive as well.
+
+
+
+Poor function name
+
+
+
+
+The name of the method doesn't flow well and it doesn't cover one of the available return values. A better and equally terse name would be `describe`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Method naming sucks
+
+
+
+
+"Relatively readable, but the order of the checks is confusing. I would prefer seeing the checks in numerical order and using the same sign each time.
+
+< 5: return "low"
+<= 10: return "ok"
+return "high""
+"If this makes sense in the problem domain, :shipit: but you could reduce cognitive load by rewriting as a step function:
+if(value < 5) {
+  return "low";
+} else if (value < 11 ) {
+  return "ok";
+} else {
+  return  "high";
+}"
+
+Multiple ternaries and poor function naming = bad
+Too many conditional statements on a single line. It made the logic hard to follow.
+
+
+like that it's terse, but hard to follow. May be better split into two conditionals
+Nesting ternaries is bad. Use multiple statements instead. Generally favour using variables to name things.
+
+
+I find multi level ternary operator harder to read
+
+
+
+
+
+
+I have no intention of ever learning the precendence rules for two inline ifs. If you write this you are bad and you should feel bad.
+
+Formula was hard to read as it had a number of evaluating statements in a single line
+
+
+
+
+
+
+Chaining ternary/elivs operator is subject to headache 
+Nested ternary expressions need line breaks and proper indentation
+
+
+
+
+
+
+
+
+
+Why abbreviate highLow() to hiLo(), it's not that long. Also nested ternaries over just an if statement or two is much less readable
+avoid nested ternary imo
+
+Tenuries inside tenuries are horrible. They can be more readable if spread out over more lines. i wouldn't trust my answer without testing it.
+Without brackets it's difficult to tell which way the logic in the ternaries goes at a glance
+
+
+nested ternary statement isn't all that readable, especially on one line. function name doesn't really describe what it's doing.
+
+Chained ternary conditional (is that what it's called?) is very unreadable
+Not fond of Pythons appended if syntax
+
+
+
+
+
+
+
+Too compressed for what it does.
+
+
+
+
+
+
+
+
+
+
+In my opinion it's to much two "if's" inline. I prefer the first one in "normal" structure
+
+The conditions are simple enough that using the ternary operators is fine. If there were more cases and the conditions were more complicated, I'd write it differently.
+Ternary inside ternary is not good
+
+
+
+I wouldn't put a ternary in a ternary
+
+
+
+Would be better without ternary operator
+Foo name again 
+
+Nested ternary operators usually take me more time to read than other alternatives, although I might feel differently if the individual comparison expressions were simply named functions.
+
+
+
+
+
+
+why abbr it to `hilo`? 
+More parentheses.
+
+
+
+
+It's ok for me but I wouldn't use it. Putting so much logical and python-specific operators on one line is not good style.
+
+
+
+
+
+Use early returns over ternarys
+nested ternaries?! c'mon. also, the method hi_lo returns high (not "hi"), low (not "lo"), or a mystery third value. stahp.
+Two ternary ifs in a statement? Ffffuuu
+
+
+"Nested ternary expressions are a pain to read. Favour early returns.
+Also method name hi_lo does not hint it can return 'ok'"
+
+
+
+Ternary is OK, nested ternary is a bad idea
+I don’t mind ternaries, but nesting them isn’t cool. Would be better as separate methods 
+
+
+
+
+
+Proabably anything more complex and that would be hard to read, but I find that better than two if statements or something
+
+Ugh, not a fan of nested ternaries. Ternaries are okay when very simple, but horrid when too complicated.
+
+I'd flip the if-else around, and handle the case where the title exists to avoid the `!` operator.
+
+
+
+
+Took a while to read
+
+The function could use 3 params, instead of have a dict of values. But its personal preference.
+
+
+
+Mutation of name was a bit nasty but clear enough in this toy example
+me like a template string and returning early
+
+
+I would havd switched the branches of the if. Negations are hard
+Spaces before parentheses. 
+
+
+
+
+
+
+
+
+
+I prefer ? : when assigning alternative values to a single variable.
+
+
+
+
+
+
+
+I had a long phone call so time not accurate.
+
+
+Easy enough to follow. Again could use early returns to speed up reading of the logic and move the "Dear " into the name variable declaration.
+
+
+
+
+Strictly speaking the method does two things - it determines their title and then generates a salutation. The method name only indicates the title generation, so it could be used inappropriately.
+
+
+
+
+
+
+
+
+If !str is always nicer as unless
+
+
+
+
+
+Not the best code but it was readable
+
+
+
+
+
+
+Variable assignment could happen once for the if statement
+The conditionals in this case mapped really poorly to their bodies. We checked for absence of title (a negative case) and then did a totally-not-title thing. Also, if there _is_ a title, we just assume the existence of last name. Re-arranging the condition to be positive and swapping the two cases would have been much easier.
+
+
+
+
+
+
+
+
+
+Would prefer keyword arguments so as to describe the interface. Quite a few bugs and inconsistencies make this less readable, as it has more possible outcomes depending on the input 
+
+
+
+The spacing is ugly on the if/else and it would be clearer to do if(variable) rather than if(!variable)
+
+
+Very readable and straightforward.
+
+
+I'm uncertain how the code would behave if the dictionary did not have the title key in it. It would be nicer to see the code explicitly check that title is in the dictionary user rather than just trying to access it.
+
+
+
+Using ternaries when assigning values is easier to understand than conditionals
+
+
+
+
+
+I'd personally have cache the prefix and then return early, but plenty readable as is. Also, string interpolation ftw :)
+I'd extract the if block into its own '#name' method.
+
+
+
+
+
+
+
+Quite readable, though changing of variables outside of the scope of the if / else statement was slightly confusing.
+
+"Good opportunity to use ternary operator, much shorter, concise not terse, less cognitive overhead
+return "Dear " + user.title ? user.title + " " + user.lastName : user.firstName"
+
+
+
+
+local var name should be named greeting. A lot of assumptions of the argument user, that it in fact is an object with properties for example.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Quite readable if you don't care about what the output is (more than that it returns some kind of greeting). I thought there was quite unlogic that you greeted the person either by firstname or lastname depending on whether or not you provided a title but that's not really related to the readability more to the "business logic" :)
+
+
+
+
+Whitespaces are missing and I would use string templates instead of concatenation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"when declaring name, it would have been clearer if it was
+var name = "Dear ";"
+
+
+"the `name` temp var is misnamed--it's not strictly a name, but rather a salutation (I think--still not a name though)
+
+also parens around args"
+
+
+
+
+
+
+Would be better not to reuse the "name" variable in function greeting
+
+
+
+
+
+
+
+Too wordy, should be better way.
+
+
+
+"Names are ok but implementation could be more explicit in 2 lines with an early return and string interpolation, eg:
+return "Dear #{user[:title]} #{user[:last_name]}" if user[:title]
+"Dear #{user[:first_name]}""
+
+
+
+
+
+
+
+
+
+
+
+
+
+ok except no comment 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The use of built in function sum would be clearer
+
+
+
+
+ugh explicit iteration, mutating temporay :(
+
+
+
+
+
+
+"Prefer preincrement in for loops like this (theoretically faster too)
+for(var i = 0; i < values.length; ++i) {
+Ambivalent about whether or not Array.prototype.reduce would be cleaner (though would definitely be slower)"
+
+
+
+
+
+
+
+
+For a one-off this is fine, but I prefer adding a .sum prototype to array which uses a reduce.
+
+
+
+
+
+
+
+use reduce
+
+"I would have prefered calling reduce on the array but this is familiar to me and naming the result variable result makes you just assume that it would reduce the values in some way, naming it sum would probably be even better.
+But when reading I basically ignore the whole `for (var i =0, i < i.length; i++) {` (whatever) part"
+
+
+
+
+not wrapped in a function so no descriptive context as to what was supposed to be happening. had to read every character of the snippet (ensure the iterator length clause was going to traverse the entire array, count the elements in the array etc.)
+
+
+
+
+
+
+
+
+
+It's more pythonic to do `result = sum(values)`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+An `inject` call would be preferable here.
+
+
+
+
+
+
+Could use reduce method with accumulator
+not the most idiomatic ruby, but simple enough. 
+
+It's easy to follow, but a very verbose way to do just value.sum
+
+
+
+
+
+I'd probably be more inclined to use .inject or .reduce for this at first glance, but "it depends."
+
+It’s not unreadable but takes some mental power to keep state in mind. I would prefer to educate the person about map, reduce, etc. 
+
+
+
+
+
+
+
+
+
+
+I'm indifferent to this code. It's okay. I'd rather use `Array.prototype.reduce` for this though.
+
+It's readable, but incorrect. The reduce should receive an initialiser (which I think defaults to null, but it should have been set to 0). Had it defaulted to undefined then you'd get a result of NaN.
+I don't really use lambda notation, so this was very difficult to read.
+
+
+
+
+Not everyone knows reduce, but once you get used to t you can spot what it does easily
+Leaving out the accumulator is a bit mean ... I had to go and look up the behaviour at https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce#Parameters
+
+
+Personally I love reduce etc, but worth knowing functional competence level of the team
+Ruby has a sum method, better to use it
+
+Would prefer to see sum init at 0 as the 2nd arg to reduce.
+
+
+
+
+Obviously you should use sum. But in general nothing wrong with reduce. Fight me
+I literally had to look up that the first element is used as the initial value if no initial value is specified. Making me consult documentation is a readability crime. Also, Array.prototype.reduce never helps code to be more readable, ever.
+
+Code is readable and quickly obvious, however there is no second argument to reduce, so the value will actually be NaN (as sum will begin with undefined).
+
+
+
+Would use arrow functions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Only not ultra happy face because I haven't used reduce much. Pretty sure the initialiser can be omitted and defaults to zero but I'd have to check.
+
+Could be done way shorter by using arrow function. Whitespaces are missing^^
+Unfamiliar with reduce(), so answer is a bit of a guess after brief Googling. Use of anon func is not clear.
+
+
+
+i'd prefer es6 or newer syntax
+
+
+
+
+
+
+
+
+
+you have to know about reduce, not clear for a beginner i guess
+
+
+
+
+
+
+
+
+
+I had to look up how reduce works. Maybe add a comment?
+
+
+
+
+
+
+
+
+
+
+
+
+this is fine, but reduce without an initial value set generally works subtly different than one might expect unless they really know their javascript (because arguments.length is checked by reduce and instead of treating initial value as undefined the first element is used). Because not everyone is aware of this and often people forget this sort of thing setting the initial is arguably clearer
+
+
+
+
+
+
+It's readable, but I would lose extra local variable.
+
+
+
+
+
+
+
+I always have trouble working out the initial values supplied to reduce
+Please name the anonymous function and add an initial value arg to reduce, so it's clear it will be working on numbers
+missing starter value for the reduce call is a bit confusing
+
+
+
+
+
+
+
+using a string to name the function upset me
+
+
+
+Good but a slight cognitive overhead to double check that the round brackets (binding the || parts together) were in the right place before applying the target function with the final parentheses
+
+
+
+
+
+
+
+Misleading use of array lookup by string index? Or does javascript really do this?
+
+
+Switch case would be a bit more readable.
+
+
+
+
+
+
+
+"method call on the last line could use parentheses to wrap the arguments--their lack can get confusing with more than one arg.
+
+And I'm not sure how I feel about including the default handler in the hash. Seems like a job for Hash#fetch with a fallback option."
+
+
+
+
+
+
+
+
+
+
+
+Storing the value as `result` instead of simply returning it seems to increase cognitive load. (I almost didn't see that the value was being assigned at first glance).
+
+This function is mis-named, and unnecessarily complicated. A switch statement would have been more readable and probably  more performant as well.
+
+This looks good. My only comment is that a return can be performed in each branch, avoiding the need for the "result" variable. This also avoids else branches.
+
+bad naming - tuple. Could be more functional
+"I'd move the multiplier selection into it's own function (or hash lookup)
+Plus the case statement has a lot of repetition."
+
+
+
+
+Would probably go for a switch instead of else-if
+
+Quickly understood, though if statements were slightly harder to follow than a lookup table or switch case.
+
+
+
+
+
+
+
+
+
+
+
+
+
+The method name wasn't descriptive to me. I'm familiar with using switch statements all over the place because of redux so it was quite quick to understand the functionality
+the code can exit in any of the conditionals but you are forced to read the rest of the function to determine any other execution on the result because it's put in a variable and not returned until the end of the function
+
+
+A switch might be more readable with a lot of if else statements.
+
+
+
+
+Prefer explicit returns in this case rather that else if
+
+
+Would have preferred a switch with returns
+
+
+
+
+I'd use a `case` statement here and remove the `result` variable since it is unnecessary. Otherwise, still readable
+
+"shadowing the variable name result wasn't a great start, but then assigning it in each branch of a conditional was worse.
+
+I would have expected this to be a case statement, so I got tripped up trying to understand why it was different."
+Your textbook "bad code".
+
+
+
+Use switch
+
+
+
+
+
+
+
+
+
+Early return in function instead of assignment would make for easier reading.
+
+
+
+
+
+
+Not sure I'd call it applyTuple (probably just apply) but other than that, great use of switch
+
+I hate switch, i always have to check for tricky missing `break`s, and the temp was in scope the whole method so i didnt know if it'd be mutated some other place...  nasty
+This would not pass code review as it’s sort of “reinventing functions”
+
+This code isn't so hard to read, but I know it could be a lot shorter.
+
+
+
+
+
+
+
+
+
+
+
+
+I would like to see a jsdoc for the function but except that it were nice readable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Tuple is not a term Ruby devs are familiar with; using an intermediate `result` variable is redundant and makes the code harder to read.
+
+
+
+No need for result variable 
+I could find the correct branch of logic quickly without reading the entire method
+
+No need for 'result' variable, last expression evaluated is method's return value
+
+
+
+
+
+I would make each calculation it's own function and call the specific one necessary. If it had to be through a single method call I would create an enum for the possible values to serve as a protection and documentation for the available options, and then call out to the specific function (double, etc.).
+
+
+why Tuple?
+
+
+There's probably better ways to do that in JS, perhaps using functions?
+What's a tuple in this context?
+
+
+
+
+
+
+Could be more terse - e.g. ternary
+There's no need for the else, it breaks the readibility
+
+Function name is useless. It doesn't help the reader/ users any context to what it does or why it exists.
+
+No need for else branch or ternary operator could be used
+
+
+
+getResult is a bad name
+
+
+
+
+
+
+
+Not clear what it's purpose is
+
+Short methods like this are perfect place to use elvis/ternary to avoid duplicate return statements. Could be even more readable by using es6 syntax and implicit return by double arrow function.
+
+
+
+You've probably guessed by now -- I prefer ? :
+
+
+
+
+
+
+
+
+
+
+
+
+
+simple, separated conditions with return statements. easy to see where the code returns
+
+
+
+
+redundant else.
+
+
+It has a very generic name and it's not clear when this code would be useful.
+ternary operator here will be better
+
+
+Magic numbers along with the function name associated with numbers make this hard to understand at a quick glance
+
+
+
+
+
+
+you don't need a function for this. I prefer a inline "? :"
+
+
+I'd rename the method 'get_result' to something more descriptive of its behavior
+
+What makes it badly readable is that the order of return values is 10, then 20, but the if checks the other way round (>4, then <= 4).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I would omit the else block
+
+
+
+
+
+
+I have no idea what this is the result of, why 4 is the threshhold or what 10 or 20 mean
+This code is fine, other than being very generic and not super useful. But it's a contrived example anyway, so I won't judge it harshly. If we're playing code golf, `result` should be a `const` instead, and the `else` is unnecessary.
+
+None of the names of things reveal much about this code. It's not clear what it's for.
+
+
+
+
+
+
+
+
+I don't really understand the operators ? : so I guessed, but otherwise clear!
+Simple enough ternary
+Love a nice turnary operator but I can see how some might find them confusing
+
+The names were vague and didnt help me to understand what was the purpose of the conditional test
+
+
+
+Inline if finally seeming normalish
+Pretty good. Not sure how I'd improve.
+
+
+Crisp and clean
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I thought this was a trick question because it was so simple.
+
+
+
+
+
+Should valid value is actually an integer.
+
+
+
+
+
+
+
+
+
+Ternary operators can be troubling
+
+
+
+
+
+
+
+
+
+
+
+bad naming and confusing code makes it a harder to read, Ternary is usually nice
+
+
+
+method name isn't very helpful--looks like this is some kind of domain specific logic where 4 is a magic number (and so are 10 and 20), and `#get_result` is pretty vague
+
+
+
+
+
+
+
+
+
+
+
+
+If else should be used over ternary when possible 
+I don't mind ternaries if they're this simple. Any more complex and they're a mess.
+Short, but on its own looks weird. In a real code, I'd probably asked for some context.
+
+
+
+"get_result is not a very revealing method name.
+Also readability would improve with an early return."
+
+
+
+
+
+
+
+
+
+
+Braces would mean I dont need to know the operator precedence 
+
+
+
+the function name is really confusing
+A traditional "if() { } else {}" would be clearer than this single line version
+
+
+
+
+
