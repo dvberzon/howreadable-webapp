@@ -1,9 +1,35 @@
 Good quotes from comments
 ------
 
+If else should be used over ternary when possible
+
+ternary operator here will be better
+
+shadowing the variable name result wasn't a great start, but then assigning it in each branch of a conditional was worse.
+
+This function is mis-named, and unnecessarily complicated. A switch statement would have been more readable and probably  more performant as well.
+
+
+looks like this is some kind of domain specific logic where 4 is a magic number (and so are 10 and 20)
+
 I would ask for a complete rewrite on a code review.
 
+
+If we're playing code golf, `result` should be a `const` instead, and the `else` is unnecessary.
+
+Function name is useless. It doesn't help the reader/ users any context to what it does or why it exists.
+
 I am also not keen on the use of abbreviations as they mk cd hrd 2 rd.
+
+I would make each calculation it's own function and call the specific one necessary. If it had to be through a single method call I would create an enum for the possible values to serve as a protection and documentation for the available options, and then call out to the specific function (double, etc.).
+
+This would not pass code review as it’s sort of “reinventing functions”
+
+Use switch
+
+Your textbook "bad code".
+
+I hate switch, i always have to check for tricky missing `break`s
 
 Anything with < or > and particularly combinations make my old man brain hurt. I'm not even sure if the logic of this is true. 
 
@@ -88,7 +114,7 @@ Secondly the entire method body is indented when the guard clause (of the index 
 
 Finally arrays start at 0 not 1 so that is certainly going to cause surprises.
 
-Too lengthy implementation for something simple such as 'abcdefghijklmnopqrstuvwxyz'[num] with an early return of '-' when out of range
+** Too lengthy implementation for something simple such as 'abcdefghijklmnopqrstuvwxyz'[num] with an early return of '-' when out of range
 
 I'd normally prefer a real if condition or case statement than early returns in this case, I'd normally use that for error cases rather than flow control.
 
@@ -108,6 +134,9 @@ if(value < 5) {
 } else {
   return  "high";
 }
+
+this is fine, but reduce without an initial value set generally works subtly different than one might expect unless they really know their javascript (because arguments.length is checked by reduce and instead of treating initial value as undefined the first element is used). Because not everyone is aware of this and often people forget this sort of thing setting the initial is arguably clearer
+
 
 Nesting ternaries is bad. Use multiple statements instead. Generally favour using variables to name things.
 
@@ -135,3 +164,5 @@ Quite readable if you don't care about what the output is (more than that it ret
 Prefer preincrement in for loops like this (theoretically faster too)
 for(var i = 0; i < values.length; ++i) {
 Ambivalent about whether or not Array.prototype.reduce would be cleaner (though would definitely be slower)
+
+Please name the anonymous function and add an initial value arg to reduce, so it's clear it will be working on numbers
