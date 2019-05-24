@@ -1,14 +1,15 @@
 class TestCase
-  attr_accessor :id, :name, :question, :answers, :correct_answer, :languages, :examples
-
+  attr_accessor :id, :name, :intro, :languages, :patterns, :exercises
+  
   def initialize id, yaml
     self.id = id
     self.name = yaml['name']
-    self.question = yaml['question']
-    self.answers = yaml['answers']
-    self.correct_answer = yaml['correct_answer']
+    self.intro = yaml['intro']
     self.languages = yaml['languages']
-    self.examples = yaml['examples']
+    self.patterns = yaml['patterns']
+    self.exercises = yaml['exercises'].map do |exercise_yaml|
+      Exercise.new exercise_yaml
+    end
   end
 
   def self.find id
@@ -19,10 +20,6 @@ class TestCase
 
   def has_lang lang
     languages.include? lang
-  end
-
-  def answer_options lang
-    answers.map {|ans| [ans, Experiment.translate_answer(ans, lang)]}
   end
 
 end
