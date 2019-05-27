@@ -1,5 +1,6 @@
 class Participant < ApplicationRecord
-  has_many :responses, -> {order :index}, dependent: :delete_all
+  has_many :responses, dependent: :delete_all
+  has_many :participant_test_cases, dependent: :delete_all
   validates :language_choice, presence: true
 
   def client_dimensions
@@ -8,5 +9,9 @@ class Participant < ApplicationRecord
 
   def num_filled_responses
     @num_filled_responses || responses.where.not(given_answer: nil).count
+  end
+
+  def start_test_case test_case_id
+    participant_test_cases.create({test_case_id: test_case_id})
   end
 end
