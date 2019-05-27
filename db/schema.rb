@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_26_143329) do
+ActiveRecord::Schema.define(version: 2019_05_27_134405) do
 
   create_table "participant_test_cases", force: :cascade do |t|
     t.integer "participant_id"
     t.string "test_case_id"
-    t.text "excercise_patterns"
+    t.text "exercise_patterns"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,38 +36,15 @@ ActiveRecord::Schema.define(version: 2019_05_26_143329) do
     t.integer "client_h"
   end
 
-  create_table "random_sequence_entries", force: :cascade do |t|
-    t.string "value"
-    t.integer "index"
-    t.integer "block_index"
-    t.datetime "assigned_at"
-    t.integer "assigned_to"
-    t.boolean "locked"
-    t.integer "random_sequence_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "random_sequences", force: :cascade do |t|
-    t.string "test_case"
-    t.string "language"
-    t.integer "current_index"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "responses", force: :cascade do |t|
     t.string "test_case"
-    t.string "example"
     t.integer "participant_id"
     t.integer "responded_ms"
     t.string "given_answer"
-    t.integer "readable_score"
-    t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "index"
-    t.datetime "randomised_at"
+    t.integer "exercise_id"
+    t.string "pattern"
     t.index ["participant_id"], name: "index_responses_on_participant_id"
   end
 

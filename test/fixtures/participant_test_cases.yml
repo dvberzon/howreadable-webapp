@@ -3,9 +3,9 @@
 one:
   participant_id: 1
   test_case_id: MyString
-  excercise_patterns: MyText
+  exercise_patterns: MyText
 
 two:
   participant_id: 1
   test_case_id: MyString
-  excercise_patterns: MyText
+  exercise_patterns: MyText

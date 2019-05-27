@@ -1,0 +1,21 @@
+structure 2
+
+test_case -> * exercises
+test_case -> 2 patterns
+
+when agree to do a test:
+- we need to select a random test_case
+then create responses for that test case? randomising the order of which pattern is shown
+
+We could just store the sequence within the response
+
+or we could store the order within a a model with
+
+participant_id
+test_case_id
+pattern_sequence serialised
+
+participant_test_case
+participant_id
+test_case_id
+exercise_patterns
