@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_27_134405) do
+ActiveRecord::Schema.define(version: 2019_05_28_211723) do
 
   create_table "participant_test_cases", force: :cascade do |t|
     t.integer "participant_id"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_134405) do
     t.text "exercise_patterns"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "completed"
   end
 
   create_table "participants", force: :cascade do |t|

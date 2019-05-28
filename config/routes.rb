@@ -8,9 +8,9 @@ Rails.application.routes.draw do
     resources :data_downloads, only: [:show]
   end
 
-#  resources :participants do
-#    resources :responses
-#  end
+  resources :participants do
+    resources :responses
+  end
 
   root to: 'home#index'
   #root to: 'home#closed'

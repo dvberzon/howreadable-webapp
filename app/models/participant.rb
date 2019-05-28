@@ -1,6 +1,8 @@
 class Participant < ApplicationRecord
   has_many :responses, dependent: :delete_all
-  has_many :participant_test_cases, dependent: :delete_all
+  has_many :participant_test_cases,
+    -> { order('created_at desc') },
+    dependent: :delete_all
   validates :language_choice, presence: true
 
   def client_dimensions
@@ -13,5 +15,28 @@ class Participant < ApplicationRecord
 
   def start_test_case test_case_id
     participant_test_cases.create({test_case_id: test_case_id})
+  end
+
+
+  def available_test_case_ids
+    started_ids = started_test_case_ids
+    Experiment.test_case_ids.reject do |id|
+      started_ids.include? id
+    end
+  end
+
+  def started_test_case_ids
+    participant_test_cases.pluck(:test_case_id)
+  end
+
+  def start_next_test_case
+    available = available_test_case_ids
+    return unless available.length
+    # start one of the available test cases at random
+    start_test_case available.sample
+  end
+
+  def current_test_case
+    participant_test_cases.where(completed: [nil, false]).last
   end
 end

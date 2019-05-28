@@ -21,6 +21,10 @@ class Experiment
     end
   end
 
+  def self.test_case_ids
+    test_cases_yaml.keys
+  end
+
   def self.years_programming_options
     yaml['years_programming'].map{|value, name| [name, value]}
   end

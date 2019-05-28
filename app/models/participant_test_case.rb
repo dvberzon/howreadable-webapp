@@ -1,7 +1,7 @@
 class ParticipantTestCase < ApplicationRecord
   serialize :exercise_patterns
   before_save :randomize_exercise_patterns
-  after_save :generate_responses
+  after_create :generate_responses
   belongs_to :participant
 
   def randomize_exercise_patterns
@@ -24,10 +24,17 @@ class ParticipantTestCase < ApplicationRecord
     @test_case ||= TestCase.find test_case_id
   end
 
+  def responses
+    participant.responses.where(test_case: test_case_id)
+  end
+
   def generate_responses
-    # return there is no language choice
+    # return if there is no language choice
     return unless participant &&  participant.language_choice
+    # return if the langage choice is not valid for this test case
     return unless test_case.has_lang participant.language_choice
+    # return if we've already generated responses
+    return if responses
 
     test_case.exercises.each do |exercise|
       participant.responses.create({
