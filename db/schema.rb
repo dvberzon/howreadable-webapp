@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_211723) do
+ActiveRecord::Schema.define(version: 2019_05_29_194230) do
 
   create_table "participant_test_cases", force: :cascade do |t|
     t.integer "participant_id"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_211723) do
     t.datetime "updated_at", null: false
     t.integer "exercise_id"
     t.string "pattern"
+    t.boolean "responded"
     t.index ["participant_id"], name: "index_responses_on_participant_id"
   end
 

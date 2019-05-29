@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :participants do
+    resources :test_cases, only: [:new, :show]
     resources :responses
   end
 

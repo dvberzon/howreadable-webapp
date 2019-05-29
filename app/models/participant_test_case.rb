@@ -30,11 +30,11 @@ class ParticipantTestCase < ApplicationRecord
 
   def generate_responses
     # return if there is no language choice
-    return unless participant &&  participant.language_choice
+    return unless participant && participant.language_choice
     # return if the langage choice is not valid for this test case
     return unless test_case.has_lang participant.language_choice
     # return if we've already generated responses
-    return if responses
+    return unless responses.empty?
 
     test_case.exercises.each do |exercise|
       participant.responses.create({
