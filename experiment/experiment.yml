@@ -1,0 +1,107 @@
+test_cases:
+  
+  # Ternary operators vs if statements
+  ternary_if:
+    name: "Ternary operators vs if statements"
+    patterns:
+      - ternary
+      - if_statement
+    languages:
+      - js
+    intro: >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    exercises:
+      - id: 1
+        question: What value will the variable <strong>result</strong> have?
+        answers:
+          - 10
+          - 20
+          - 'null'
+        correct_answer: 20
+      - id: 2
+        question: What value will the variable <strong>result</strong> have?
+        answers:
+          - "'short'"
+          - "'long'"
+          - 'null'
+        correct_answer: 'short'
+      - id: 3
+        question: What value will the variable <strong>result</strong> have?
+        answers:
+          - "'one or more'"
+          - "'neither'"
+          - 'null'
+        correct_answer: 'one or more'
+      - id: 4
+        question: What value will the variable <strong>result</strong> have?
+        answers:
+          - "'full'"
+          - "'empty'"
+          - 'null'
+        correct_answer: 'full'
+
+  dummy:
+    name: Dummy test case
+    intro: >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    languages:
+      - js
+    patterns:
+      - pattern1
+      - pattern2
+    exercises:
+      - id: 1
+        question: What value will the variable <strong>result</strong> have?
+        answers:
+          - 'correct'
+          - 'incorrect'
+          - 'definitely wrong'
+        correct_answer: 'correct'
+      - id: 2
+        question: What value will the variable <strong>result</strong> have?
+        answers:
+          - 'correct'
+          - 'incorrect'
+          - 'definitely wrong'
+        correct_answer: 'correct'
+
+
+languages:
+  js: Javascript (ES5)
+
+answer_translations:
+  'null':
+    js: 'null'
+#    rb: nil
+#    py: None
+  'false':
+    js: 'false'
+#    rb: 'false'
+#    py: 'False'
+  'true':
+    js: 'true'
+#    rb: 'true'
+#    py: 'True'
+#
+#lickert:
+#  0: fa-angry
+#  1: fa-frown
+#  2: fa-meh
+#  3: fa-smile
+#  4: fa-grin-stars
+
+years_programming:
+  0: Just started
+  1: One year
+  2: Two years
+  3: Three years
+  4: Four years
+  5: Five years
+  6: 6 - 10 years
+  10: 10 years or more
