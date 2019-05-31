@@ -1,9 +1,10 @@
 <h1>Thank you</h1>
 <div class="intro">
 <p class="lead">Please read the following instructions carefully</p>
-<p>You are about to be shown a series of <em><%= @num_snippets %></em> code snippets</p>
+<p>In the following experiments we will show you a series of code snippets</p>
 <p>For each snippet, We would like you to read the code, and then answer a question about what it does</p>
 <p>The purpose of this process is to test the readability of the code snippet, not your ability as a developer. There are no trick questions and we aren't trying to catch you out, so don't spend ages searching for a hidden bug. Try to answer as quickly as you can based on your initial impression of what the code does</p>
 <p>Please note that the code snippets can be most comfortably read on a desktop computer</p>
 <p class="text-right">
-<%= link_to new_participant_test_case_path(@participant), :class=>'button button-primary' do %>Start experiment<% end %></p>
+  <%= link_to new_participant_test_case_path(@participant), :class=>'button button-primary' do %>Start experiment<% end %>
+</p>

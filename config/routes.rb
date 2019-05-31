@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   end
 
   resources :participants do
-    resources :test_cases, only: [:new, :show]
+    resources :test_cases, only: [:new, :show] do
+      member do
+        get :complete
+      end
+    end
     resources :responses
   end
 

@@ -18,7 +18,7 @@ class ResponsesController < ApplicationController
           if @response.next
             redirect_to edit_participant_response_path @participant, @response.next
           else
-            redirect_to thankyou_path
+            redirect_to complete_participant_test_case_path @participant, @participant.test_case(@response.test_case)
           end
         end
         format.json { render :show, status: :ok, location: @response }

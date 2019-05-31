@@ -13,11 +13,10 @@
       <th>Date</th>
       <th>Index</th>
       <th>Test case</th>
-      <th>Example</th>
+      <th>Exercise id</th>
+      <th>Pattern</th>
       <th>Responded ms</th>
       <th>Given answer</th>
-      <th>Readable score</th>
-      <th>Comments</th>
     </tr>
   </thead>
 
@@ -28,11 +27,10 @@
         <td><%= response.updated_at.strftime('%d/%m/%Y %H:%M') %></td>
         <td><%= response.index %></td>
         <td><%= response.test_case %></td>
-        <td><%= response.example %></td>
+        <td><%= response.exercise_id %></td>
+        <td><%= response.pattern %></td>
         <td><%= response.responded_ms %></td>
         <td><%= response.given_answer %> <% if response.correct? %>&#10003;<% end %></td>
-        <td><%= response.readable_score %></td>
-        <td><%= response.comments %></td>
       </tr>
     <% end %>
   </tbody>

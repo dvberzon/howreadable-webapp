@@ -22,4 +22,8 @@ class TestCase
     languages.include? lang
   end
 
+  def exercise id
+    exercises.find {|exercise| exercise.id == id}
+  end
+
 end

@@ -21,31 +21,30 @@ class Stats
       participants[lang] = (participants[lang] || 0) + 1
     end
     test_case = (test_cases[response.test_case] ||= {})
-    example = (test_case[response.example] ||= {})
-    example[:overall] ||= ({
+    pattern = (test_case[response.pattern] ||= {})
+    pattern[:overall] ||= ({
       total: 0,
       total_ms: 0,
       total_correct: 0,
       total_readable: 0
     })
-    example[lang] ||= ({
+    pattern[lang] ||= ({
       total: 0,
       total_ms: 0,
       total_correct: 0,
       total_readable: 0
     })
-    [example[:overall], example[lang]].each do |stat|
+    [pattern[:overall], pattern[lang]].each do |stat|
       stat[:total] += 1
       stat[:total_ms] += (response.responded_ms || 0)
       stat[:total_correct] += 1 if response.correct?
-      stat[:total_readable] += (response.readable_score || 0)
     end
   end
 
   def calculate_averages
     test_cases.each do |k, tc|
-      tc.each do |k, example|
-        example.each do |lang, stat|
+      tc.each do |k, pattern|
+        pattern.each do |lang, stat|
           if(total = stat[:total])
             stat[:average_ms] = stat[:total_ms].to_f / total
             stat[:percent_correct] = stat[:total_correct].to_f * 100 / total

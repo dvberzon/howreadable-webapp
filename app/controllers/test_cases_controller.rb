@@ -1,6 +1,7 @@
 class TestCasesController < ApplicationController
-  before_action :set_participant, only: [:new, :show]
-  before_action  only: [:new, :show] do
+  before_action :set_participant
+  before_action :set_participant_test_case, only: [:show, :complete]
+  before_action do
     session_participant_only params[:participant_id]
   end
 
@@ -10,7 +11,14 @@ class TestCasesController < ApplicationController
   end
 
   def show
-    @participant_test_case = @participant.current_test_case
+  end
+
+  def complete
+    @participant_test_case.complete
+    @num_available = @participant.num_available_test_cases
+    if @num_available == 0
+      redirect_to thankyou_path
+    end
   end
 
   private
@@ -19,6 +27,6 @@ class TestCasesController < ApplicationController
     end
 
     def set_participant_test_case
-      @participant_test_case = ParticipantTestCase.find[:test_case_id]
+      @participant_test_case = ParticipantTestCase.find(params[:id])
     end
 end

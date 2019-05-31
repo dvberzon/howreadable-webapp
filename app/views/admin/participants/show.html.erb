@@ -25,11 +25,10 @@
   <thead>
     <tr>
       <th>Test case</th>
-      <th>Example</th>
+      <th>Exercise</th>
+      <th>Pattern</th>
       <th>Responded ms</th>
       <th>Given answer</th>
-      <th>Readable score</th>
-      <th>Comments</th>
     </tr>
   </thead>
 
@@ -37,11 +36,10 @@
     <% @participant.responses.each do |response| %>
       <tr>
         <td><%= response.test_case %></td>
-        <td><%= response.example %></td>
+        <td><%= response.exercise_id %></td>
+        <td><%= response.pattern %></td>
         <td><%= response.responded_ms %></td>
         <td><%= response.given_answer %> <% if response.correct? %>&#10003;<% end %></td>
-        <td><%= response.readable_score %></td>
-        <td><%= response.comments %></td>
       </tr>
     <% end %>
   </tbody>

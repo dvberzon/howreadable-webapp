@@ -1,0 +1,5 @@
+<h1>Thank you</h1>
+<p>Would you have time for another experiment?</p>
+<p>There <%= is_are @num_available %> <%= @num_available %> more <%= 'experiment'.pluralize(@num_available) %> we would like your help with.</p>
+<p><%= link_to new_participant_test_case_path(@participant), :class=>'button button-primary' do %>Start another experiment<% end %></p>
+<p><%= link_to thankyou_path, :class=>'button button-secondary' do %>Finish<% end %></p>

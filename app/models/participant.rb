@@ -36,7 +36,15 @@ class Participant < ApplicationRecord
     start_test_case available.sample
   end
 
+  def num_available_test_cases
+    available_test_case_ids.length
+  end
+
   def current_test_case
-    participant_test_cases.where(completed: [nil, false]).last
+    participant_test_cases.order(:created_at).where(completed: [nil, false]).last
+  end
+
+  def test_case id
+    participant_test_cases.where(test_case_id: id).first
   end
 end

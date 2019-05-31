@@ -25,30 +25,6 @@
           </div>
         </div>
 
-        <div class="field">
-          <%= form.label :readable_score, 'How readable did you find this code?' %>
-          <div class="option-buttons">
-          
-            <ul class="lickert">
-              <li class="label">Horrid</li>
-              <% Experiment.lickert.each do |id, css| %>
-                <li>
-                  <span class="option">
-                    <%= form.radio_button :readable_score, id %>
-                    <%= form.label :readable_score, value: id, :class=>'button' do %><i class="far <%= css %>"></i><% end %>
-                  </span>
-                </li>
-              <% end %>
-              <li class="label">Lovely</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="field">
-          <%= form.label :comments, 'Any comments?' %>
-          <%= form.text_area :comments, :class=>'u-full-width' %>
-        </div>
-
         <div class="actions">
           <button class="back">I want to see the code again</button>
           <%= form.submit 'next', :class=>'button-primary' %>

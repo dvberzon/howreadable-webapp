@@ -5,24 +5,28 @@ class Response < ApplicationRecord
     TestCase.find test_case
   end
 
+  def exercise_obj
+    test_case_obj.try(:exercise, exercise_id)
+  end
+
   def answer_options
-    test_case_obj.answer_options participant.language_choice
+    exercise_obj.answer_options participant.language_choice
   end
 
   def snippet
-    Snippet.new test_case, example, participant.language_choice
+    Snippet.new test_case, exercise_id, pattern, participant.language_choice
   end
 
   def next
-    @next ||= participant.responses.find_by index: (index||0) + 1
+    @next ||= participant.responses.find_by(test_case: test_case, index: (index||0) + 1)
   end
 
   def prev
-    @prev ||= participant.responses.find_by index: (index||0) - 1
+    @prev ||= participant.responses.find_by(test_case: test_case,  index: (index||0) - 1)
   end
 
   def correct?
-    given_answer == test_case_obj.correct_answer.to_s
+    given_answer == exercise_obj.correct_answer.to_s
   end
 
   def self.answered

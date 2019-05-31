@@ -1,13 +1,14 @@
 class Snippet
-  attr_accessor :test_case, :name, :lang
-  def initialize test_case, name, lang
+  attr_accessor :test_case, :exercise_id, :pattern, :lang
+  def initialize test_case, exercise_id, pattern, lang
     self.test_case = test_case
-    self.name = name
+    self.exercise_id = exercise_id
+    self.pattern = pattern
     self.lang = lang
   end
 
   def filename 
-    "#{name}.#{lang}"
+    "#{exercise_id}_#{pattern}.#{lang}"
   end
 
   def text

@@ -28,6 +28,10 @@ class ParticipantTestCase < ApplicationRecord
     participant.responses.where(test_case: test_case_id)
   end
 
+  def complete
+    update_attribute(:completed, true);
+  end
+
   def generate_responses
     # return if there is no language choice
     return unless participant && participant.language_choice
@@ -36,11 +40,12 @@ class ParticipantTestCase < ApplicationRecord
     # return if we've already generated responses
     return unless responses.empty?
 
-    test_case.exercises.each do |exercise|
+    test_case.exercises.each_with_index do |exercise, index|
       participant.responses.create({
         test_case: test_case_id,
         exercise_id: exercise.id,
-        pattern: exercise_patterns[exercise.id]
+        pattern: exercise_patterns[exercise.id],
+        index: index,
       })
     end
   end
