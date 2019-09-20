@@ -1,4 +1,5 @@
 class Participant < ApplicationRecord
+  include HashedIds
   has_many :responses, dependent: :delete_all
   has_many :participant_test_cases,
     -> { order('created_at desc') },

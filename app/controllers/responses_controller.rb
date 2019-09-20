@@ -2,7 +2,7 @@ class ResponsesController < ApplicationController
   before_action :set_response, only: [:show, :edit, :update, :destroy, :skip]
   before_action :set_participant, only: [:edit, :update, :skip]
   before_action  only: [:edit, :update] do
-    session_participant_only params[:participant_id]
+    valid_participant_only params[:participant_id]
   end
 
   # GET /responses/1/edit

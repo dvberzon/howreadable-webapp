@@ -2,7 +2,7 @@ class TestCasesController < ApplicationController
   before_action :set_participant
   before_action :set_participant_test_case, only: [:show, :complete]
   before_action do
-    session_participant_only params[:participant_id]
+    valid_participant_only params[:participant_id]
   end
 
   def new
