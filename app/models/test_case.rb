@@ -1,5 +1,5 @@
 class TestCase
-  attr_accessor :id, :name, :intro, :languages, :patterns, :exercises
+  attr_accessor :id, :name, :intro, :languages, :patterns, :exercises, :question
   
   def initialize id, yaml
     self.id = id
@@ -7,6 +7,7 @@ class TestCase
     self.intro = yaml['intro']
     self.languages = yaml['languages']
     self.patterns = yaml['patterns']
+    self.question = yaml['question']
     self.exercises = yaml['exercises'].map do |exercise_yaml|
       Exercise.new exercise_yaml
     end
@@ -23,7 +24,7 @@ class TestCase
   end
 
   def exercise id
-    exercises.find {|exercise| exercise.id == id}
+    exercises.find {|exercise| exercise.id.to_s == id.to_s}
   end
 
 end

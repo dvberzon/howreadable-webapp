@@ -40,7 +40,11 @@ class ParticipantTestCase < ApplicationRecord
     # return if we've already generated responses
     return unless responses.empty?
 
-    test_case.exercises.each_with_index do |exercise, index|
+    # randomise the order of the exercises
+    exercises = test_case.exercises
+    exercises.shuffle
+
+    exercises.each_with_index do |exercise, index|
       participant.responses.create({
         test_case: test_case_id,
         exercise_id: exercise.id,
