@@ -23,7 +23,6 @@ class ParticipantsController < ApplicationController
     @participant.ip = request.remote_ip
     respond_to do |format|
       if @participant.save
-        add_participant_to_session @participant
         format.html { redirect_to @participant }
         format.json { render :show, status: :created, location: @participant }
       else
