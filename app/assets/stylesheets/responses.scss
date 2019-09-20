@@ -101,13 +101,13 @@ div#response {
 
       }
       
-      .actions{
-        text-align: right;
-        .back {
-          float: left;
-        }
-      }
     }
   }
-
+  .actions{
+    margin-top: 100px;
+    text-align: right;
+    .back {
+      float: left;
+    }
+  }
 }

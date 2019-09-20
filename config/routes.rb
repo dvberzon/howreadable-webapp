@@ -14,7 +14,11 @@ Rails.application.routes.draw do
         get :complete
       end
     end
-    resources :responses
+    resources :responses do
+      member do
+        get :skip
+      end
+    end
   end
 
   root to: 'home#index'

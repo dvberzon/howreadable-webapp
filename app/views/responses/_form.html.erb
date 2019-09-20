@@ -2,7 +2,10 @@
   
     <div class="question">
       <%= render 'test_case' %>
-      <button class="go u-pull-right">I'm ready to answer</button>
+      <div class="actions">
+        <%= link_to "I don't know", skip_participant_response_path(@participant, @response), :class=>'button back' %>
+        <button class="go u-pull-right">I'm ready to answer</button>
+      </div>
     </div>
 
     <div class="answer-form">
@@ -26,7 +29,8 @@
         </div>
 
         <div class="actions">
-          <button class="back">I want to see the code again</button>
+          <%#<button class="back">I want to see the code again</button> %>
+          <%= link_to "I don't know", skip_participant_response_path(@participant, @response), :class=>'button back' %>
           <%= form.submit 'next', :class=>'button-primary' %>
         </div>
         <% end %>

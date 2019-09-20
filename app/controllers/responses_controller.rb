@@ -1,12 +1,21 @@
 class ResponsesController < ApplicationController
-  before_action :set_response, only: [:show, :edit, :update, :destroy]
-  before_action :set_participant, only: [:edit, :update]
+  before_action :set_response, only: [:show, :edit, :update, :destroy, :skip]
+  before_action :set_participant, only: [:edit, :update, :skip]
   before_action  only: [:edit, :update] do
     session_participant_only params[:participant_id]
   end
 
   # GET /responses/1/edit
   def edit
+  end
+
+  def skip
+    @response.skip
+    if @response.next
+      redirect_to edit_participant_response_path @participant, @response.next
+    else
+      redirect_to complete_participant_test_case_path @participant, @participant.test_case(@response.test_case)
+    end
   end
 
   # PATCH/PUT /responses/1

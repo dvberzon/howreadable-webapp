@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_20_150207) do
+ActiveRecord::Schema.define(version: 2019_09_20_164802) do
 
   create_table "participant_test_cases", force: :cascade do |t|
     t.integer "participant_id"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_09_20_150207) do
     t.string "pattern"
     t.boolean "responded"
     t.integer "index"
+    t.boolean "skipped"
     t.index ["participant_id"], name: "index_responses_on_participant_id"
   end
 

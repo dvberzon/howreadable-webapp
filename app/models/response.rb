@@ -32,5 +32,9 @@ class Response < ApplicationRecord
   def self.answered
     where.not(given_answer: nil)
   end
+
+  def skip
+    self.update_attribute(:skipped, true)
+  end
   
 end
