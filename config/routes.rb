@@ -2,10 +2,14 @@ Rails.application.routes.draw do
   
 
   namespace :admin do
+    get 'test_cases/index'
+  end
+  namespace :admin do
     root to: 'home#index'
     resources :participants, only: [:index, :show, :destroy]
     resources :responses, only: [:index]
     resources :data_downloads, only: [:show]
+    resources :test_cases, only: [:index, :show]
   end
 
   resources :participants do

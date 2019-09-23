@@ -1,0 +1,22 @@
+// Place all the styles related to the admin/test_cases controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+pre {
+  padding: 0px;
+  code.hljs {
+    padding: 20px;
+  }
+}
+
+ul.snippets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+  li {
+    vertical-align: top;
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+  }
+}

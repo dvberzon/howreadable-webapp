@@ -26,7 +26,7 @@ class Response < ApplicationRecord
   end
 
   def correct?
-    given_answer == exercise_obj.correct_answer.to_s
+    given_answer == exercise_obj.try(:correct_answer).try(:to_s)
   end
 
   def self.answered
