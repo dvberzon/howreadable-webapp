@@ -1,12 +1,17 @@
 <h1>How to take part</h1>
 <div class="intro">
 <p class="lead">Please read the following instructions carefully</p>
-<p>This is an experiment to test the readability of various coding patterns.</p>
-<p>We are going to show you a series of code snippets. For each snippet, we would like you to read it until you feel you understand what it does. We will then ask you to answer a question about, specifically the value of a variable after the code is run.</p>
-<p>Here is an example:</p>
-<hr />
-<p>Look at the following code.</p>
-<pre><code class='language-javascript' lang='javascript'>function getResult(value) {
+<div class="instructions">
+  <div class="panel">
+    <p>This is an experiment to test the readability of various coding patterns.</p>
+    <p>We are going to show you a series of code snippets. For each snippet, we would like you to read it until you feel you understand what it does.</p>
+    <p>We will then ask you to answer a question about, specifically the value of a variable after the code is run.</p>
+    <p>Here is an example:</p>
+  </div>
+  <div class="panel panel-grey">
+    <p>Look at the following code.</p>
+    <pre><code class='language-javascript' lang='javascript'><!--
+-->function getResult(value) {
   if (value &lt; 10) {
     return 'yes';
   } else {
@@ -14,30 +19,53 @@
   }
 }
 
-var result = getResult(3);
-</code></pre>
-<p>What value will the variable <code>result</code> have?</p>
+var result = getResult(3);<!--
+--></code></pre>
+    <p>What value will the variable <code>result</code> have?</p>
+  </div>
+  <hr />
+  <p>We will ask you to choose the correct value for the variable <code>result</code> from a number of options. For example:</p>
+  <ul class="answer-list">
+    <li><code>'yes'</code></li>
+    <li><code>'no'</code></li>
+    <li><code>null</code></li>
+  </ul>
+  <p>Once you have selected the option you think is correct, we will then show you another snippet.</p>
+  <p>There are <strong>11</strong> experiments in total, where each has a series of six snippets. You can do as few or as many as you like, and you can stop and come back later if you'd like to.</p>
+  <h4>Tips for taking part</h4>
+  <div class="panel panel-grey panel-img">
+    <%= image_tag 'time.svg' %>
+  </div>
+  <div class="panel">
+    <h5>Time is of the essence</h5>
+    <p>As part of the experiment, we will be measuring the amount of time you read each snippet before answering the question. There is no need to rush, but please try to answer the question as soon as you are confident that you understand what the code does.</p>
+  </div>
+  <hr />
+  <div class="panel">
+    <h5>Sorry about the smell</h5>
+    <p>Some of the code you see will smell bad. The snippets are designed specifically for the experiment and will not necessarily follow good coding patterns or be particularly readable. You may find some of the code offensive or confusing. Please hold your nose and do your best to answer the question.</p>
+  </div>
+  <div class="panel panel-grey panel-img">
+    <%= image_tag 'smell.svg' %>
+  </div>
+  <hr />
+  <div class="panel panel-grey panel-img">
+    <%= image_tag 'tricks.svg' %>
+  </div>
+  <div class="panel">
+    <h5>Nothing up our sleeve</h5>
+    <p>There are no tricks or hidden bugs in the snippets, so please take them at face value. There is no need to spend ages searching for the catch. If the correct answer seems obvious, that's because it is.</p>
+  </div>
+  <hr />
+  <div class="panel">
+    <h5>No guesswork</h5>
+    <p>If you are not sure what the code does, or there is part of it you don't understand, please don't guess. We have tried to use code syntax and patterns that most developers will understand, but we may not have been successful. If you don't understand the code, that is our fault, not yours, so please let us know by selecting the &quot;I don't know&quot; option.</p>
+  </div>
+  <div class="panel panel-grey panel-img">
+    <%= image_tag 'guess.svg' %>
+  </div>
+</div>
 <hr />
-<p>We will ask you to choose the correct value for the variable <code>result</code> from a number of options. For example:</p>
-<ul>
-<li><code>'yes'</code></li>
-<li><code>'no'</code></li>
-<li><code>null</code></li>
-
-</ul>
-<p>Once you have selected the option you think is correct, we will then show you another snippet.</p>
-<p>There are <strong>X</strong> experiments in total, where each has a series of six snippets. You can do as few or as many as you like, although we would appreciate it if you could complete all six snippets for any experiments you start.</p>
-<p>Here are a few tips for taking part:</p>
-
-<h4>Time is of the essence</h4>
-<p>As part of the experiment, we will be measuring the amount of time you read each snippet before answering the question. There is no need to rush, but please try to answer the question as soon as you are confident that you understand what the code does.</p>
-<h4>Sorry about the smell</h4>
-<p>Some of the code you see will smell bad. The snippets are designed specifically for the experiment and will not necessarily follow good coding patterns or be particularly readable. You may find some of the code offensive or confusing. Please hold your nose and do your best to answer the question.</p>
-<h4>Nothing up our sleeve</h4>
-<p>There are no tricks or hidden bugs in the snippets, so please take them at face value. There is no need to spend ages searching for the catch. If the correct answer seems obvious, that's because it is.</p>
-<h4>No guesswork</h4>
-<p>If you are not sure what the code does, or there is part of it you don't understand, please don't guess. We have tried to use code syntax and patterns that most developers will understand, but we may not have been successful. If you don't understand the code, that is our fault, not yours, so please let us know by selecting the &quot;I don't know&quot; option.</p>
-
-</ul><p class="text-right">
+<p class="text-right">
   <%= link_to new_participant_test_case_path(@participant), :class=>'button button-primary' do %>Start experiment<% end %>
 </p>
