@@ -18,6 +18,24 @@ div.intro {
       font-weight: 400;
     }
   }
+  div.conditions {
+    text-align: center;
+    ul {
+      text-align: left;
+      display: inline-block;
+      margin: 0 auto;
+      font-size: 20px;
+      margin-bottom: 2.5rem;
+      list-style: none;
+      li::before {
+        content: '\2713';
+        font-size: 40px;
+        color: #a6e22e;
+        vertical-align: middle;
+        margin-right: 16px;
+      }
+    }
+  }
   em {
     color: #69d;
     font-weight: 600;
