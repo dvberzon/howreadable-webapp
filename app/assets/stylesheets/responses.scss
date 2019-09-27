@@ -111,3 +111,57 @@ div#response {
     }
   }
 }
+
+div.progress-wheel {
+  position: relative;
+  width: 70px;
+  float: right;
+  div.number {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    text-align: center;
+    top: 20px;
+    left: 0;
+    right: 0;
+    font-size: 30px;
+    line-height: 30px;
+    vertical-align: baseline;
+  }
+  .seg {
+    fill: #fff;
+  }
+  .progress-1 {
+    .seg1 {
+      fill: #a6e22e;
+    }
+  }
+  
+  .progress-2 {
+    .seg1, .seg2 {
+      fill: #a6e22e;
+    }
+  }
+  
+  .progress-3 {
+    .seg1, .seg2, .seg3 {
+      fill: #a6e22e;
+    }
+  }
+  
+  .progress-4 {
+    .seg1, .seg2, .seg3, .seg4 {
+      fill: #a6e22e;
+    }
+  }
+  .progress-5 {
+    .seg1, .seg2, .seg3, .seg4, .seg5 {
+      fill: #a6e22e;
+    }
+  }
+  .progress-6 {
+    .seg {
+      fill: #a6e22e;
+    }
+  }
+  
+}
