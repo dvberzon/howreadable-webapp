@@ -19,36 +19,51 @@ div#participant {
 }
 
 div.instructions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  div.panel {
-    box-sizing: border-box;
-    width: 49%;
-    @media only screen and (max-width: 900px) {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  }
-  hr {
-    width: 100%;
-  }
-  h4 {
-    width: 100%;
-    padding-bottom: 10px;
-    border-bottom: solid 1px #ddd;
-  }
-  div.panel-grey {
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #eee;
-  }
-  div.panel-img {
-    text-align: center;
+  div.panel-row {
     display: flex;
-    img {
-      margin: auto;
-      height: 180px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: solid 1px #eee;
+    padding-bottom: 20px;
+    margin: 0 -8px 20px;
+    div.panel {
+      padding: 16px;
+      box-sizing: border-box;
+      flex-grow: 1;
+      width: 50%;
+      @media only screen and (max-width: 900px) {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+    div.panel-full {
+      max-width: 100%;
+    }
+    hr {
+      width: 100%;
+    }
+    h4 {
+      width: 100%;
+      padding-bottom: 10px;
+      border-bottom: solid 1px #ddd;
+    }
+    div.panel-grey {
+      border-radius: 10px;
+      background-color: #eee;
+    }
+    div.panel-img {
+      max-width: 30%;
+      text-align: center;
+      display: flex;
+      img {
+        margin: auto;
+        height: 180px;
+      }
+      @media only screen and (max-width: 900px) {
+        max-width: 100%;
+        order: -1;
+      }
     }
   }
   ul.answer-list {
@@ -61,7 +76,7 @@ div.instructions {
         padding: 10px;
         font-size: 20px;
       }
-      padding: 10px 30px;
+      padding: 10px 5%;
     }
   }
 }
