@@ -19,6 +19,9 @@ div#participant {
 }
 
 div.instructions {
+  p.lead {
+    border-bottom: solid 1px #eee;
+  }
   div.panel-row {
     display: flex;
     flex-wrap: wrap;
@@ -27,7 +30,7 @@ div.instructions {
     padding-bottom: 20px;
     margin: 0 -8px 20px;
     div.panel {
-      padding: 16px;
+      padding: 0 16px;
       box-sizing: border-box;
       flex-grow: 1;
       width: 50%;
@@ -46,23 +49,62 @@ div.instructions {
     h4 {
       width: 100%;
       padding-bottom: 10px;
-      border-bottom: solid 1px #ddd;
-    }
-    div.panel-grey {
-      border-radius: 10px;
-      background-color: #eee;
     }
     div.panel-img {
+      padding: 16px;
+      background-color: #000;
+      border-radius: 10px;
       max-width: 30%;
       text-align: center;
       display: flex;
-      img {
+      svg {
         margin: auto;
         height: 180px;
+        fill: #fff;
       }
       @media only screen and (max-width: 900px) {
         max-width: 100%;
         order: -1;
+      }
+    }
+    &.time {
+      div.panel-img {
+        svg {
+          fill: #f92672;
+        }
+      }
+      h4 {
+        border-bottom: 2px solid #f92672;
+      }
+    }
+    &.smell {
+      div.panel-img {
+        svg {
+          fill: #a6e22e;
+        }
+      }
+      h4 {
+        border-bottom: 2px solid #a6e22e;
+      }
+    }
+    &.tricks {
+      div.panel-img {
+        svg {
+          fill: #ae81ff;
+        }
+      }
+      h4 {
+        border-bottom: 2px solid #ae81ff;
+      }
+    }
+    &.guess {
+      div.panel-img {
+        svg {
+          fill: #e6db74;
+        }
+      }
+      h4 {
+        border-bottom: 2px solid #e6db74;
       }
     }
   }
