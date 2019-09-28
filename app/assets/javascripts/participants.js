@@ -20,4 +20,19 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('participant_client_w').value = clientWidth;
     document.getElementById('participant_client_h').value = clientHeight;
   }
+
+  var navButtons = document.querySelectorAll('button.nav')
+  console.log(navButtons);
+  function navToSection(event) {
+    var sectionId = event.target.dataset.target;
+    var sections = document.querySelectorAll('section');
+    for(var i = 0; i < sections.length; i++){
+      sections[i].classList.remove('in');
+    } 
+    document.getElementById(sectionId).classList.add('in');
+    window.scrollTo(0,0);
+  }
+  for(var i = 0; i < navButtons.length; i++){
+    navButtons[i].addEventListener('click', navToSection);  
+  }
 });

@@ -63,6 +63,13 @@ div.footer {
   text-align: right;
 }
 
+.actions{
+  text-align: right;
+  .back {
+    float: left;
+  }
+}
+
 p.share-link {
   font-size: 20px;
   text-align: center;

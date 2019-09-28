@@ -1,16 +1,26 @@
 <h1>How readable?</h1>
 <div class="intro">
   <p class="lead">We need your help with an investigation into <em>readable code</em></p>
-  <p>Are you?<p>
-  <div class="conditions">
-    <ul>
-      <li>A <em>computer programmer</em>?</li>
-      <li>Familiar with javascript?</li>
-      <li>Free for about <em>10 minutes</em>?</li>
-    </ul>
-  </div>
-  <p>If so, we would like to show you some snippets of source code and ask you questions about them.</p>
-  <p>The aim is to investigate how different coding patterns affect readability.</p>
+  <div class="row">
+    <div class="six columns">
+      <p class="lead">Are you?<p>
+      <div class="conditions">
+        <ul>
+          <li>A <em>computer programmer</em>?</li>
+          <li>Familiar with JavaScript?</li>
+          <li>Free for about <em>10 minutes</em>?</li>
+        </ul>
+      </div>
+    </div>
+    <div class="six columns">
+      <p class="lead">If so you can help us.<p>
+      <p>We would like to show you some snippets of source code and ask you questions about them.</p>
+      <p>The aim is to investigate how different coding patterns affect readability.</p>
+    </div>
+</div>
+<p class="take-part">
+  <%= link_to "I'd like to take part", start_path('js'), :class=>"button button-primary" %>
+</p>
 <%#  <p class="languages">
   <%# Experiment.languages.each do |id, name| %#>
     <%= link_to start_path(id), :class=>"button" do %#>
@@ -19,7 +29,4 @@
   <% end %#>
   </p>
 %>
-  <p class="take-part">
-    <%= link_to "I'd like to take part", start_path('js'), :class=>"button button-primary" %>
-  </p>
 </div>
