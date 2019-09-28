@@ -19,7 +19,7 @@
         <div class="field">
           <%= form.label :given_answer, 'Your answer:' %>
           <div class="option-buttons answer-options">
-            <% @response.answer_options.each do |id, name| %>
+            <% @response.answer_options.shuffle.each do |id, name| %>
               <span class="option">
                 <%= form.radio_button :given_answer, id %>
                 <%= form.label :given_answer, name, value: id, :class=>'button' %>
