@@ -1,11 +1,10 @@
 class TestCase
-  attr_accessor :id, :priority, :name, :intro, :languages, :patterns, :exercises, :question
+  attr_accessor :id, :priority, :name, :languages, :patterns, :exercises, :question
   
   def initialize id, yaml
     self.id = id
     self.priority = yaml['priority']
     self.name = yaml['name']
-    self.intro = yaml['intro']
     self.languages = yaml['languages']
     self.patterns = yaml['patterns']
     self.question = yaml['question']

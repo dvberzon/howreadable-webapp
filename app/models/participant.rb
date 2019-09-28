@@ -21,16 +21,16 @@ class Participant < ApplicationRecord
   end
 
   def start_next_test_case
-    next_id = test_case_order[num_completed_test_cases]
+    next_id = test_case_order[num_started_test_cases]
     return unless next_id
     start_test_case next_id
   end
 
   def num_available_test_cases
-    test_case_order.length - num_completed_test_cases
+    test_case_order.length - num_started_test_cases
   end
 
-  def num_completed_test_cases
+  def num_started_test_cases
     participant_test_cases.length
   end
 
@@ -40,6 +40,10 @@ class Participant < ApplicationRecord
 
   def test_case id
     participant_test_cases.where(test_case_id: id).first
+  end
+
+  def test_case_index id
+    test_case_order.index id
   end
 
   def randomize_test_case_order

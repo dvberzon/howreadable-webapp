@@ -32,6 +32,10 @@ class ParticipantTestCase < ApplicationRecord
     update_attribute(:completed, true);
   end
 
+  def index
+    participant.test_case_order.index(test_case_id) || 0
+  end
+
   def generate_responses
     # return if there is no language choice
     return unless participant && participant.language_choice

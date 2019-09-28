@@ -20,14 +20,16 @@ div#response {
   margin-top: 40px;
   div.question {
     display: block;
-    code {
-      padding: 15px 30px;
-      font-size: 20px;
-      line-height: 28px;
-      font-family: Inconsolata, courier, monospace;
-      @media only screen and (max-width: 970px) {
-        font-size: 16px;
-        padding: 20px;
+    pre {
+      code {
+        padding: 15px 30px;
+        font-size: 20px;
+        line-height: 28px;
+        font-family: Inconsolata, courier, monospace;
+        @media only screen and (max-width: 970px) {
+          font-size: 16px;
+          padding: 20px;
+        }
       }
     }
     @media only screen and (max-width: 700px) {
@@ -109,9 +111,14 @@ div#response {
 }
 
 div.progress-wheel {
-  position: relative;
+  position: absolute;
+  padding: 0 8px;
+  top: 24px;
+  right: 16px;
+  background-color: white;
   width: 70px;
   float: right;
+  fill: #1EAEDB;
   div.number {
     font-family: Arial, Helvetica, sans-serif;
     position: absolute;
@@ -128,35 +135,35 @@ div.progress-wheel {
   }
   .progress-1 {
     .seg1 {
-      fill: #a6e22e;
+      fill: #1EAEDB;
     }
   }
   
   .progress-2 {
     .seg1, .seg2 {
-      fill: #a6e22e;
+      fill: #1EAEDB;
     }
   }
   
   .progress-3 {
     .seg1, .seg2, .seg3 {
-      fill: #a6e22e;
+      fill: #1EAEDB;
     }
   }
   
   .progress-4 {
     .seg1, .seg2, .seg3, .seg4 {
-      fill: #a6e22e;
+      fill: #1EAEDB;
     }
   }
   .progress-5 {
     .seg1, .seg2, .seg3, .seg4, .seg5 {
-      fill: #a6e22e;
+      fill: #1EAEDB;
     }
   }
   .progress-6 {
     .seg {
-      fill: #a6e22e;
+      fill: #1EAEDB;
     }
   }
   

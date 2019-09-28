@@ -1,7 +1,5 @@
 <%= render 'progress' %>
-<h4>How readable?</h4>
-<div id="response-form">
-  <p>Thank you for your answer</p>
-  <%= link_to 'Next', edit_participant_response_path(@participant, @response.next), :class=>'button primary' %>
-  <p>If you like, you can bookmark this page and carry on when you have more time</p>
-</div>
+<h3><%= random_thanks %></h3>
+<h5>Are you ready for the next snippet?</h5>
+<p class="highlight">You can bookmark this page and continue at a later date.</p>
+<p class="actions"><%= link_to 'Show next snippet', edit_participant_response_path(@participant, @response.next), :class=>'button button-primary' %><p>

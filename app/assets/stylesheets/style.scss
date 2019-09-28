@@ -20,14 +20,37 @@ main {
   flex: 1 0 auto
 }
 
+h1.brand, h4.brand {
+  font-family: Inconsolata, courier, monospace;
+  border-bottom: solid 1px #1EAEDB;
+  margin-bottom: 30px;
+}
+
+h1.brand {
+  margin-top: 10px;
+}
+
+/* .button.button-primary {
+  background-color:  #ae81ff;
+  border-color:  #ae81ff;
+  &:hover {
+    background-color: #956edc;
+    border-color:  #956edc;
+  }
+} */
+
+code {
+  font-family: Inconsolata, courier, monospace;
+}
 
 div.container {
+  position: relative;
   margin: 40px auto;
   max-width: 950px;
   width: calc(100% - 10px);
   border-radius: 30px;
   background-color: white;
-  padding: 30px 50px;
+  padding: 20px 50px 30px;
 }
 /*
 div.container.home {
@@ -68,6 +91,10 @@ div.footer {
   .back {
     float: left;
   }
+}
+
+p.highlight {
+  color: #1EAEDB;
 }
 
 p.share-link {
