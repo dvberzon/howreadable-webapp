@@ -25,6 +25,10 @@ h1.brand, h4.brand {
   font-family: Inconsolata, courier, monospace;
   border-bottom: solid 1px #1EAEDB;
   margin-bottom: 30px;
+  em {
+    font-style: normal;
+    color: #1EAEDB;
+  }
 }
 
 h1.brand {
