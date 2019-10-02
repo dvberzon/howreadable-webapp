@@ -9,7 +9,7 @@ class Exercise
   end
 
   def answer_options lang
-    answers.map {|ans| [ans, Experiment.translate_answer(ans, lang)]}
+    answers
   end
 
 end

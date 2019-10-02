@@ -44,6 +44,12 @@ h1.brand {
   }
 } */
 
+section.content {
+  box-sizing: border-box;
+  min-height: 250px;
+  padding-bottom: 100px;
+}
+
 code {
   font-family: Inconsolata, courier, monospace;
 }
@@ -98,7 +104,8 @@ div.footer {
   }
 }
 
-p.highlight {
+div.bookmark {
+  text-align: right;
   color: #1EAEDB;
 }
 
