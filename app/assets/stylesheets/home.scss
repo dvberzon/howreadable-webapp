@@ -45,6 +45,12 @@ div.intro {
     font-weight: 600;
     font-style: normal;
   }
+  @media (max-width: 730px) {
+    .six.columns {
+      width: 100%;
+      margin: 0px;
+    }
+  }
 }
 /*
 p.languages {
@@ -73,7 +79,7 @@ p.languages {
 }
 */
 p.take-part {
-  margin: 40px 0 20px;
+  margin: 30px 0 20px;
   text-align: center;
   .button {
     min-width: 120px;

@@ -34,7 +34,7 @@ div#response {
     }
     @media only screen and (max-width: 700px) {
       pre {
-        margin: 0 -40px 2.5rem;
+        margin: 0 -24px 2.5rem;
       }
     }
   }
@@ -52,6 +52,9 @@ div#response {
       }
       .answer-options{
         text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;    
         label {
           font-family: Inconsolata, courier, monospace;
           font-size: 18px;
@@ -126,6 +129,13 @@ div.progress-wheel {
     font-size: 30px;
     line-height: 30px;
     vertical-align: baseline;
+  }
+  @media only screen and (max-width: 700px) {
+    width: 50px;
+    div.number {
+      top: 10px;
+      font-size: 24px;
+    }
   }
   .seg {
     fill: #fff;

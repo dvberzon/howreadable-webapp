@@ -13,6 +13,7 @@ body {
   height: 100%;
   font-size: 1.8em;
   display: flex;
+  min-width: 250px;
   flex-direction: column;
 }
 
@@ -62,6 +63,9 @@ div.container {
   border-radius: 30px;
   background-color: white;
   padding: 20px 50px 30px;
+  @media only screen and (max-width: 600px) {
+    padding: 16px 24px;
+  }
 }
 /*
 div.container.home {
@@ -99,8 +103,16 @@ div.footer {
 
 .actions{
   text-align: right;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   .back {
-    float: left;
+    margin-right: auto;
+  }
+  @media (max-width: 470px) {
+    button, a, input {
+      width: 100%;
+    }
   }
 }
 
