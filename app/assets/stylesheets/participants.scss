@@ -127,7 +127,12 @@ div.instructions {
         padding: 10px;
         font-size: 20px;
       }
-      padding: 8px 5%;
+      padding: 8px 5px;
+    }
+  }
+  @media (max-width: 720px) {
+    .six.columns {
+      width: 100%;
     }
   }
 }
