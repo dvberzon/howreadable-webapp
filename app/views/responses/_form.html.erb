@@ -22,7 +22,7 @@
               <% @response.answer_options.shuffle.each_with_index do |ans, index| %>
                 <span class="option">
                   <%= form.radio_button :given_answer, ans, id: "response_#{index}" %>
-                  <%= form.label :given_answer, ans, for: "response_#{index}", :class=>'button' %>
+                  <%= form.label :given_answer, ans.to_s, for: "response_#{index}", :class=>'button' %>
                 </span>
               <% end %>
             </div>
