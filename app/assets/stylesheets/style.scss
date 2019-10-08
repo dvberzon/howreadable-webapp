@@ -86,17 +86,6 @@ div.option-buttons {
   }
 }
 
-div.footer {
-  flex-shrink: 0;
-  text-align: right;
-  color: white;
-  font-weight: 600;
-  padding: 10px;
-  a {
-    color: #ccf;
-  }
-}
-
 .text-right {
   text-align: right;
 }
@@ -149,5 +138,34 @@ div.mobile-warning {
   display: none;
   @media (max-width: 550px) {
     display: block;
+  }
+}
+
+
+div.footer {
+  flex-shrink: 0;
+  color: white;
+  font-size: 0.95em;
+  padding: 24px 16px ;
+  background-color: rgba(0, 0, 0, 0.5);
+  vertical-align: top;
+  ul {
+    list-style: none;
+    text-align: right;
+    margin: 0;
+    a {
+      color: #33C3F0;
+      text-decoration: none;
+    }
+  }
+  a.ocasta-logo {
+    width: 120px;
+    display: block;
+    margin-top: 4px;
+    svg {
+      fill: white;
+      background-color: #ed0000;
+      padding: 10px;
+    }
   }
 }
