@@ -138,3 +138,16 @@ p.contact {
   text-align: right;
   margin-top: 50px;
 }
+
+div.warning {
+  background-color: #e6db74;
+  padding: 10px;
+  text-align: center;
+}
+
+div.mobile-warning {
+  display: none;
+  @media (max-width: 550px) {
+    display: block;
+  }
+}
