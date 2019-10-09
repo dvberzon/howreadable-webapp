@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def homepage? 
-    controller_name == "home" && action_name == "index"
+    controller_name == "home" && ["index","closed"].include?(action_name)
   end
 end

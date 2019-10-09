@@ -25,8 +25,8 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'home#index'
-  #root to: 'home#closed'
+  #root to: 'home#index'
+  root to: 'home#closed'
   get 'home' => 'home#index'
   get 'thankyou' => 'home#thankyou', as: :thankyou
   get 'closed' => 'home#closed'
