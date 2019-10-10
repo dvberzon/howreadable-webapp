@@ -22,6 +22,10 @@ main {
   flex: 1 0 auto
 }
 
+h1 {
+  font-size: 4.2rem;
+}
+
 h1.brand, h4.brand {
   font-family: Inconsolata, courier, monospace;
   border-bottom: solid 1px #1EAEDB;
@@ -34,6 +38,7 @@ h1.brand, h4.brand {
 
 h1.brand {
   margin-top: 10px;
+  font-size: 5.0rem;
 }
 
 /* .button.button-primary {
