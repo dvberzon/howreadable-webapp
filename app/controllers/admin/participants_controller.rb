@@ -6,7 +6,7 @@ class Admin::ParticipantsController < ApplicationController
   # GET /participants
   # GET /participants.json
   def index
-    @participants = Participant.includes(:responses).order(:id)
+    @participants = Participant.includes(:responses, :participant_test_cases).order(created_at: :desc)
       .paginate(:page => params[:page])
   end
 
