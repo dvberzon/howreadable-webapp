@@ -22,7 +22,8 @@
       <%= k %>
     </div>
     <div class="panel-body">
-      <% tc.each do |k, example| %>
+      <p>Total Participants:  <span class="text-info"><%= tc[:participants] %></span></p>
+      <% tc[:patterns].each do |k, example| %>
         <h4><%= k %></h4>
         <% example.each do |lang, stat| %>
           <ul class="list-inline <%= lang==:overall ? 'text-danger' : 'text-muted' %>">

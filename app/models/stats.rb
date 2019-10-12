@@ -20,13 +20,21 @@ class Stats
       lang = response.participant.language_choice
       participants[lang] = (participants[lang] || 0) + 1
     end
-    test_case = (test_cases[response.test_case] ||= {})
-    pattern = (test_case[response.pattern] ||= {})
+    test_case = (test_cases[response.test_case] ||= {
+      participant_ids: {},
+      participants: 0,
+      patterns: {}
+    })
+    unless test_case[:participant_ids][response.participant_id]
+      test_case[:participant_ids][response.participant_id] = true
+      test_case[:participants] += 1
+    end
+    pattern = (test_case[:patterns][response.pattern] ||= {})
     pattern[:overall] ||= ({
       total: 0,
       total_ms: 0,
       total_correct: 0,
-      total_readable: 0
+      total_readable: 0,
     })
     pattern[lang] ||= ({
       total: 0,
@@ -43,7 +51,7 @@ class Stats
 
   def calculate_averages
     test_cases.each do |k, tc|
-      tc.each do |k, pattern|
+      tc[:patterns].each do |k, pattern|
         pattern.each do |lang, stat|
           if(total = stat[:total])
             stat[:average_ms] = stat[:total_ms].to_f / total
