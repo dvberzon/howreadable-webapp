@@ -27,6 +27,10 @@ class TestCase
     exercises.find {|exercise| exercise.id.to_s == id.to_s}
   end
 
+  def self.random_id_sequence
+    Experiment.test_case_ids.shuffle
+  end
+
   # generate a sequence of test_case ids based on the priority of each test case
   # The first test case should be priority 1
   # Subsequent test cases should be random with weighted by priority

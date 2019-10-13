@@ -48,7 +48,8 @@ class Participant < ApplicationRecord
 
   def randomize_test_case_order
     unless test_case_order
-      self.test_case_order = TestCase.weighted_random_id_sequence
+      # self.test_case_order = TestCase.weighted_random_id_sequence
+      self.test_case_order = TestCase.random_id_sequence
     end
   end
 end
