@@ -9,9 +9,7 @@
   </div>
   <div class="panel-body">
     <ul class="list-inline">
-      <% @stats.participants.each do |k, v| %>
-        <li><%= k %>: <span class="text-info"><%= v %></span></li>
-      <% end %>
+        <li>total: <span class="text-info"><%= @stats.participants %></span></li>
     </ul>
   </div>
 </div>
@@ -23,11 +21,11 @@
     </div>
     <div class="panel-body">
       <p>Total Participants:  <span class="text-info"><%= tc[:participants] %></span></p>
-      <% tc[:patterns].each do |k, example| %>
+      <% tc[:patterns].each do |k, pattern| %>
         <h4><%= k %></h4>
-        <% example.each do |lang, stat| %>
-          <ul class="list-inline <%= lang==:overall ? 'text-danger' : 'text-muted' %>">
-              <li><strong><%= lang %></strong></li>
+        <% pattern.each do |exercise, stat| %>
+          <ul class="list-inline <%= exercise==:overall ? 'text-danger' : 'text-muted' %>">
+              <li><strong><%= exercise %></strong></li>
               <li>Total: <span class="text-info"><%= stat[:total] %></span></li>
               <li>Ave Time (s): <span class="text-info"><%= "%.2f" % (stat[:average_ms]/1000.0) %></span></li>
               <li>Percentage correct: <span class="text-info"><%= "%.1f" %stat[:percent_correct] %></span></li>

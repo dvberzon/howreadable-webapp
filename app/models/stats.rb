@@ -2,7 +2,7 @@ class Stats
   attr_accessor :participants, :test_cases
   def initialize
     @participant_ids = {}
-    self.participants = {total: 0}
+    self.participants = 0
     self.test_cases = {}
     Response.includes(:participant).answered.find_each do |response|
       add_response response
@@ -13,12 +13,9 @@ class Stats
   private 
 
   def add_response response
-    lang = response.participant.language_choice
     unless @participant_ids[response.participant_id]
       @participant_ids[response.participant_id] = true
-      participants[:total] += 1 
-      lang = response.participant.language_choice
-      participants[lang] = (participants[lang] || 0) + 1
+      self.participants += 1 
     end
     test_case = (test_cases[response.test_case] ||= {
       participant_ids: {},
@@ -36,16 +33,19 @@ class Stats
       total_correct: 0,
       total_readable: 0,
     })
-    pattern[lang] ||= ({
+    exercise = response.exercise_id
+    pattern[exercise] ||= ({
       total: 0,
       total_ms: 0,
       total_correct: 0,
       total_readable: 0
     })
-    [pattern[:overall], pattern[lang]].each do |stat|
+    [pattern[:overall], pattern[exercise]].each do |stat|
       stat[:total] += 1
-      stat[:total_ms] += (response.responded_ms || 0)
-      stat[:total_correct] += 1 if response.correct?
+      if response.correct?
+        stat[:total_ms] += (response.responded_ms || 0)
+        stat[:total_correct] += 1
+      end
     end
   end
 
