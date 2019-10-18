@@ -49,7 +49,7 @@ class Stats
       end
     end
     if response.correct?
-      pattern['overall'][:correct_times].push response.responded_ms
+      pattern['overall'][:correct_times].push response.responded_ms / 1000
     end
   end
 

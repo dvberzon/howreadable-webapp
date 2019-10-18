@@ -45,6 +45,9 @@
               type: 'histogram',
               opacity: 0.5,
               name: '<%= k %>',
+              xbins: {
+                size: 5,
+              }
             })
           <% end %>
           Plotly.newPlot('histogram-<%= tc_key %>', data, {barmode: "overlay"});
