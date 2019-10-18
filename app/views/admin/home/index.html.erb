@@ -35,7 +35,8 @@
             <% end %>
           </div>
         <% end %>
-        <div id="histogram-<%= tc_key %>"></div>
+      </div>
+      <div id="histogram-<%= tc_key %>"></div>
         <script>
           var data = []
           <% tc[:patterns].each do |k, pattern| %>
@@ -48,7 +49,6 @@
           <% end %>
           Plotly.newPlot('histogram-<%= tc_key %>', data, {barmode: "overlay"});
         </script>
-      </div>
     </div>
   </div>
 <% end %>
