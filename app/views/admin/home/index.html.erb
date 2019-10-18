@@ -14,24 +14,41 @@
   </div>
 </div>
 
-<% @stats.test_cases.each do |k, tc| %>
+<% @stats.test_cases.each do |tc_key, tc| %>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <%= k %>
+      <%= tc_key %>
     </div>
     <div class="panel-body">
       <p>Total Participants:  <span class="text-info"><%= tc[:participants] %></span></p>
-      <% tc[:patterns].each do |k, pattern| %>
-        <h4><%= k %></h4>
-        <% pattern.each do |exercise, stat| %>
-          <ul class="list-inline <%= exercise==:overall ? 'text-danger' : 'text-muted' %>">
-              <li><strong><%= exercise %></strong></li>
-              <li>Total: <span class="text-info"><%= stat[:total] %></span></li>
-              <li>Ave Time (s): <span class="text-info"><%= "%.2f" % (stat[:average_ms]/1000.0) %></span></li>
-              <li>Percentage correct: <span class="text-info"><%= "%.1f" %stat[:percent_correct] %></span></li>
-          </ul>
+      <div class="row">
+        <% tc[:patterns].each do |k, pattern| %>
+          <div class="col col-xs-6">
+            <h4><%= k %></h4>
+            <% pattern.sort.each do |exercise, stat| %>
+              <ul class="list-inline <%= exercise=='overall' ? 'text-danger' : 'text-muted' %>">
+                  <li><strong><%= exercise %></strong></li>
+                  <li>Total: <span class="text-info"><%= stat[:total] %></span></li>
+                  <li>Ave Time (s): <span class="text-info"><%= "%.2f" % (stat[:average_ms]/1000.0) %></span></li>
+                  <li>Percentage correct: <span class="text-info"><%= "%.1f" %stat[:percent_correct] %></span></li>
+              </ul>
+            <% end %>
+          </div>
         <% end %>
-      <% end %>
+        <div id="histogram-<%= tc_key %>"></div>
+        <script>
+          var data = []
+          <% tc[:patterns].each do |k, pattern| %>
+            data.push({
+              x: <%= pattern['overall'][:correct_times] %>,
+              type: 'histogram',
+              opacity: 0.5,
+              name: '<%= k %>',
+            })
+          <% end %>
+          Plotly.newPlot('histogram-<%= tc_key %>', data, {barmode: "overlay"});
+        </script>
+      </div>
     </div>
   </div>
 <% end %>
