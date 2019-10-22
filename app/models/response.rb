@@ -36,5 +36,9 @@ class Response < ApplicationRecord
   def skip
     self.update_attribute(:skipped, true)
   end
+
+  def self.num_participants_answered
+    answered.distinct.pluck(:participant_id).count
+  end
   
 end

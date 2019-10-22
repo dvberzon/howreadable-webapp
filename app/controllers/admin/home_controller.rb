@@ -3,6 +3,9 @@ class Admin::HomeController < ApplicationController
   layout 'admin'
 
   def index
-    @stats = Stats.new
+    respond_to do |format|
+      format.html { @stats = Stats.new }
+      format.json { @total = Response.num_participants_answered }
+    end
   end
 end
