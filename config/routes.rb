@@ -12,24 +12,24 @@ Rails.application.routes.draw do
     resources :test_cases, only: [:index, :show]
   end
 
-  resources :participants do
-    resources :test_cases, only: [:new, :show] do
-      member do
-        get :complete
-      end
-    end
-    resources :responses do
-      member do
-        get :skip
-      end
-    end
-  end
+#  resources :participants do
+#    resources :test_cases, only: [:new, :show] do
+#      member do
+#        get :complete
+#      end
+#    end
+#    resources :responses do
+#      member do
+#        get :skip
+#      end
+#    end
+#  end
 
-  root to: 'home#index'
-  #root to: 'home#closed'
-  get 'home' => 'home#index'
-  get 'thankyou' => 'home#thankyou', as: :thankyou
+  #root to: 'home#index'
+  root to: 'home#closed'
+#  get 'home' => 'home#index'
+#  get 'thankyou' => 'home#thankyou', as: :thankyou
   get 'closed' => 'home#closed'
-  get 'start/:lang' => 'participants#new', as: :start
+#  get 'start/:lang' => 'participants#new', as: :start
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
