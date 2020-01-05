@@ -2,18 +2,138 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 div#participant {
-/*  div#contact {
-    display: none;
-    &.show {
-      display: block;
-    }
-  }
-*/
+
   @media only screen and (max-width: 550px) {
     .field {
       .text-right {
         text-align: left;
       }
+    }
+  }
+}
+
+div.instructions {
+  section {
+    display: none;
+    &.in {
+      display: block;
+    }
+  }
+  p.lead {
+    border-bottom: solid 1px #eee;
+    font-weight: bold;
+  }
+  div.panel-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: solid 1px #eee;
+    padding-bottom: 20px;
+    margin: 0 -8px 20px;
+    div.panel {
+      padding: 0 16px;
+      box-sizing: border-box;
+      flex-grow: 1;
+      width: 50%;
+      @media only screen and (max-width: 900px) {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+    div.panel-grey {
+      padding: 16px;
+      border-radius: 10px;
+      background-color: #eee;
+    }
+    div.panel-full {
+      max-width: 100%;
+    }
+    hr {
+      width: 100%;
+    }
+    h4 {
+      width: 100%;
+      padding-bottom: 10px;
+    }
+    h5 {
+      font-weight: bold;
+    }
+    div.panel-img {
+      padding: 16px;
+      background-color: #000;
+      border-radius: 10px;
+      max-width: 30%;
+      text-align: center;
+      display: flex;
+      svg {
+        margin: auto;
+        height: 180px;
+        fill: #fff;
+      }
+      @media only screen and (max-width: 900px) {
+        max-width: 100%;
+        order: -1;
+      }
+    }
+    &.time {
+      div.panel-img {
+        svg {
+          fill: #f92672;
+        }
+      }
+      h5 {
+        border-bottom: 2px solid #f92672;
+      }
+    }
+    &.smell {
+      div.panel-img {
+        svg {
+          fill: #a6e22e;
+        }
+      }
+      h5 {
+        border-bottom: 2px solid #a6e22e;
+      }
+    }
+    &.tricks {
+      div.panel-img {
+        svg {
+          fill: #ae81ff;
+        }
+      }
+      h5 {
+        border-bottom: 2px solid #ae81ff;
+      }
+    }
+    &.guess {
+      div.panel-img {
+        svg {
+          fill: #e6db74;
+        }
+      }
+      h5 {
+        border-bottom: 2px solid #e6db74;
+      }
+    }
+  }
+  ul.answer-list {
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    li {
+      display: inline-block;
+      code {
+        padding: 10px;
+        font-size: 20px;
+      }
+      padding: 8px 5px;
+    }
+  }
+  @media (max-width: 720px) {
+    .six.columns {
+      width: 100%;
+      margin: 0px;
     }
   }
 }

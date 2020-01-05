@@ -1,7 +1,8 @@
-<h1>How readable?</h1>
-<p>In this experiment we will show you a series of <%= @participant_test_case.responses.length %> code snippets</p>
-<p><mark>Specific instructions for the test case</mark></p>
-<p><%= @participant_test_case.test_case.intro %></p>
+<h2>Experiment <%= @participant_test_case.index + 1 %></h2>
+<section class="content">
+  <p>We are about to show you a series of <%= @participant_test_case.responses.length %> code snippets</p>
+  <p>After reading each snippet, we will ask you for the value of the variable <code>result</code></p>
+</section>
 <p class="text-right">
   <%= link_to  edit_participant_response_path(@participant, @participant_test_case.responses.first), class: 'button button-primary' do %>Start<% end %>
 </p>

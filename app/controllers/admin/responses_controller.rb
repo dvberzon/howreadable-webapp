@@ -5,7 +5,7 @@ class Admin::ResponsesController < ApplicationController
   # GET /responses
   # GET /responses.json
   def index
-    @responses = Response.paginate(:page => params[:page])
+    @responses = Response.order(created_at: :desc).paginate(:page => params[:page])
   end
 
 end

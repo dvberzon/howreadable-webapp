@@ -1,8 +1,4 @@
-<h1>How readable?</h1>
+<%= render 'progress' %>
 <div id="response-form">
-  <% percent = response_progress_percent %>
-  <div class="progress-bar">
-    <div class="progress" style="width:<%= percent %>"><%= percent %></div>
-  </div>
   <%= render 'form', response: @response, participant: @participant %>
 </div>

@@ -1,6 +1,7 @@
 class Experiment
   def self.yaml
-    @@yaml ||= YAML.load_file(Rails.root.join('experiment','experiment.yml'));
+    #@yaml ||= 
+    YAML.load_file(Rails.root.join('experiment','experiment.yml'));
   end
 
   def self.lang_name lang

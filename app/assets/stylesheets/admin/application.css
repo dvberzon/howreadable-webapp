@@ -12,7 +12,12 @@
  *
  *= require normalize.css
  *= require bootstrap.min
+ *= require monokai-sublime.css
  *= require_tree .
  *= require_self
  */
 tr.greyed-out td, tr.greyed-out td a { color: #ccc; }
+
+body {
+  margin-top: 20px;
+}

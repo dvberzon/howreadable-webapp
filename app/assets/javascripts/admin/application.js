@@ -14,3 +14,5 @@
 //= require activestorage
 //= require highlight.pack
 //= require_tree .
+
+hljs.initHighlightingOnLoad();

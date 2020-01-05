@@ -2,9 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>How readable - code readability testing</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>How Readable? - code readability experiment</title>
+    <meta name="description" content="We all want to write Readable code, but what makes code readable? This is your chance to take part in our experiment to find the answer!">
+    <meta name="author" content="Daniel van Berzon">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@dvberzon">
+    <meta name="twitter:title" content="How Readable? - code readability experiment">
+    <meta name="twitter:description" content="We all want to write Readable code, but what makes code readable? This is your chance to take part in our experiment to find the answer!">
+    <meta name="twitter:creator" content="@dvberzon">
+    <!-- Twitter Summary card images must be at least 120x120px -->
+    <meta name="twitter:image" content="https://howreadable.com/code.jpg">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="How Readable? - code readability experiment" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://howreadable.com" />
+    <meta property="og:image" content="https://howreadable.com/code.jpg" />
+    <meta property="og:description" content="We all want to write Readable code, but what makes code readable? This is your chance to take part in our experiment to find the answer!" />
+    <meta property="og:site_name" content="Howreadable.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Raleway:400,300,200,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -20,16 +36,50 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5bb103e5752ef70011efcfa3&product='inline-share-buttons' async='async'></script>
-
   </head>
   <body>
     <main>
-      <div class="container <%= container_class %>">
+      <div class="warning mobile-warning"><strong>Warning</strong>: This experiment is not suitable for mobile screens.</div>
+      <noscript>
+        <div class="warning"><strong>Warning</strong>: This page will not operate with JavaScript turned off</div>
+      </noscript>
+      <div class="container content-container <%= container_class %>">
+        <% unless homepage? %>
+          <h4 class="brand">How readable<em>?</em></h4>
+        <% end %>
         <%= yield %>
       </div>
     </main>
     <div class="footer">
-      &copy; 2019 <a href="mailto:info@howreadable.com">Daniel van Berzon</a>
+      <div class="container">
+        <ul class="u-pull-right">
+          <li>
+            &copy; 2019 <a href="mailto:info@howreadable.com">Daniel van Berzon</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://vanberzon.com/readability">About our research</a>
+          </li>
+        </ul>
+        <div >
+          Sponsored by 
+          <a href="https://www.ocasta.com" target="_blank" class="ocasta-logo" >
+            <svg width="140px" height=40px" viewBox="0 0 284 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Artboard" transform="translate(-507.000000, -259.000000)" fill="#FFFFFF">
+                      <g id="Group-15" transform="translate(507.000000, 259.000000)">
+                          <path d="M38.5818,35.826 C38.5818,27.467 32.3348,21.312 24.2518,21.312 C16.1678,21.312 9.9208,27.467 9.9208,35.826 C9.9208,44.185 16.1678,50.341 24.2518,50.341 C32.3348,50.341 38.5818,44.185 38.5818,35.826 M-0.0002,35.826 C-0.0002,22.138 10.8398,11.667 24.2518,11.667 C37.7548,11.667 48.5028,22.138 48.5028,35.826 C48.5028,49.422 37.7548,59.986 24.2518,59.986 C10.8398,59.986 -0.0002,49.422 -0.0002,35.826" id="Fill-1"></path>
+                          <path d="M54.9275,35.826 C54.9275,22.138 65.3075,11.667 79.1785,11.667 C88.1815,11.667 95.9905,16.351 99.6645,23.516 L91.1205,28.477 C89.1005,24.159 84.5985,21.404 79.0875,21.404 C71.0035,21.404 64.8485,27.559 64.8485,35.826 C64.8485,44.094 71.0035,50.248 79.0875,50.248 C84.5985,50.248 89.1005,47.4 91.3045,43.175 L99.8485,48.044 C95.9905,55.301 88.1815,59.986 79.1785,59.986 C65.3075,59.986 54.9275,49.422 54.9275,35.826" id="Fill-4"></path>
+                          <path d="M142.6517,35.826 C142.6517,27.283 136.4047,21.128 128.1377,21.128 C119.8707,21.128 113.6237,27.283 113.6237,35.826 C113.6237,44.369 119.8707,50.524 128.1377,50.524 C136.4047,50.524 142.6517,44.369 142.6517,35.826 L142.6517,35.826 Z M152.5727,12.861 L152.5727,58.792 L142.6517,58.792 L142.6517,52.178 C139.1607,57.046 133.7417,59.986 126.5757,59.986 C114.0827,59.986 103.7027,49.422 103.7027,35.826 C103.7027,22.138 114.0827,11.667 126.5757,11.667 C133.7417,11.667 139.1607,14.606 142.6517,19.383 L142.6517,12.861 L152.5727,12.861 Z" id="Fill-6"></path>
+                          <path d="M197.4886,45.8387 C197.4886,55.0257 189.4966,59.9857 179.5746,59.9857 C170.3886,59.9857 163.7746,55.8517 160.8366,49.2377 L169.3796,44.2767 C170.8486,48.4107 174.5226,50.8917 179.5746,50.8917 C183.9846,50.8917 187.3846,49.4217 187.3846,45.7467 C187.3846,37.5707 162.6726,42.1637 162.6726,25.7207 C162.6726,17.0867 170.1136,11.6667 179.4836,11.6667 C187.0156,11.6667 193.2626,15.1567 196.4766,21.2197 L188.1186,25.9047 C186.4646,22.3227 183.2506,20.6687 179.4836,20.6687 C175.9006,20.6687 172.7776,22.2307 172.7776,25.5377 C172.7776,33.8977 197.4886,28.8447 197.4886,45.8387" id="Fill-8"></path>
+                          <path d="M218.6136,22.4139 L218.6136,44.4609 C218.6136,50.3409 222.4716,50.2479 230.0046,49.8809 L230.0046,58.7919 C214.7556,60.6289 208.6926,56.4029 208.6926,44.4609 L208.6926,22.4139 L200.2406,22.4139 L200.2406,12.8609 L208.6926,12.8609 L208.6926,2.9399 L218.6136,-0.0001 L218.6136,12.8609 L230.0046,12.8609 L230.0046,22.4139 L218.6136,22.4139 Z" id="Fill-10"></path>
+                          <path d="M273.5443,35.826 C273.5443,27.283 267.2973,21.128 259.0293,21.128 C250.7623,21.128 244.5163,27.283 244.5163,35.826 C244.5163,44.369 250.7623,50.524 259.0293,50.524 C267.2973,50.524 273.5443,44.369 273.5443,35.826 L273.5443,35.826 Z M283.4643,12.861 L283.4643,58.792 L273.5443,58.792 L273.5443,52.178 C270.0533,57.046 264.6343,59.986 257.4693,59.986 C244.9763,59.986 234.5953,49.422 234.5953,35.826 C234.5953,22.138 244.9763,11.667 257.4693,11.667 C264.6343,11.667 270.0533,14.606 273.5443,19.383 L273.5443,12.861 L283.4643,12.861 Z" id="Fill-13"></path>
+                      </g>
+                  </g>
+              </g>
+          </svg>
+          </a>
+        </div>
+      </div>  
     </div>
   </body>
 </html>

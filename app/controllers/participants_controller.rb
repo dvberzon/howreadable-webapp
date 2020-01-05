@@ -1,7 +1,7 @@
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: [:show]
   before_action  only: [:show] do
-    session_participant_only params[:id]
+    valid_participant_only params[:id]
   end
   
   # GET /participants/1
@@ -23,7 +23,6 @@ class ParticipantsController < ApplicationController
     @participant.ip = request.remote_ip
     respond_to do |format|
       if @participant.save
-        add_participant_to_session @participant
         format.html { redirect_to @participant }
         format.json { render :show, status: :created, location: @participant }
       else
@@ -33,11 +32,10 @@ class ParticipantsController < ApplicationController
     end
   end
 
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_participant
-      @participant = Participant.find(params[:id])
+      @participant = Participant.find_by_id(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

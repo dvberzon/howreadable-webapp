@@ -12,12 +12,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def add_participant_to_session participant
-    session[:participant] = participant.id
-  end
-
-  def session_participant_only id
-    if session[:participant].to_s != id.to_s
+  def valid_participant_only id
+    unless Participant.valid_param id
       render(:file => File.join(Rails.root, 'public/403.html'), :status => 403, :layout => false)
     end
   end

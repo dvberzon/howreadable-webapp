@@ -26,11 +26,19 @@ class Response < ApplicationRecord
   end
 
   def correct?
-    given_answer == exercise_obj.correct_answer.to_s
+    given_answer == exercise_obj.try(:correct_answer).try(:to_s)
   end
 
   def self.answered
     where.not(given_answer: nil)
+  end
+
+  def skip
+    self.update_attribute(:skipped, true)
+  end
+
+  def self.num_participants_answered
+    answered.distinct.pluck(:participant_id).count
   end
   
 end

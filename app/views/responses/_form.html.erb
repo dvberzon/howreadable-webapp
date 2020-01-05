@@ -1,32 +1,36 @@
 <div id="response">
   
     <div class="question">
-      <%= render 'test_case' %>
-      <button class="go u-pull-right">I'm ready to answer</button>
+      <section class="content">
+        <%= render 'test_case' %>
+      </section>
+      <div class="actions">
+        <%= link_to "I don't know", skip_participant_response_path(@participant, @response), :class=>'button back' %>
+        <button class="go button-primary">I'm ready to answer</button>
+      </div>
     </div>
 
     <div class="answer-form">
       
       <%= form_with(model: [participant, response], local: true) do |form| %>
-      
-        <div class="field">
+        <section class="content">
           <%= form.hidden_field :responded_ms %>
-        </div>
 
-        <div class="field">
-          <%= form.label :given_answer, 'Your answer:' %>
-          <div class="option-buttons answer-options">
-            <% @response.answer_options.each do |id, name| %>
-              <span class="option">
-                <%= form.radio_button :given_answer, id %>
-                <%= form.label :given_answer, name, value: id, :class=>'button' %>
-              </span>
-            <% end %>
+          <div class="field">
+            <%= form.label :given_answer, 'Your answer:' %>
+            <div class="option-buttons answer-options">
+              <% @response.answer_options.shuffle.each_with_index do |ans, index| %>
+                <span class="option">
+                  <%= form.radio_button :given_answer, ans, id: "response_#{index}" %>
+                  <%= form.label :given_answer, ans.to_s, for: "response_#{index}", :class=>'button' %>
+                </span>
+              <% end %>
+            </div>
           </div>
-        </div>
-
+        </section>
         <div class="actions">
-          <button class="back">I want to see the code again</button>
+          <%#<button class="back">I want to see the code again</button> %>
+          <%= link_to "I don't know", skip_participant_response_path(@participant, @response), :class=>'button back' %>
           <%= form.submit 'next', :class=>'button-primary' %>
         </div>
         <% end %>

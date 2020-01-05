@@ -20,19 +20,21 @@ div#response {
   margin-top: 40px;
   div.question {
     display: block;
-    code {
-      padding: 15px 30px;
-      font-size: 20px;
-      line-height: 28px;
-      font-family: Inconsolata, courier, monospace;
-      @media only screen and (max-width: 970px) {
-        font-size: 16px;
-        padding: 20px;
+    pre {
+      code {
+        padding: 15px 30px;
+        font-size: 20px;
+        line-height: 28px;
+        font-family: Inconsolata, courier, monospace;
+        @media only screen and (max-width: 970px) {
+          font-size: 16px;
+          padding: 20px;
+        }
       }
     }
     @media only screen and (max-width: 700px) {
       pre {
-        margin: 0 -40px 2.5rem;
+        margin: 0 -24px 2.5rem;
       }
     }
   }
@@ -50,12 +52,16 @@ div#response {
       }
       .answer-options{
         text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;    
         label {
+          font-family: Inconsolata, courier, monospace;
           font-size: 18px;
           text-transform: none;
           margin: 5px 20px;
           @media only screen and (max-width: 780px) {
-            margin: 5px 0;
+            margin: 8px 0;
             font-size: 16px;
             padding: 0 20px;
           }
@@ -100,13 +106,72 @@ div#response {
 
       }
       
-      .actions{
-        text-align: right;
-        .back {
-          float: left;
-        }
-      }
     }
   }
+}
 
+div.progress-wheel {
+  position: absolute;
+  padding: 0 8px;
+  top: 24px;
+  right: 16px;
+  background-color: white;
+  width: 70px;
+  float: right;
+  fill: #1EAEDB;
+  div.number {
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    text-align: center;
+    top: 20px;
+    left: 0;
+    right: 0;
+    font-size: 30px;
+    line-height: 30px;
+    vertical-align: baseline;
+  }
+  @media only screen and (max-width: 700px) {
+    width: 50px;
+    div.number {
+      top: 10px;
+      font-size: 24px;
+    }
+  }
+  .seg {
+    fill: #fff;
+  }
+  .progress-1 {
+    .seg1 {
+      fill: #1EAEDB;
+    }
+  }
+  
+  .progress-2 {
+    .seg1, .seg2 {
+      fill: #1EAEDB;
+    }
+  }
+  
+  .progress-3 {
+    .seg1, .seg2, .seg3 {
+      fill: #1EAEDB;
+    }
+  }
+  
+  .progress-4 {
+    .seg1, .seg2, .seg3, .seg4 {
+      fill: #1EAEDB;
+    }
+  }
+  .progress-5 {
+    .seg1, .seg2, .seg3, .seg4, .seg5 {
+      fill: #1EAEDB;
+    }
+  }
+  .progress-6 {
+    .seg {
+      fill: #1EAEDB;
+    }
+  }
+  
 }

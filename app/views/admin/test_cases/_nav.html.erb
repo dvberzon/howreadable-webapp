@@ -1,0 +1,7 @@
+<% Experiment.test_cases.each do |test_case|%>
+  <% active = @test_case.try(:id) == test_case.id %>
+  <%= link_to test_case.name, 
+        admin_test_case_path(test_case.id),
+        class: "btn #{active && ' btn-info'}"
+  %>
+<% end %>
