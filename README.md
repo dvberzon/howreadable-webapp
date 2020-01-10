@@ -12,7 +12,7 @@ The webapp allowed users to anonymously participate in the experiment. After col
 
 The webapp captures the time taken to read each snippet and the answer given and stores it in the db. Each snippet is one of a pair of snippets chosen at random, where the two snippets in the pair differ only in terms of the use of a specific code construct. The aim of the experiment is to assess the readability of the construct by analysing the average time taken to read the snippet and the percentage of correct answers. The full methodology is described [here](https://howreadable.com/experiment/methodology.html)
 
-There is an admin system where the collected data can be viewed and analysed. The demo admin system is [here](http://howreadable-2.herokuapp.com/)
+There is an admin system where the collected data can be viewed and analysed. The demo admin system is [here](http://howreadable-2.herokuapp.com/admin)
 
 ```
 username: hrteam
