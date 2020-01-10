@@ -5,21 +5,6 @@ This directory defines the static data for the howreadable.com experiment.
 
 The experiment data itself is defined in `/experiment.yml` and the snippets are defined in subdirectories as js files
 
-The `v1` directory contains the experiment folder from the version 1 experiment.
-
-tests.md describes the various patterns we might test. The patterns we have agreed on so far are:
-
-- Ternary operator vs if else
-- Specific vs generic named functions
-- Comments vs no Comments
-- Pure functions vs side effects
-- Order of if
-- Named vs inline functions
-- If else vs early return
-- Abstracting into functions vs local operations
-- Chaining methods vs intermediate variables
-- Boolean algebra
-
 The experiment.yml file defines the following data structures:
 
 # test cases
@@ -28,7 +13,7 @@ As an example, a test case with the id `ternary_if` might compare ternary operat
 
 # patterns
 Each test case has two or more patterns. These are the code structures that we are comparing for readability
-For example the test case `ternary_if` might have patterns of `ternary` and `if_statment`.
+For example the test case `boolean_algebra` might have patterns of `expanded` and `simplified`.
 
 # exercises
 Each test case has multiple exercises. Each exercise represents a series of code commands that the participant will read and
