@@ -1,0 +1,325 @@
+test_cases:
+  # boolean algebra
+  boolean_algebra:
+    priority: 3
+    name: Boolean Algebra
+    question: What value will the variable <code>result</code> have?
+    patterns:
+      - expanded
+      - simplified
+    languages:
+      - js
+    exercises:
+      - id: dvb1
+        answers:
+          - 'true'
+          - 'false'
+          - 'null'
+        correct_answer: 'true'
+      - id: dvb2
+        answers:
+          - 'true'
+          - 'false'
+          - 'null'
+        correct_answer: 'true'
+      - id: dvb3
+        answers:
+          - 'true'
+          - 'false'
+          - 'null'
+        correct_answer: 'true'
+      - id: dvb4
+        answers:
+          - 'true'
+          - 'false'
+          - 'null'
+        correct_answer: 'false'
+      - id: jss1
+        answers:
+          - 'true'
+          - 'false'
+          - 'null'
+        correct_answer: 'false'
+      - id: jss2
+        answers:
+          - 'true'
+          - 'false'
+          - 'null'
+        correct_answer: 'false'
+
+  #chaining_intermediate
+  chaining_intermediate:
+    priority: 2
+    name: Chaining Intermediate
+    question: What value will the variable <code>result</code> have?
+    patterns:
+      - chaining
+      - intermediate
+    languages:
+      - js      
+    exercises:
+      - id: dvb1
+        answers:
+          - "'abg'"
+          - "'bag'"
+          - "'gba'"
+        correct_answer: "'abg'"
+      - id: jss1
+        answers:
+          - "'The right answer'"
+          - "'The Right Answer'"
+          - "'the right answer'"
+        correct_answer: "'The right answer'"
+      - id: jss2
+        answers:
+          - "'B'"
+          - "'c'"
+          - "'A'"
+        correct_answer: "'B'"
+      - id: ncc1
+        answers:
+          - "'world! Hello'"
+          - "'!world Hello!'"
+          - "'!dlrow olleH'"
+        correct_answer: "'world! Hello'"
+      - id: ncc2
+        answers:
+          - 6
+          - 3
+          - 1
+        correct_answer: 6
+      - id: ncc3
+        answers:
+          - 2
+          - 3
+          - 4
+        correct_answer: 4
+
+  #functions_local
+  functions_local:
+    priority: 3
+    name: Functions vs Local
+    question: What value will the variable <code>result</code> have?
+    patterns:
+      - function
+      - local
+    languages:
+      - js
+    exercises:
+      - id: dvb1
+        answers:
+          - 3
+          - 2
+          - 6
+        correct_answer: 2
+      - id: dvb2
+        answers:
+          - "'Ace of Hearts'"
+          - "'Ace of Spades'"
+          - "'2 of Hearts'"
+        correct_answer: "'Ace of Hearts'"
+      - id: dvb3
+        answers:
+          - true
+          - false
+          - 'null'
+        correct_answer: true
+      - id: jss1
+        answers:
+          - "'19:30'"
+          - "'7:30'"
+          - "'7:30 PM'"
+        correct_answer: "'19:30'"
+      - id: ncc1
+        answers:
+          - 21
+          - 24
+          - 27
+        correct_answer: 24
+      - id: ncc2
+        answers:
+          - 10
+          - 20
+          - 18
+        correct_answer: 20
+        
+          
+  # order_of_if
+  order_of_if:
+    priority: 2
+    name: Order of if statement
+    question: What value will the variable <code>result</code> have?
+    patterns:
+      - negative_first
+      - positive_first
+    languages:
+      - js
+    exercises:
+      - id: dvb1
+        answers:
+          - "'Miss Marple'"
+          - "'Jane Marple'"
+          - "'Miss Jane Marple'"
+        correct_answer: "'Miss Marple'"
+      - id: dvb2
+        answers:
+          - "'jane'"
+          - "'jane@example.com'"
+          - true
+        correct_answer: "'jane'"
+      - id: ncc1
+        answers:
+          - "'no'"
+          - "'yes'"
+          - 'null'
+        correct_answer: "'no'"
+      - id: ncc2
+        answers:
+          - "'no'"
+          - "'yes'"
+          - 'null'
+        correct_answer: "'no'"
+      - id: ncc3
+        answers:
+          - "'gotta catch them all'"
+          - "'caught them all'"
+          - 102
+        correct_answer: "'gotta catch them all'"
+      - id: ncc4
+        answers:
+          - "'no'"
+          - "'yes'"
+          - 'null'
+        correct_answer: "'no'"
+
+#  precedence_brackets:
+  precedence_brackets:
+    priority: 3
+    name: Operator Precedence vs Brackets
+    question: What value will the variable <code>result</code> have?
+    patterns:
+      - brackets
+      - precedence
+    languages:
+      - js
+    exercises:
+      - id: dvb1
+        answers:
+          - 440
+          - 2640
+          - 2420
+        correct_answer: 440
+      - id: dvb2
+        answers:
+          - true
+          - false
+          - 'null'
+        correct_answer: true
+      - id: dvb3
+        answers:
+          - true
+          - false
+          - 'null'
+        correct_answer: true
+      - id: jss1
+        answers:
+          - 90
+          - 30
+          - 0
+        correct_answer: 90
+      - id: jss2
+        answers:
+          - "'$1,000'"
+          - "'1,000'"
+          - 'null'
+        correct_answer: "'$1,000'"
+      - id: ncc1
+        answers:
+          - 12
+          - 11.7
+          - 12.7
+        correct_answer: 12
+
+#  pure_functions:
+  pure_functions:
+    priority: 1
+    name: Pure Functions
+    question: What value will the variable <code>result</code> have?
+    patterns:
+      - impure
+      - pure
+    languages:
+      - js
+    exercises:
+      - id: dvb1
+        answers:
+          - 20
+          - 10
+          - 100
+        correct_answer: 20
+      - id: dvb2
+        answers:
+          - 2
+          - 3
+          - 5
+        correct_answer: 2
+      - id: dvb3
+        answers:
+          - 4
+          - 8
+          - 1
+        correct_answer: 4
+      - id: jss1
+        answers:
+          - 2
+          - 4
+          - 6
+        correct_answer: 4
+      - id: jss2
+        answers:
+          - "'Snowball'"
+          - "'Snuffles'"
+          - "'DOG'"
+        correct_answer: "'Snowball'"
+      - id: ncc1
+        answers:
+          - 4
+          - 5
+          - 7
+        correct_answer: 5
+
+
+
+languages:
+  js: Javascript (ES5)
+
+answer_translations:
+  'null':
+    js: 'null'
+#    rb: nil
+#    py: None
+  'false':
+    js: 'false'
+#    rb: 'false'
+#    py: 'False'
+  'true':
+    js: 'true'
+#    rb: 'true'
+#    py: 'True'
+#
+#lickert:
+#  0: fa-angry
+#  1: fa-frown
+#  2: fa-meh
+#  3: fa-smile
+#  4: fa-grin-stars
+
+years_programming:
+  0: Just started
+  1: One year
+  2: Two years
+  3: Three years
+  4: Four years
+  5: Five years
+  6: 6 - 10 years
+  10: 10 years or more

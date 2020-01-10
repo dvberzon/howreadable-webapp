@@ -1,0 +1,35 @@
+{
+  "name": "howreadable-experiment",
+  "version": "0.0.0",
+  "description": "The experiment config for the howreadable webapp",
+  "main": "index.js",
+  "scripts": {
+    "prettier": "prettier --write '**/*.js'",
+    "test": "prettier --check '**/*.js' && node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvberzon/howreadable-experiment.git"
+  },
+  "keywords": [
+    "howreadable",
+    "how",
+    "readable",
+    "readability",
+    "grammar",
+    "experiment",
+    "snippets"
+  ],
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/dvberzon/howreadable-experiment/issues"
+  },
+  "homepage": "https://github.com/dvberzon/howreadable-experiment#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "globule": "^1.2.1",
+    "prettier": "^1.18.2"
+  }
+}

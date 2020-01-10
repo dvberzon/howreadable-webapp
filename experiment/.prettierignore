@@ -1,0 +1,6 @@
+# ignore the operator precedence foder, as prettier will
+# add or remove brackets and therefore break the tests
+precedence_brackets/
+/v1/**
+pure_functions/ncc1_*
+
