@@ -25,10 +25,10 @@ Rails.application.routes.draw do
     end
   end
 
-  #root to: 'home#index'
-  root to: 'home#closed'
+  root to: 'home#index'
+  #root to: 'home#closed'
   get 'home' => 'home#index'
-#  get 'thankyou' => 'home#thankyou', as: :thankyou
+  get 'thankyou' => 'home#thankyou', as: :thankyou
   get 'closed' => 'home#closed'
   get 'start/:lang' => 'participants#new', as: :start
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

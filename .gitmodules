@@ -1,3 +1,0 @@
-[submodule "experiment"]
-	path = experiment
-	url = git@github.com:dvberzon/howreadable-experiment.git
